@@ -2,7 +2,7 @@
 
 ## Our Visualization Website
 
-View here:
+View here: https://amiefeng.github.io/COSI116A-Team4/
 
 ## Meet The Team
 
