@@ -4,8 +4,8 @@ const months = [
     "June", "July", "August", "September", "October", 
     "November", "December"
   ];
-  const years = [2022, 2023, 2024]; // Add or modify years as needed
-  const mbtaLines = ["Red Line", "Green Line", "Blue Line", "Orange Line", "Silver Line"];
+  const years = [2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024]; // Add or modify years as needed
+  const mbtaLines = ["Red Line", "Green Line", "Blue Line", "Orange Line"];
   
   // Populate the months dropdown
   const monthSelect = document.querySelector('select[name="monthInput"]');
