@@ -1,4 +1,4 @@
-﻿Year/Mont,route_or_line,average_monthly_ridership,countofdates,ObjectId,,
+﻿year_month,route_or_line,average_monthly_ridership,countofdates,ObjectId,expected_time,actual_time
 2016/01,Blue Line,50652,31,51,583193.465,628864.108
 2016/02,Blue Line,52322,29,62,558127.959,603353.61
 2016/03,Blue Line,56676,31,73,651869.797,714329.801
