@@ -6,16 +6,48 @@ body {
 
 	background: linear-gradient(135deg, #f3f8fd, #c8ddfb 55%, #e0cfe8);
 	min-height: 100vh;
+	scroll-behavior: smooth;
 }
 
 h1, h2, h3 {
 	line-height: 1.2
+	padding: 10px;
+}
+
+nav {
+	display: flex;
+	justify-content: flex-end;
+	position: sticky;
+	top: 0;
+	z-index: 10;
+	
+  }
+nav ul{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	list-style-type: none;
+}
+
+nav li{
+	margin: 0 3px;
+}
+
+nav a{
+	text-decoration: none;
+	color: rgb(21, 38, 80);
+
+	background-color: rgba(151, 151, 212, 0.3); 
+	border-radius: 10px; 
+	padding: 5px 6px;
+	margin: 5px; 
 }
 
 /* Your text should be in a nice narrow column */
 .content-column {
 	max-width: 1050px;
-	margin: 40px auto;
+	margin: 0px auto;
+	padding-top: 10px;
 }
 
 /* But your visualization should be full-width and full-height */
@@ -52,7 +84,7 @@ h1, h2, h3 {
 	height:1px;
 	background:#fff;
 }
-#forkongithub a::after{
+c a::after{
 	bottom:1px;
 	top:auto;
 }
@@ -61,7 +93,7 @@ h1, h2, h3 {
 		position:fixed;
 		display:block;
 		top:0;
-		right:0;
+		left:0;
 		width:200px;
 		overflow:hidden;
 		height:200px;
@@ -71,12 +103,12 @@ h1, h2, h3 {
 		width:200px;
 		position:absolute;
 		top:60px;
-		right:-60px;
-		transform:rotate(45deg);
-		-webkit-transform:rotate(45deg);
-		-ms-transform:rotate(45deg);
-		-moz-transform:rotate(45deg);
-		-o-transform:rotate(45deg);
+		left:-60px;
+		transform:rotate(-45deg);
+		-webkit-transform:rotate(-45deg);
+		-ms-transform:rotate(-45deg);
+		-moz-transform:rotate(-45deg);
+		-o-transform:rotate(-45deg);
 		box-shadow:4px 4px 10px rgba(0,0,0,0.8);
 	}
 }
