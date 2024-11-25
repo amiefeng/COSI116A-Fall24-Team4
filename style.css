@@ -56,6 +56,18 @@ nav a{
   height: 100%;
 }
 
+#vis-svg {
+	width: 100%;
+	height: 500px; /* Set height explicitly */
+  }
+
+  #vis-svg svg {
+	width: 100%;
+	height: 500px; /* Set height explicitly */
+	background-color: #f9f9f9; 
+	border: 1px solid #ccc;
+}
+
 /* Fork on GitHub ribbon via https://codepo8.github.io/css-fork-on-github-ribbon/# */  
 #forkongithub a{
 	background:rgb(205, 129, 195);
