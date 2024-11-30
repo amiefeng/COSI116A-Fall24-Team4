@@ -141,3 +141,47 @@ c a::after{
 		box-shadow:4px 4px 10px rgba(0,0,0,0.8);
 	}
 }
+
+/* calendar styles */
+#calendar {
+    background-color: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+	width: 90%;
+}
+
+.calendar-year-heading {
+    color: rgb(109, 46, 109);
+    margin-bottom: 10px;
+	font-size: 22px;
+}
+
+.month-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 8px;
+}
+
+@media (max-width: 768px) {
+    .month-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.month-cell {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 8px;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+	font-size: 14px;
+}
+
+.month-cell:hover {
+    background-color: rgb(237, 214, 237);
+    transform: scale(1.05);
+}
