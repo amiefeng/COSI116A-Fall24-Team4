@@ -7,7 +7,7 @@ const months = [
   const years = [2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024]; // Add or modify years as needed
   const mbtaLines = ["Red Line", "Green Line", "Blue Line", "Orange Line"];
   
-  // Populate months dropdown
+  // Populate the months dropdown
   const monthSelect = document.querySelector('select[name="monthInput"]');
   months.forEach(month => {
     const option = document.createElement("option");
@@ -16,7 +16,7 @@ const months = [
     monthSelect.appendChild(option);
   });
   
-  // Populate years dropdown
+  // Populate the years dropdown
   const yearSelect = document.querySelector('select[name="yearInput"]');
   years.forEach(year => {
     const option = document.createElement("option");
@@ -25,11 +25,11 @@ const months = [
     yearSelect.appendChild(option);
   });
   
-  // Populate MBTA lines dropdown
+  // Populate the MBTA lines dropdown
   const lineSelect = document.querySelector('select[name="lineInput"]');
   mbtaLines.forEach(line => {
     const option = document.createElement("option");
-    option.value = line; 
+    option.value = line; // Use the line name as the value
     option.textContent = line;
     lineSelect.appendChild(option);
   });
