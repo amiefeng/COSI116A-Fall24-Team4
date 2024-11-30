@@ -1,4 +1,4 @@
-var margin = {top: 50, right: 50, bottom: 50, left: 50},
+var margin = {top: 50, right: 50, bottom: 70, left: 85},
     width = 500 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
 
@@ -37,6 +37,21 @@ d3.csv("../data/rapid_transit_ridership_and_reliability_m_y_l.csv", function(err
     svg.append("g")
         .attr("transform", "translate(0," + height + ")")
         .call(d3.axisBottom(x));
+
+    // add x-axis label
+    svg.append("text")             
+      .attr("transform","translate(" + (width/2) + " ," + (height + margin.top + 5) + ")")
+      .style("text-anchor", "middle")
+      .text("Reliability");
+
+    // add y-axis label
+    svg.append("text")
+     .attr("transform", "rotate(-90)")
+     .attr("y", 0 - margin.left)
+     .attr("x",0 - (height / 2))
+     .attr("dy", "1em")
+     .style("text-anchor", "middle")
+     .text("Average Monthly Ridership"); 
 
     // add y-axis
     svg.append("g")

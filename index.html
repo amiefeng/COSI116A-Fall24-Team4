@@ -16,19 +16,21 @@
 
 <!-- Main page content -->
 <body>
-
+  <div class = "nav_container">
     <!-- Navigation Bar -->
     <nav>
       <ul>
         <li><a href="#motivation">Motivation</a></li>
         <li><a href="#viz">Visualization</a></li>
         <li><a href="#demo">Demo Video</a></li>
+        <li><a href="#viz_explain">Explanation</a></li>
         <li><a href="#data">Data Analysis</a></li>
         <li><a href="#task">Task Analysis</a></li>
         <li><a href="#design">Design Process</a></li>
         <li><a href="#conclusion">Conclusion</a></li>
       </ul>
     </nav>
+  </div>
 
   <!-- Your writeup goes here -->
   <div class = "content-column">
@@ -49,25 +51,32 @@
     
     <h1 id="viz">Visualization</h1>
     
-    <div id="filterMenu">
-      <p>Select Date & Line View</p>
-      <table>
-        <td><span class="monthInput">
-            Month:
-            <select class="monthInput" name="monthInput"></select>
-          </span>
-          <br /></td>
-          <td><span class="yearInput">
-            Year:
-            <select class="yearInput" name="yearInput"></select>
-          </span><br /></td>
-          <td><span class="lineInput">
-            MBTA Color Line:
-            <select class="lineInput" name="lineInput"></select>
-          </span></td>
-      </table>
+    <div class = "input-menus">
+      <div id="filterMenu">
+        <p>Select Date & Line View:</p>
+        <table>
+          <td><span class="monthInput">
+              Month:
+              <select class="monthInput" name="monthInput"></select>
+            </span>
+            <br /></td>
+            <td><span class="yearInput">
+              Year:
+              <select class="yearInput" name="yearInput"></select>
+            </span><br /></td>
+            <td><span class="lineInput">
+              MBTA Color Line:
+              <select class="lineInput" name="lineInput"></select>
+            </span></td>
+        </table>
+      </div>
+      <div id="legend">
+        <p>Legend</p>
+        <svg id="my_legend" height=200 width=450></svg>
+      </div>
     </div>
     
+
     <p><em>Include the interactive visualization as part of this page. Static example follows.</em></p>
     
   </div>
@@ -130,6 +139,7 @@
 
     <p><em>List here where any code, packages/libraries, text, images, designs, etc. that you leverage come from.</em></p>
     
+    <p>credits to <a href="http://www.d3noob.org"> d3noob</a> for clarifying d3 concepts and complexities </p>
     
   </div>
 
@@ -139,7 +149,9 @@
   
   <!-- Scripts at the end avoid need for dealing with async, defer, or onload event handlers -->
   <script src="lib/d3.v4/d3.v4.js"></script>
+  <script src="js/legend.js"></script>
   <script src="js/visualization.js"></script>
   <script src="js/dropdown.js"></script>
+  
 </body>
 </html>
