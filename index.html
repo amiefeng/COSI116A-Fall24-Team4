@@ -52,6 +52,7 @@
     <h1 id="viz">Visualization</h1>
     
     <div class = "input-menus">
+      <!-- filter menu -->
       <div id="filterMenu">
         <p>Select Date & Line View:</p>
         <table>
@@ -70,6 +71,11 @@
             </span></td>
         </table>
       </div>
+
+      <!-- calendar -->
+      <div id="calendar"></div>
+
+      <!-- color lengend -->
       <div id="legend">
         <p>Legend</p>
         <svg id="my_legend" height=200 width=450></svg>
@@ -151,7 +157,8 @@
   <script src="lib/d3.v4/d3.v4.js"></script>
   <script src="js/legend.js"></script>
   <script src="js/visualization.js"></script>
-  <script src="js/dropdown.js"></script>
+  <script src="js/filter.js"></script>
+  <script src="js/cal.js"></script>
   
 </body>
 </html>
