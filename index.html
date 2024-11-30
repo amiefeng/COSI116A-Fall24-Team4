@@ -38,21 +38,32 @@
     
     <p>A Project-long Course Project as part of COSI 116A: Information Visualization</a>, taught by <a href="https://cs.brandeis.edu/~dylan/">Prof. Dylan Cashman</a>, <a href="https://cs.brandeis.edu/">Brandeis University</a>.</p>
     
-    
-    <h1 id="motivation">Motivation</h1>
-    
-    <!-- <p><em>Summary of user needs and motivating questions.</em></p> -->
-    <!-- <p><em>Expectation: There is a clear focus, and a developed explanation of the problem, and a reasonable response is proposed.</em></p> -->
-    <p>As residents of the greater Boston area, public transportation can be essential based on accessibility and how potentially convenient it can be. Therefore, one of the main features that users look for in the MBTA is reliability. Generally, public transportation can be seen as convient and cost effective yet short on aspects such as reliability.</p>
-    <p>Based on this general sentiment, we are left asking: </p>
-    <ul>
-      <li>How does the reliability of the MBTA affect users’ decisions to rely on it regularly?</li>
-      <li>What kind of visualizations or data representations would help users and decision-makers understand the effectiveness of the MBTA system and identify areas for improvement?</li>
-    </ul>
+    <div class="section-cards">
+      <h1 id="motivation">Motivation</h1>
+      
+      <!-- <p><em>Summary of user needs and motivating questions.</em></p> -->
+      <!-- <p><em>Expectation: There is a clear focus, and a developed explanation of the problem, and a reasonable response is proposed.</em></p> -->
+      <p>As residents of the greater Boston area, public transportation can be essential based on accessibility and how potentially convenient it can be. Therefore, one of the main features that users look for in the MBTA is reliability. Generally, public transportation can be seen as convient and cost effective yet short on aspects such as reliability.</p>
+      <p>Based on this general sentiment, we are left asking: </p>
+      <ul>
+        <li>How does the reliability of the MBTA affect users’ decisions to rely on it regularly?</li>
+        <li>What kind of visualizations or data representations would help users and decision-makers understand the effectiveness of the MBTA system and identify areas for improvement?</li>
+      </ul>
+    </div>
 
-    
+   
     <h1 id="viz">Visualization</h1>
+  
+    <p><em>Include the interactive visualization as part of this page. Static example follows.</em></p>
     
+  </div>
+  
+  <!-- Your visualization here -->
+  <div class="vis-holder">
+    <!-- Change viewbox to whatever you want, e.g. "0 0 1000 6000" This determines your aspect ratio and coordinate system -->    
+    <!-- Delete all the sample SVG code below after the viewbox to before the closing tag. Populate this part of the SVG with D3. -->
+
+        
     <div class = "input-menus">
       <!-- filter menu -->
       <div id="filterMenu">
@@ -83,20 +94,12 @@
         <svg id="my_legend" height=200 width=450></svg>
       </div>
     </div>
-    
 
-    <p><em>Include the interactive visualization as part of this page. Static example follows.</em></p>
-    
-  </div>
-  
-  <!-- Your visualization here -->
-  <div class="vis-holder">
-    <!-- Change viewbox to whatever you want, e.g. "0 0 1000 6000" This determines your aspect ratio and coordinate system -->    
-    <!-- Delete all the sample SVG code below after the viewbox to before the closing tag. Populate this part of the SVG with D3. -->
     <svg id="vis-svg">
 
     <!-- Don't delete the closing tag! -->
     </svg>
+  </div>
   </div>
   
   <!-- Your writeup goes here -->
@@ -148,9 +151,8 @@
     <p><em>List here where any code, packages/libraries, text, images, designs, etc. that you leverage come from.</em></p>
     <ul>
       <li>Canva</li>
+      <li>Credits to <a href="http://www.d3noob.org"> d3noob</a> for clarifying d3 concepts and complexities </li>
     </ul>
-    
-    <p>credits to <a href="http://www.d3noob.org"> d3noob</a> for clarifying d3 concepts and complexities </p>
     
   </div>
 
