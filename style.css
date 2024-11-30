@@ -44,6 +44,16 @@ nav a{
 	padding: 5px 6px;
 }
 
+.section-cards{
+	background-color: #ffffffdf;
+	border: 1px solid #ddd;
+	border-radius: 10px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	padding: 20px;
+	width: 1098px;
+	display:block;
+
+}
 /* Your text should be in a nice narrow column */
 .content-column {
 	max-width: 1050px;
@@ -52,12 +62,21 @@ nav a{
 
 .input-menus {
 	display: flex;
-	gap:200px;
+	max-width: 1300px;
+	justify-content: space-between;
+	gap:20px;
 }
 
-#legend {
-	text-align: center
+#filterMenu {
+	width:100%;
+	text-align: center;
+	margin-right: 15px;
 }
+#legend {
+	text-align: center;
+}
+
+
 /* But your visualization should be full-width and full-height */
 .vis-holder {
   width: 100%;
