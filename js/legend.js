@@ -1,0 +1,10 @@
+var svg = d3.select("#my_legend")
+
+svg.append("circle").attr("cx",180).attr("cy",30).attr("r", 10).style("fill", "#DA291C")
+svg.append("circle").attr("cx",180).attr("cy",60).attr("r", 10).style("fill", "#00843D")
+svg.append("circle").attr("cx",180).attr("cy",90).attr("r", 10).style("fill", "#003DA5")
+svg.append("circle").attr("cx",180).attr("cy",120).attr("r", 10).style("fill", "#ED8B00")
+svg.append("text").attr("x", 200).attr("y", 30).text("Red Line").style("font-size", "15px").attr("alignment-baseline","middle")
+svg.append("text").attr("x", 200).attr("y", 60).text("Green Line").style("font-size", "15px").attr("alignment-baseline","middle")
+svg.append("text").attr("x", 200).attr("y", 90).text("Blue Line").style("font-size", "15px").attr("alignment-baseline","middle")
+svg.append("text").attr("x", 200).attr("y", 120).text("Orange Line").style("font-size", "15px").attr("alignment-baseline","middle")
