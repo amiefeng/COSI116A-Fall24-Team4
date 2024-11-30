@@ -1,14 +1,12 @@
 /* General formatting */
 body {
-	margin: 0;
-	padding: 0;
+	padding: 0 10px;
 	font: 18px/1.5 -apple-system, BlinkMacSystemFont, "avenir next",avenir, "Segoe UI", "lucida grande", "helvetica neue", helvetica, "Fira Sans",roboto, noto, "Droid Sans", cantarell, oxygen, ubuntu, "franklin gothic medium", "century gothic", "Liberation Sans",
 	sans-serif;
 
 	background: linear-gradient(135deg, #f3f8fd, #c8ddfb 55%, #e0cfe8);
 	min-height: 100vh;
 	scroll-behavior: smooth;
-	position:relative;
 }
 
 h1, h2, h3 {
@@ -16,27 +14,23 @@ h1, h2, h3 {
 	padding: 10px;
 }
 
-.nav_container {
-	position:relative;
-  }
-
 nav {
 	display: flex;
+	justify-content: flex-end;
 	position: sticky;
-	float: right; 
-	margin-right: 45px;
-	
+	top: 0;
+	z-index: 1;
   }
 nav ul{
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
 	align-items: space-between;
 	list-style-type: none;
-	gap: 15px;
+	gap: 5px;
 }
 
 nav li{
-	background: rgb(109, 46, 109);
+	border-radius: 2px;
 	border-radius: 5px;
 	margin: 0 3px;
 	text-align: center;
@@ -44,12 +38,10 @@ nav li{
 
 nav a{
 	text-decoration: none;
-	color: white;
-
-
-	border-radius: 10px; 
+	color: whitesmoke;
+	background-color: rgba(151, 151, 212, 0.9); 
+	border-radius: 5px; 
 	padding: 5px 6px;
-	margin: 5px; 
 }
 
 /* Your text should be in a nice narrow column */
@@ -87,7 +79,7 @@ nav a{
 
 /* Fork on GitHub ribbon via https://codepo8.github.io/css-fork-on-github-ribbon/# */  
 #forkongithub a{
-	background:rgb(109, 46, 109);
+	background:rgba(151, 151, 212); 
 	color:#fff;
 	text-decoration:none;
 	font-family:arial,sans-serif;
