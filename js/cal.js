@@ -1,54 +1,156 @@
-// Calendar Visualization with D3
+// Calendar Visualization with D3 and Year Selection
 document.addEventListener('DOMContentLoaded', () => {
     const monthNames = [
-      'January', 'February', 'March',
-      'April', 'May', 'June',
-      'July', 'August', 'September',
-      'October', 'November', 'December'
+        'January', 'February', 'March',
+        'April', 'May', 'June',
+        'July', 'August', 'September',
+        'October', 'November', 'December'
     ];
-  
+
+    // Years to include in the selection
+    const years = ['All Years', ...Array.from({length: 9}, (_, i) => 2016 + i)];
+
     // Select the calendar container in the HTML
     const calendarContainer = d3.select('#calendar');
-  
-    // Function to create the calendar
-    function createCalendar(year) {
-      // Clear any existing calendar
-      calendarContainer.selectAll('*').remove();
-  
-      // Create year heading
-      calendarContainer.append('div')
-        .attr('class', 'calendar-year-heading')
+
+    // Create a container for the entire calendar section
+    const calendarWrapper = d3.select('#calendar').append('div')
+        .style('display', 'flex')
+        .style('gap', '20px');
+
+    // Create year selection sidebar
+    const yearSidebar = calendarWrapper.append('div')
+        .attr('class', 'year-selection-sidebar')
+        .style('width', '200px')
+        .style('background-color', '#f9f9f9')
+        .style('border', '1px solid #e0e0e0')
+        .style('border-radius', '8px')
+        .style('padding', '15px')
+        .style('height', 'fit-content');
+
+    // Add "Select Year(s)" heading
+    yearSidebar.append('div')
         .style('text-align', 'center')
-        .style('font-size', '24px')
         .style('font-weight', 'bold')
-        .style('margin-bottom', '20px')
-        .text(year);
-  
-      // Create a grid for months
-      const monthGrid = calendarContainer.append('div')
-        .attr('class', 'month-grid')
+        .style('margin-bottom', '15px')
+        .style('color', 'rgb(109, 46, 109)')
+        .text('Select Year(s)');
+
+    // Create year selection grid
+    const yearGrid = yearSidebar.append('div')
         .style('display', 'grid')
-        .style('grid-template-columns', 'repeat(4, 1fr)')
+        .style('grid-template-columns', 'repeat(2, 1fr)')
         .style('grid-gap', '10px');
-  
-      // Create month cells
-      monthGrid.selectAll('.month-cell')
-        .data(monthNames)
+
+    // Store selected years
+    let selectedYears = ['All Years'];
+
+    // Function to toggle year selection
+    function toggleYearSelection(year) {
+        if (year === 'All Years') {
+            // If "All Years" is selected, clear other selections
+            selectedYears = ['All Years'];
+            yearGrid.selectAll('.year-cell')
+                .style('background-color', d => d === 'All Years' ? 'rgb(109, 46, 109)' : '#fff')
+                .style('color', d => d === 'All Years' ? '#fff' : '#000');
+        } else {
+            // Remove "All Years" if it's selected
+            if (selectedYears.includes('All Years')) {
+                selectedYears = [];
+            }
+
+            // Toggle the specific year
+            if (selectedYears.includes(year)) {
+                selectedYears = selectedYears.filter(y => y !== year);
+            } else {
+                selectedYears.push(year);
+            }
+
+            // Update button styles
+            yearGrid.selectAll('.year-cell')
+                .style('background-color', d => {
+                    if (d === 'All Years') return '#fff';
+                    return selectedYears.includes(d) ? 'rgb(109, 46, 109)' : '#fff';
+                })
+                .style('color', d => {
+                    if (d === 'All Years') return '#000';
+                    return selectedYears.includes(d) ? '#fff' : '#000';
+                });
+        }
+
+        // Update calendar based on selected years
+        updateCalendar();
+    }
+
+    // Create year selection buttons
+    yearGrid.selectAll('.year-cell')
+        .data(years)
         .enter()
         .append('div')
-        .attr('class', 'month-cell')
+        .attr('class', 'year-cell')
         .style('border', '1px solid #ccc')
         .style('padding', '10px')
         .style('text-align', 'center')
-        .text(d => d);
+        .style('cursor', 'pointer')
+        .style('background-color', d => d === 'All Years' ? 'rgb(109, 46, 109)' : '#fff')
+        .style('color', d => d === 'All Years' ? '#fff' : '#000')
+        .text(d => d)
+        .on('click', function(d) {
+            toggleYearSelection(d);
+        });
+
+    // Create a container for the calendar grid
+    const calendarContent = calendarWrapper.append('div')
+        .attr('class', 'calendar-content')
+        .style('flex-grow', '1');
+
+    // Function to update calendar
+    function updateCalendar() {
+        // Currently, we'll just recreate the calendar for the current selected years
+        // You might want to add more complex filtering logic here
+        const currentYear = document.querySelector('select[name="yearInput"]').value;
+        createCalendar(currentYear);
     }
-  
+
+    // Function to create the calendar
+    function createCalendar(year) {
+        // Clear any existing calendar
+        calendarContent.selectAll('*').remove();
+
+        // Create year heading
+        calendarContent.append('div')
+            .attr('class', 'calendar-year-heading')
+            .style('text-align', 'center')
+            .style('font-size', '24px')
+            .style('font-weight', 'bold')
+            .style('margin-bottom', '20px')
+            .text(year);
+
+        // Create a grid for months
+        const monthGrid = calendarContent.append('div')
+            .attr('class', 'month-grid')
+            .style('display', 'grid')
+            .style('grid-template-columns', 'repeat(4, 1fr)')
+            .style('grid-gap', '10px');
+
+        // Create month cells
+        monthGrid.selectAll('.month-cell')
+            .data(monthNames)
+            .enter()
+            .append('div')
+            .attr('class', 'month-cell')
+            .style('border', '1px solid #ccc')
+            .style('padding', '10px')
+            .style('text-align', 'center')
+            .text(d => d);
+    }
+
     // Listen for changes in the year dropdown
     const yearSelect = document.querySelector('select[name="yearInput"]');
     yearSelect.addEventListener('change', (event) => {
-      createCalendar(event.target.value);
+        createCalendar(event.target.value);
     });
-  
+
     // Initialize calendar with current selected year
     createCalendar(yearSelect.value);
-  });
+});
