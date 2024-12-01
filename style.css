@@ -3,27 +3,115 @@ body {
 	padding: 0 10px;
 	font: 18px/1.5 -apple-system, BlinkMacSystemFont, "avenir next",avenir, "Segoe UI", "lucida grande", "helvetica neue", helvetica, "Fira Sans",roboto, noto, "Droid Sans", cantarell, oxygen, ubuntu, "franklin gothic medium", "century gothic", "Liberation Sans",
 	sans-serif;
+	background: linear-gradient(135deg, #f3f8fd, #c8ddfb 55%, #e0cfe8);
+
+	min-height: 100vh;
+	max-width: 100%;
+    overflow-x: hidden;
+	scroll-behavior: smooth;
 }
 
 h1, h2, h3 {
-	line-height: 1.2
+	line-height: 1.2;
+	padding: 10px;
 }
 
+nav {
+	display: flex;
+	justify-content: flex-end;
+	position: sticky;
+	top: 0;
+	z-index: 1;
+  }
+nav ul{
+	display: flex;
+	flex-direction: row;
+	align-items: space-between;
+	list-style-type: none;
+	gap: 5px;
+}
+
+nav li{
+	border-radius: 2px;
+	border-radius: 5px;
+	margin: 0 3px;
+	text-align: center;
+}
+
+nav a{
+	text-decoration: none;
+	color: whitesmoke;
+	background-color: rgba(151, 151, 212, 0.9); 
+	border-radius: 5px; 
+	padding: 5px 6px;
+}
+
+img {
+	max-width: 50%;
+}
+
+.section-cards{
+	background-color: #ffffffdf;
+	border: 1px solid #ddd;
+	border-radius: 10px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	padding: 20px;
+	width: 1098px;
+	display:block;
+
+}
 /* Your text should be in a nice narrow column */
 .content-column {
 	max-width: 1050px;
-	margin: 40px auto;
+	margin: 0px auto;
 }
+
+.input-menus {
+	display: flex;
+	max-width: 1300px;
+	justify-content: space-between;
+	gap:20px;
+}
+
+#filterMenu {
+	width:100%;
+	text-align: center;
+	margin-right: 15px;
+}
+#legend {
+	text-align: center;
+}
+
 
 /* But your visualization should be full-width and full-height */
 .vis-holder {
   width: 100%;
   height: 100%;
+  margin-left:100px;
 }
+
+#vis-svg {
+	width: 100%;
+	height: 500px; /* Set height explicitly */
+  }
+
+  #vis-svg svg {
+	width: 100%;
+	height: 500px; /* Set height explicitly */
+	background-color: #f9f9f9; 
+	border: 1px solid #ccc;
+}
+
+.sketches {
+	display:flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
 
 /* Fork on GitHub ribbon via https://codepo8.github.io/css-fork-on-github-ribbon/# */  
 #forkongithub a{
-	background:rgb(205, 129, 195);
+	background:rgba(151, 151, 212); 
 	color:#fff;
 	text-decoration:none;
 	font-family:arial,sans-serif;
@@ -49,7 +137,7 @@ h1, h2, h3 {
 	height:1px;
 	background:#fff;
 }
-#forkongithub a::after{
+c a::after{
 	bottom:1px;
 	top:auto;
 }
@@ -58,7 +146,7 @@ h1, h2, h3 {
 		position:fixed;
 		display:block;
 		top:0;
-		right:0;
+		left:0;
 		width:200px;
 		overflow:hidden;
 		height:200px;
@@ -68,12 +156,78 @@ h1, h2, h3 {
 		width:200px;
 		position:absolute;
 		top:60px;
-		right:-60px;
-		transform:rotate(45deg);
-		-webkit-transform:rotate(45deg);
-		-ms-transform:rotate(45deg);
-		-moz-transform:rotate(45deg);
-		-o-transform:rotate(45deg);
+		left:-60px;
+		transform:rotate(-45deg);
+		-webkit-transform:rotate(-45deg);
+		-ms-transform:rotate(-45deg);
+		-moz-transform:rotate(-45deg);
+		-o-transform:rotate(-45deg);
 		box-shadow:4px 4px 10px rgba(0,0,0,0.8);
 	}
+}
+
+/* calendar styles */
+#calendar {
+    background-color: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+	width: 90%;
+}
+
+.calendar-year-heading {
+    color: rgb(109, 46, 109);
+    margin-bottom: 10px;
+	font-size: 22px;
+}
+
+.month-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    grid-gap: 8px;
+}
+
+@media (max-width: 768px) {
+    .month-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.month-cell {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 8px;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+	font-size: 17px;
+}
+
+.month-cell:hover {
+    background-color: rgb(237, 214, 237);
+    transform: scale(1.05);
+}
+
+.year-selection-sidebar .year-cell {
+    padding: 6px; 
+    font-size: 14px; 
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border-radius: 5px;
+}
+
+.year-selection-sidebar .year-cell:hover {
+    background-color: rgb(237, 214, 237) !important;
+    transform: scale(1.05);
+}
+
+/* Reset button styling */
+#reset-button {
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+#reset-button:hover {
+    background-color: rgb(207, 71, 170);
 }

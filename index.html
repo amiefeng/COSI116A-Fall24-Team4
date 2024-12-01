@@ -1,16 +1,170 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MBTA Map</title>
-    <script src="https://d3js.org/d3.v7.min.js"></script>
-    <link rel="stylesheet" href="style.css" />
-    <!-- Optional for styling -->
-  </head>
-  <body>
-    <h1>MBTA Rapid Transit Map</h1>
-    <svg id="map"></svg>
-    <script src="map.js"></script>
-  </body>
+
+<!-- Metadata -->
+<head>
+  <meta charset="utf-8">
+  
+  <!-- Title -->
+  <title>Ridership vs Reliability Vizualization</title>
+  
+  <!-- CSS Styling -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Favicons -->
+</head>
+
+<!-- Main page content -->
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+      <ul>
+        <li><a href="#motivation">Motivation</a></li>
+        <li><a href="#viz">Visualization</a></li>
+        <li><a href="#demo">Demo Video</a></li>
+        <li><a href="#data">Data Analysis</a></li>
+        <li><a href="#task">Task Analysis</a></li>
+        <li><a href="#design">Design Process</a></li>
+        <li><a href="#conclusion">Conclusion</a></li>
+      </ul>
+    </nav>
+
+  <!-- Your writeup goes here -->
+  <div class = "content-column">
+  
+    <h1>Project Team 4: Ridership vs Reliability, COSI 116A F24</h1>
+    
+    <p><strong>Promise Adeliyi</strong>, <strong>Amie Feng</strong>, <strong>Gabriel Oscar</strong>, <strong>Omorogieva Ogieva</strong></p>
+    
+    <p>A Project-long Course Project as part of COSI 116A: Information Visualization</a>, taught by <a href="https://cs.brandeis.edu/~dylan/">Prof. Dylan Cashman</a>, <a href="https://cs.brandeis.edu/">Brandeis University</a>.</p>
+    
+    <div class="section-cards">
+      <h1 id="motivation">Motivation</h1>
+      
+      <!-- <p><em>Summary of user needs and motivating questions.</em></p> -->
+      <!-- <p><em>Expectation: There is a clear focus, and a developed explanation of the problem, and a reasonable response is proposed.</em></p> -->
+      <p>As residents of the greater Boston area, public transportation can be essential based on accessibility and how potentially convenient it can be. Therefore, one of the main features that users look for in the MBTA is reliability. Generally, public transportation can be seen as convient and cost effective yet short on aspects such as reliability.</p>
+      <p>Based on this general sentiment, we are left asking: </p>
+      <ul>
+        <li>How does the reliability of the MBTA affect users’ decisions to rely on it regularly?</li>
+        <li>What kind of visualizations or data representations would help users and decision-makers understand the effectiveness of the MBTA system and identify areas for improvement?</li>
+      </ul>
+    </div>
+
+   
+    <h1 id="viz">Visualization</h1>
+  
+    <p><em>Include the interactive visualization as part of this page. Static example follows.</em></p>
+    
+  </div>
+  
+  <!-- Your visualization here -->
+  <div class="vis-holder">
+    <!-- Change viewbox to whatever you want, e.g. "0 0 1000 6000" This determines your aspect ratio and coordinate system -->    
+    <!-- Delete all the sample SVG code below after the viewbox to before the closing tag. Populate this part of the SVG with D3. -->
+
+    <h3>Calendar Selection</h3>
+    <div class = "input-menus">
+      <!-- calendar -->
+      <div id="calendar"></div>
+
+      <!-- filter menu -->
+      <div id="filterMenu">
+        <p>Select Date & Line View:</p>
+        <table>
+            <td><span class="lineInput">
+              MBTA Color Line:
+              <select class="lineInput" name="lineInput"></select>
+            </span></td>
+        </table>
+      </div>
+
+      <!-- color lengend -->
+      <div id="legend">
+        <svg id="my_legend" height=250 width=450></svg>
+      </div>
+    </div>
+
+    <svg id="vis-svg">
+
+    <!-- Don't delete the closing tag! -->
+    </svg>
+  </div>
+  </div>
+  
+  <!-- Your writeup goes here -->
+  <div class = "content-column">
+
+    <h1 id = "demo">Demo Video</h1>
+    
+    <p><em>Embedded MP4 demo video using the HTML5 &lt;video&gt; tag. For example, this screen recording Prof. Cody Dunne made of Mike Bostock's flexible transitions in D3 slide:</em></p>
+    
+    <video controls width="100%">
+      <source src="http://www.ccs.neu.edu/home/cody/courses/shared/d3-flexible-transitions.mp4" type="video/mp4">
+      <p>Your browser doesn't support HTML5 video. Here is
+       a <a href="http://www.ccs.neu.edu/home/cody/courses/shared/d3-flexible-transitions.mp4">link to the video</a> instead.</p>
+    </video>
+
+    <h1 id = "viz_explanation">Visualization explanation</h1>
+    
+    <p><em>Final visualization screenshots (PNG images), design justifications, UI walk-through, and linked presentation slides.</em></p>
+
+    <h1 id = "data">Data Analysis</h1>
+    <p><em>Summary of data, data types, and data preprocessing.</em></p>
+
+    <p><em>Expectation: Data sources match the problem statement and are appropriate. These descriptions should be very explicit so someone could read your page and properly reproduce your results.</em></p>
+
+    <h1 id = "task">Task Analysis</h1>
+
+    <p><em>Summary of task table.</em></p>
+
+    <p><em>Expectation: Clearly describes domain tasks, processes, goals and abstract tasks for domain problems.</em></p>
+
+    <p><b>Here is our original task table after conducting user interviews: </b></p>
+    <img src="images/task_table.png">
+    <h1 id = "design">Design Process</h1>
+    
+    <p><em>Sketches and design choices to justify final visualization.</em></p>
+    <div class = "sketches">
+      <img src="images/sketches.png">
+      <img src="images/promise_mbtamap.png">
+      <img src="images/promise_scatterplot.png">
+      <img src="images/gabe_plot_and_heatmap.png">
+    </div>
+
+    <p><em>Expectation: Evidence of iterative improvement.
+    Logical discussion of design choices grounded in theory from course.
+    Discusses feedback from usability testing.</em></p>
+
+
+    <h1 id = "conclusion">Conclusion</h1>
+
+    <p><em>Short summary of work completed and areas for improvement/future-work.</em></p>
+    
+    <p><em>Expectation: Meaningfully wraps up project and has good future directions.</em></p>
+
+    
+    <h1>Acknowledgments</h1>
+
+    <p><em>List here where any code, packages/libraries, text, images, designs, etc. that you leverage come from.</em></p>
+    <ul>
+      <li>Canva</li>
+      <li>Figma</li>
+      <li>Credits to <a href="http://www.d3noob.org"> d3noob</a> for clarifying d3 concepts and complexities </li>
+    </ul>
+    
+  </div>
+
+  <!-- Update this with your GitHub repo URL -->
+  <span id="forkongithub"><a href="https://github.com/amiefeng/COSI116A-Group4">Fork me on GitHub</a></span>
+
+  
+  <!-- Scripts at the end avoid need for dealing with async, defer, or onload event handlers -->
+  <script src="lib/d3.v4/d3.v4.js"></script>
+  <script src="js/legend.js"></script>
+  <script src="js/visualization.js"></script>
+  <script src="js/filter.js"></script>
+  <script src="js/cal.js"></script>
+  
+</body>
 </html>
