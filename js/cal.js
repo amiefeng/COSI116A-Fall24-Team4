@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
 
     // Years to include in the selection
-    const years = ['All Years', ...Array.from({length: 9}, (_, i) => 2016 + i)];
+    const years = ['All Years', ...Array.from({ length: 9 }, (_, i) => 2016 + i)];
 
     // Select the calendar container in the HTML
     const calendarContainer = d3.select('#calendar');
@@ -31,6 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Add "Select Year(s)" heading
     yearSidebar.append('div')
         .style('text-align', 'center')
+        .style('font-size', '20px')
         .style('font-weight', 'bold')
         .style('margin-bottom', '15px')
         .style('color', 'rgb(109, 46, 109)')
@@ -89,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
         .append('div')
         .attr('class', 'year-cell')
         .style('border', '1px solid #ccc')
-        .style('padding', '10px')
+        .style('padding', '10px') 
         .style('text-align', 'center')
         .style('cursor', 'pointer')
         .style('background-color', d => d === 'All Years' ? 'rgb(109, 46, 109)' : '#fff')
@@ -99,38 +100,56 @@ document.addEventListener('DOMContentLoaded', () => {
             toggleYearSelection(d);
         });
 
+
     // Create a container for the calendar grid
     const calendarContent = calendarWrapper.append('div')
         .attr('class', 'calendar-content')
-        .style('flex-grow', '1');
+        .style('flex-grow', '1')
+        .style('position', 'relative'); // For positioning reset button
+
+    // Add reset button
+    const resetButton = calendarContent.append('div')
+        .attr('class', 'reset-button')
+        .style('position', 'absolute')
+        .style('bottom', '10px')
+        .style('right', '10px')
+        .style('background-color', 'rgb(109, 46, 109)')
+        .style('color', '#fff')
+        .style('padding', '5px 10px')
+        .style('border-radius', '5px')
+        .style('cursor', 'pointer')
+        .style('font-size', '12px')
+        .text('Reset')
+        .on('click', () => {
+            toggleYearSelection('All Years');
+        });
 
     // Function to update calendar
     function updateCalendar() {
-        // Currently, we'll just recreate the calendar for the current selected years
-        // You might want to add more complex filtering logic here
-        const currentYear = document.querySelector('select[name="yearInput"]').value;
+        const currentYear = selectedYears.includes('All Years') ? 'All Years' : selectedYears.join(', ');
         createCalendar(currentYear);
     }
 
     // Function to create the calendar
     function createCalendar(year) {
         // Clear any existing calendar
-        calendarContent.selectAll('*').remove();
+        calendarContent.selectAll('*').filter(':not(.reset-button)').remove();
 
         // Create year heading
         calendarContent.append('div')
             .attr('class', 'calendar-year-heading')
             .style('text-align', 'center')
-            .style('font-size', '24px')
+            .style('font-size', '20px')
             .style('font-weight', 'bold')
             .style('margin-bottom', '20px')
-            .text(year);
+            .style('color', 'rgb(109, 46, 109)')
+            .text(`Select Month(s)`);
 
         // Create a grid for months
         const monthGrid = calendarContent.append('div')
             .attr('class', 'month-grid')
             .style('display', 'grid')
-            .style('grid-template-columns', 'repeat(4, 1fr)')
+            .style('grid-template-columns', 'repeat(3, 1fr)')
             .style('grid-gap', '10px');
 
         // Create month cells
@@ -145,12 +164,6 @@ document.addEventListener('DOMContentLoaded', () => {
             .text(d => d);
     }
 
-    // Listen for changes in the year dropdown
-    const yearSelect = document.querySelector('select[name="yearInput"]');
-    yearSelect.addEventListener('change', (event) => {
-        createCalendar(event.target.value);
-    });
-
-    // Initialize calendar with current selected year
-    createCalendar(yearSelect.value);
+    // Initialize calendar with "All Years"
+    createCalendar('All Years');
 });
