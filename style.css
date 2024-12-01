@@ -185,13 +185,13 @@ c a::after{
 
 .month-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr); 
     grid-gap: 8px;
 }
 
 @media (max-width: 768px) {
     .month-grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -202,10 +202,32 @@ c a::after{
     padding: 8px;
     text-align: center;
     transition: background-color 0.3s ease, transform 0.2s ease;
-	font-size: 14px;
+	font-size: 17px;
 }
 
 .month-cell:hover {
     background-color: rgb(237, 214, 237);
     transform: scale(1.05);
+}
+
+.year-selection-sidebar .year-cell {
+    padding: 6px; 
+    font-size: 14px; 
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border-radius: 5px;
+}
+
+.year-selection-sidebar .year-cell:hover {
+    background-color: rgb(237, 214, 237) !important;
+    transform: scale(1.05);
+}
+
+/* Reset button styling */
+#reset-button {
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+#reset-button:hover {
+    background-color: rgb(207, 71, 170);
 }
