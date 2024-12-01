@@ -43,32 +43,43 @@ document.addEventListener('DOMContentLoaded', () => {
         .style('grid-template-columns', 'repeat(2, 1fr)')
         .style('grid-gap', '10px');
 
-    // Store selected years and months
+    // Store selected years
     let selectedYears = ['All Years'];
-    let selectedMonths = [];
 
     // Function to toggle year selection
     function toggleYearSelection(year) {
         if (year === 'All Years') {
+            // If "All Years" is selected, clear other selections
             selectedYears = ['All Years'];
             yearGrid.selectAll('.year-cell')
                 .style('background-color', d => d === 'All Years' ? 'rgb(109, 46, 109)' : '#fff')
                 .style('color', d => d === 'All Years' ? '#fff' : '#000');
         } else {
+            // Remove "All Years" if it's selected
             if (selectedYears.includes('All Years')) {
                 selectedYears = [];
             }
 
+            // Toggle the specific year
             if (selectedYears.includes(year)) {
                 selectedYears = selectedYears.filter(y => y !== year);
             } else {
                 selectedYears.push(year);
             }
 
+            // Update button styles
             yearGrid.selectAll('.year-cell')
-                .style('background-color', d => selectedYears.includes(d) ? 'rgb(109, 46, 109)' : '#fff')
-                .style('color', d => selectedYears.includes(d) ? '#fff' : '#000');
+                .style('background-color', d => {
+                    if (d === 'All Years') return '#fff';
+                    return selectedYears.includes(d) ? 'rgb(109, 46, 109)' : '#fff';
+                })
+                .style('color', d => {
+                    if (d === 'All Years') return '#000';
+                    return selectedYears.includes(d) ? '#fff' : '#000';
+                });
         }
+
+        // Update calendar based on selected years
         updateCalendar();
     }
 
@@ -95,6 +106,24 @@ document.addEventListener('DOMContentLoaded', () => {
         .style('flex-grow', '1')
         .style('position', 'relative'); // For positioning reset button
 
+    // Add "All Month" button
+    const allMonthButton = calendarContent.append('div')
+        .attr('class', 'all-month-button')
+        .style('position', 'absolute')
+        .style('bottom', '10px')
+        .style('right', '120px') // Positioned to the left of the Reset button
+        .style('background-color', 'rgb(109, 46, 109)')
+        .style('color', '#fff')
+        .style('padding', '5px 10px')
+        .style('border-radius', '5px')
+        .style('cursor', 'pointer')
+        .style('font-size', '12px')
+        .text('All Months')
+        .on('click', () => {
+            selectedMonths = [...monthNames];
+            updateMonthStyles();
+        });
+
     // Add reset button
     const resetButton = calendarContent.append('div')
         .attr('class', 'reset-button')
@@ -109,35 +138,22 @@ document.addEventListener('DOMContentLoaded', () => {
         .style('font-size', '12px')
         .text('Reset')
         .on('click', () => {
+            toggleYearSelection('All Years');
             selectedMonths = [];
-            calendarContent.selectAll('.month-cell')
-                .style('background-color', '#fff')
-                .style('color', '#000');
+            updateMonthStyles();
         });
 
     // Function to update calendar
+    let selectedMonths = [];
     function updateCalendar() {
         const currentYear = selectedYears.includes('All Years') ? 'All Years' : selectedYears.join(', ');
         createCalendar(currentYear);
     }
 
-    // Function to toggle month selection
-    function toggleMonthSelection(month) {
-        if (selectedMonths.includes(month)) {
-            selectedMonths = selectedMonths.filter(m => m !== month);
-        } else {
-            selectedMonths.push(month);
-        }
-
-        calendarContent.selectAll('.month-cell')
-            .style('background-color', d => selectedMonths.includes(d) ? 'rgb(109, 46, 109)' : '#fff')
-            .style('color', d => selectedMonths.includes(d) ? '#fff' : '#000');
-    }
-
     // Function to create the calendar
     function createCalendar(year) {
         // Clear any existing calendar
-        calendarContent.selectAll('*').filter(':not(.reset-button)').remove();
+        calendarContent.selectAll('*').filter(':not(.reset-button):not(.all-month-button)').remove();
 
         // Create year heading
         calendarContent.append('div')
@@ -172,6 +188,23 @@ document.addEventListener('DOMContentLoaded', () => {
             .on('click', function(d) {
                 toggleMonthSelection(d);
             });
+    }
+
+    // Function to toggle month selection
+    function toggleMonthSelection(month) {
+        if (selectedMonths.includes(month)) {
+            selectedMonths = selectedMonths.filter(m => m !== month);
+        } else {
+            selectedMonths.push(month);
+        }
+        updateMonthStyles();
+    }
+
+    // Function to update month styles
+    function updateMonthStyles() {
+        calendarContent.selectAll('.month-cell')
+            .style('background-color', d => selectedMonths.includes(d) ? 'rgb(109, 46, 109)' : '#fff')
+            .style('color', d => selectedMonths.includes(d) ? '#fff' : '#000');
     }
 
     // Initialize calendar with "All Years"
