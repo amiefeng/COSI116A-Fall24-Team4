@@ -3,9 +3,11 @@ body {
 	padding: 0 10px;
 	font: 18px/1.5 -apple-system, BlinkMacSystemFont, "avenir next",avenir, "Segoe UI", "lucida grande", "helvetica neue", helvetica, "Fira Sans",roboto, noto, "Droid Sans", cantarell, oxygen, ubuntu, "franklin gothic medium", "century gothic", "Liberation Sans",
 	sans-serif;
-
 	background: linear-gradient(135deg, #f3f8fd, #c8ddfb 55%, #e0cfe8);
+
 	min-height: 100vh;
+	max-width: 100%;
+    overflow-x: hidden;
 	scroll-behavior: smooth;
 }
 
@@ -42,6 +44,10 @@ nav a{
 	background-color: rgba(151, 151, 212, 0.9); 
 	border-radius: 5px; 
 	padding: 5px 6px;
+}
+
+img {
+	max-width: 50%;
 }
 
 .section-cards{
@@ -95,6 +101,13 @@ nav a{
 	background-color: #f9f9f9; 
 	border: 1px solid #ccc;
 }
+
+.sketches {
+	display:flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
 
 /* Fork on GitHub ribbon via https://codepo8.github.io/css-fork-on-github-ribbon/# */  
 #forkongithub a{
