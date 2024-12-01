@@ -106,24 +106,6 @@ document.addEventListener('DOMContentLoaded', () => {
         .style('flex-grow', '1')
         .style('position', 'relative'); // For positioning reset button
 
-    // Add "All Month" button
-    const allMonthButton = calendarContent.append('div')
-        .attr('class', 'all-month-button')
-        .style('position', 'absolute')
-        .style('bottom', '10px')
-        .style('right', '120px') // Positioned to the left of the Reset button
-        .style('background-color', 'rgb(109, 46, 109)')
-        .style('color', '#fff')
-        .style('padding', '5px 10px')
-        .style('border-radius', '5px')
-        .style('cursor', 'pointer')
-        .style('font-size', '12px')
-        .text('All Months')
-        .on('click', () => {
-            selectedMonths = [...monthNames];
-            updateMonthStyles();
-        });
-
     // Add reset button
     const resetButton = calendarContent.append('div')
         .attr('class', 'reset-button')
@@ -139,8 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
         .text('Reset')
         .on('click', () => {
             toggleYearSelection('All Years');
-            selectedMonths = [];
-            updateMonthStyles();
+            toggleMonthSelection('All Months');
         });
 
     // Function to update calendar
@@ -153,7 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Function to create the calendar
     function createCalendar(year) {
         // Clear any existing calendar
-        calendarContent.selectAll('*').filter(':not(.reset-button):not(.all-month-button)').remove();
+        calendarContent.selectAll('*').filter(':not(.reset-button)').remove();
 
         // Create year heading
         calendarContent.append('div')
@@ -172,9 +153,9 @@ document.addEventListener('DOMContentLoaded', () => {
             .style('grid-template-columns', 'repeat(3, 1fr)')
             .style('grid-gap', '10px');
 
-        // Create month cells
-        monthGrid.selectAll('.month-cell')
-            .data(monthNames)
+        // Create month cells, starting with "All Months"
+        const monthCells = monthGrid.selectAll('.month-cell')
+            .data(['All Months', ...monthNames])
             .enter()
             .append('div')
             .attr('class', 'month-cell')
@@ -182,8 +163,22 @@ document.addEventListener('DOMContentLoaded', () => {
             .style('padding', '10px')
             .style('text-align', 'center')
             .style('cursor', 'pointer')
-            .style('background-color', d => selectedMonths.includes(d) ? 'rgb(109, 46, 109)' : '#fff')
-            .style('color', d => selectedMonths.includes(d) ? '#fff' : '#000')
+            .style('background-color', d => {
+                if (d === 'All Months') {
+                    return selectedMonths.length === 0 || selectedMonths.length === monthNames.length 
+                        ? 'rgb(109, 46, 109)' 
+                        : '#fff';
+                }
+                return selectedMonths.includes(d) ? 'rgb(109, 46, 109)' : '#fff';
+            })
+            .style('color', d => {
+                if (d === 'All Months') {
+                    return selectedMonths.length === 0 || selectedMonths.length === monthNames.length 
+                        ? '#fff' 
+                        : '#000';
+                }
+                return selectedMonths.includes(d) ? '#fff' : '#000';
+            })
             .text(d => d)
             .on('click', function(d) {
                 toggleMonthSelection(d);
@@ -192,21 +187,49 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Function to toggle month selection
     function toggleMonthSelection(month) {
-        if (selectedMonths.includes(month)) {
-            selectedMonths = selectedMonths.filter(m => m !== month);
+        if (month === 'All Months') {
+            // If "All Months" is selected, clear other selections
+            selectedMonths = [];
+            updateMonthStyles();
         } else {
-            selectedMonths.push(month);
+            // Remove "All Months" from considerations
+            const allMonthsIndex = selectedMonths.indexOf('All Months');
+            if (allMonthsIndex > -1) {
+                selectedMonths.splice(allMonthsIndex, 1);
+            }
+
+            // Toggle the specific month
+            if (selectedMonths.includes(month)) {
+                selectedMonths = selectedMonths.filter(m => m !== month);
+            } else {
+                selectedMonths.push(month);
+            }
+
+            updateMonthStyles();
         }
-        updateMonthStyles();
     }
 
     // Function to update month styles
     function updateMonthStyles() {
         calendarContent.selectAll('.month-cell')
-            .style('background-color', d => selectedMonths.includes(d) ? 'rgb(109, 46, 109)' : '#fff')
-            .style('color', d => selectedMonths.includes(d) ? '#fff' : '#000');
+            .style('background-color', d => {
+                if (d === 'All Months') {
+                    return selectedMonths.length === 0 || selectedMonths.length === monthNames.length 
+                        ? 'rgb(109, 46, 109)' 
+                        : '#fff';
+                }
+                return selectedMonths.includes(d) ? 'rgb(109, 46, 109)' : '#fff';
+            })
+            .style('color', d => {
+                if (d === 'All Months') {
+                    return selectedMonths.length === 0 || selectedMonths.length === monthNames.length 
+                        ? '#fff' 
+                        : '#000';
+                }
+                return selectedMonths.includes(d) ? '#fff' : '#000';
+            });
     }
 
-    // Initialize calendar with "All Years"
+    // Initialize calendar with "All Years" and "All Months"
     createCalendar('All Years');
 });
