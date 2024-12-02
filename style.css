@@ -222,7 +222,7 @@ c a::after{
     transform: scale(1.05);
 }
 
-/* Reset button styling */
+/* Calendar Reset button styling */
 #reset-button {
     font-size: 14px;
     transition: background-color 0.3s ease;
@@ -230,4 +230,68 @@ c a::after{
 
 #reset-button:hover {
     background-color: rgb(207, 71, 170);
+}
+
+/* lines filter styles */
+#filterMenu {
+    display: flex;
+    justify-content: center;
+}
+
+.filter-wrapper {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.filter-heading {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: rgb(109, 46, 109);
+}
+
+.line-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 3fr);
+    grid-gap: 10px;
+}
+
+.line-cell {
+    border: 1px solid #ccc;
+	font-size: 17px;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    background-color: #fff;
+    color: #000;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.line-cell.selected, .line-cell.all-lines {
+    background-color: rgb(109, 46, 109);
+    color: #fff;
+}
+
+.filter-reset-button {
+    background-color: rgb(109, 46, 109);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    text-align: center;
+    margin-top: 10px;
+    transition: background-color 0.2s;
+}
+
+.filter-reset-button:hover {
+    background-color: rgb(139, 76, 139);
 }
