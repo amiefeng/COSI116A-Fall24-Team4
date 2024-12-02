@@ -1,8 +1,10 @@
+function filter(){
+  function chart(){
 // Data for dropdown options
 const months = [
-    "January", "February", "March", "April", "May", 
-    "June", "July", "August", "September", "October", 
-    "November", "December"
+    "01", "02", "03", "04", "05", 
+    "06", "07", "08", "09", "10", 
+    "11", "12"
   ];
   const years = [2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024]; // Add or modify years as needed
   const mbtaLines = ["Red Line", "Green Line", "Blue Line", "Orange Line"];
@@ -33,4 +35,6 @@ const months = [
     option.textContent = line;
     lineSelect.appendChild(option);
   });
-  
+}
+return chart;
+}
