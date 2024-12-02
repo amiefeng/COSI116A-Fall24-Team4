@@ -70,12 +70,43 @@
     <h1>Data Analysis</h1>
     <p><em>Summary of data, data types, and data preprocessing.</em></p>
 
+    Our data source consists of a spreadsheet, of which the following fields are utilized:
+      - year_month
+      - route_or_line
+      - average_monthly_ridership
+      - expected_time
+      - actual_time
+
+    year_month reflects the year and month of the data entry, route_or_line reflects the line of the data entry, average_monthly_ridership reflects the average daily ridership over the given month for the line on that year,
+    expected time reflects the expected wait time, and actual_time reflects the actual wait time (both expected and actual time are sums over the entire month).
+
+    The two variables whose relationship we are examining are average monthly ridership and reliability. We followed the MBTA's lead by considering reliability to be the quotient of the expected time and the actual time. These means that a perfectly reliable (100%) data entry would have an identical expected time and actual time (early trains don't appear to be particularly common in the MBTA system).
+
+    Our data source for the expected/actual time was this: https://mbta-massdot.opendata.arcgis.com/datasets/MassDOT::mbta-bus-commuter-rail-rapid-transit-reliability/explore?filters=eyJyb3V0ZV9jYXRlZ29yeSI6WyJHcmVlbiBMaW5lIiwiQmx1ZSBMaW5lIiwiUmVkIExpbmUiLCJPcmFuZ2UgTGluZSJdfQ%3D%3D
+
+    From this table, we extracted a date, route_category column, and 'otp_numerator' (expected time) / 'otp_denominator' (actual time).
+    
+    Our data source for ridership was this: https://mbta-massdot.opendata.arcgis.com/datasets/MassDOT::mbta-monthly-ridership-by-mode/explore?filters=eyJyb3V0ZV9vcl9saW5lIjpbIkdyZWVuIExpbmUiLCJPcmFuZ2UgTGluZSIsIlJlZCBMaW5lIiwiQmx1ZSBMaW5lIl19
+
+    This contained a date, line, and average monthly ridership. 
+
+    The relevant columns of these two tables were then joined in excel based on the data and route/line. The date was converted from a 'complete date' to a string containing only the year/month in order to better work with the data points in javascript.
+
+
     <p><em>Expectation: Data sources match the problem statement and are appropriate. These descriptions should be very explicit so someone could read your page and properly reproduce your results.</em></p>
 
     <h1>Task Analysis</h1>
 
     <p><em>Summary of task table.</em></p>
 
+    Our task definition for our project was intended to consist at first with more concrete tasks that would naturally develop into the solution of our overarching goal. Our tasks essentially had to do with determining the extent to which there was a relationship between reliability and ridership.
+
+    Two of our tasks were concerned with finding times during which there were higher and lower rates of reliability and ridership. Although our initial task was defined in terms of time, over the course of the project this evolved to include a spatial element as well in that we examined different lines as well as different time periods. Identifying which spatial and temporal groupings
+    had elevated levels of reliability and ridership would, we reasoned, allow us to examine whether these two phenomena were related. The mechansim by which this can be done was our third task, into which these two tasks dovetail.
+
+    Once we had developed mechanisms to look at reliability and ridership during different time periods and among different spatial groups, the next task was determining the extent to which there was overlap between high-reliability data points and high-overlap data points. Such an overlap would entail a correlation between high reliability and high ridership, which would have significant implications.
+
+    Our final, most abstract task, was the task of determining whether there was a relationship between train reliability and train ridership based on the visualizations that we had created. 
     <p><em>Expectation: Clearly describes domain tasks, processes, goals and abstract tasks for domain problems.</em></p>
 
     <h1>Design Process</h1>
@@ -97,6 +128,7 @@
     <h1>Acknowledgments</h1>
 
     <p><em>List here where any code, packages/libraries, text, images, designs, etc. that you leverage come from.</em></p>
+    A large portion of the code for brushing/linking comes from Gabriel Oscar's implementation of HW4. Gabriel Oscar used ChatGPT to assist with diagnosing errors.
     
     
   </div>
