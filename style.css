@@ -185,3 +185,10 @@ c a::after{
     background-color: rgb(237, 214, 237);
     transform: scale(1.05);
 }
+
+/**scatterplot styles*/
+circle.selected {
+	fill: pink;
+	stroke: red;
+	opacity: 5;
+  }
