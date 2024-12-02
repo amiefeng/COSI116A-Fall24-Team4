@@ -181,17 +181,7 @@ c a::after{
 	font-size: 14px;
 }
 
-
 .month-cell:hover {
     background-color: rgb(237, 214, 237);
     transform: scale(1.05);
 }
-
-/* Style for selected marks */
-.selected {
-	fill: pink;
-	stroke: red;
-	background-color: red;
-
-	opacity: 1;
-  }
