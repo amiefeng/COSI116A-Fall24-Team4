@@ -1,4 +1,4 @@
-# COSI116A-Group4
+# COSI116A-Fall24-Group4
 
 ## Our Visualization Website
 
@@ -10,3 +10,6 @@ Promise Adeliyi
 Amie Feng
 Gabriel Oscar
 Omorogieva Ogieva
+
+## Topic
+MBTA Line Reliability VS Ridership
