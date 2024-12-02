@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   // Lines to include in the selection
-  const lines = ['All Lines', 'Red Line', 'Blue Line', 'Green Line', 'Orange Line'];
+  const lines = ['All Lines', 'Red Line', 'Green Line', 'Blue Line', 'Orange Line'];
 
   // Select the filter menu container in the HTML
   const filterContainer = d3.select('#filterMenu');
@@ -49,13 +49,17 @@ document.addEventListener('DOMContentLoaded', () => {
       }
   }
 
+  // Helper function to assign a class based on line name
+  const getLineClass = (line) => {
+      return line.toLowerCase().replace(' ', '-');
+  };
+
   // Create line selection buttons
   lineGrid.selectAll('.line-cell')
       .data(lines)
       .enter()
       .append('div')
-      .attr('class', 'line-cell')
-      .classed('all-lines', d => d === 'All Lines')
+      .attr('class', d => `line-cell ${getLineClass(d)}`)
       .text(d => d)
       .on('click', function(d) {
           toggleLineSelection(d);

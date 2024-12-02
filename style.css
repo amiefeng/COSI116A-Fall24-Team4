@@ -76,7 +76,6 @@ img {
 #filterMenu {
 	width:100%;
 	text-align: center;
-	margin-right: 15px;
 }
 #legend {
 	text-align: center;
@@ -206,7 +205,7 @@ c a::after{
 }
 
 .month-cell:hover {
-    background-color: rgb(237, 214, 237);
+    background-color: rgb(237, 214, 237) !important;
     transform: scale(1.05);
 }
 
@@ -272,13 +271,69 @@ c a::after{
     cursor: pointer;
     background-color: #fff;
     color: #000;
-    transition: background-color 0.3s, color 0.3s;
+    transition: background-color 0.3s, color 0.3s, transform 0.2s ease;
+}
+.line-cell:hover{
+	transform: scale(1.05);
+}
+
+/* Line colors */
+.line-cell.red-line {
+    background-color: #fff;
+}
+.line-cell.red-line:hover{
+	background-color: #ff493c;
+	color: white;
+}
+.line-cell.red-line.selected {
+    background-color: #DA291C;
+    color: #fff;
+}
+
+.line-cell.blue-line {
+    background-color: #fff;
+}
+.line-cell.blue-line:hover{
+	background-color: #0054e3;
+	color: #fff;
+}
+.line-cell.blue-line.selected {
+    background-color: #003DA5;
+    color: #fff;
+}
+
+.line-cell.green-line {
+    background-color: #fff;
+}
+.line-cell.green-line:hover{
+	background-color: #00a44d;
+	color: white;
+}
+.line-cell.green-line.selected {
+    background-color: #00843D;
+    color: #fff;
+}
+
+.line-cell.orange-line {
+    background-color: #fff;
+}
+.line-cell.orange-line:hover{
+	background-color: #ffb349;
+	color: white;
+}
+.line-cell.orange-line.selected {
+    background-color: #ED8B00;
+    color: white;
 }
 
 .line-cell.selected, .line-cell.all-lines {
     background-color: rgb(109, 46, 109);
     color: #fff;
 }
+/* .line-cell:hover, .line-cell.all-lines:hover {
+	background-color: rgb(237, 214, 237) !important;
+	color: black;
+} */
 
 .filter-reset-button {
     background-color: rgb(109, 46, 109);
