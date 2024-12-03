@@ -20,7 +20,14 @@ var map = d3
     .height(height * 0.9)
 
 // Load the MBTA data
-d3.json('Data/transit_data.json').then(data => {
+d3.json('../data/transit_data.json', function (error, data) {
+  if (error) {
+    console.error("Error loading data:", error);
+    return;
+  }
+
+  console.log(data);
+
   const stations = data.stations;
   const lines = data.lines;
 
@@ -30,8 +37,8 @@ d3.json('Data/transit_data.json').then(data => {
   const minY = d3.min(Object.values(stations), d => d.y);
   const maxY = d3.max(Object.values(stations), d => d.y);
 
-  xScale.domain([minX, maxX]).range([margin.left, width - margin.right]);
-  yScale.domain([minY, maxY]).range([height - margin.bottom, margin.top]);
+  const xScale = d3.scaleLinear().domain([minX, maxX]).range([margin.left, width - margin.right]);
+  const yScale = d3.scaleLinear().domain([minY, maxY]).range([height - margin.bottom, margin.top]);
 
   // Draw the lines
   lines.forEach(line => {
@@ -44,6 +51,7 @@ d3.json('Data/transit_data.json').then(data => {
       .attr("class", "line")
       .attr("d", linePath)
       .attr("stroke", line.color)
+      .attr("stroke-width", 2)
       .attr("fill", "none");
   });
 
@@ -56,6 +64,7 @@ d3.json('Data/transit_data.json').then(data => {
     .attr("r", 5)
     .attr("cx", d => xScale(d.x))
     .attr("cy", d => yScale(d.y))
+    .attr("fill", "black") // Explicitly set fill color
     .on("click", (event, d) => showStationDetails(d))
     .on("mouseover", function () {
       d3.select(this).attr("fill", "red");
@@ -72,6 +81,8 @@ d3.json('Data/transit_data.json').then(data => {
     .attr("class", "label")
     .attr("x", d => xScale(d.x))
     .attr("y", d => yScale(d.y) - 10)
+    .attr("text-anchor", "middle") // Center text
+    .attr("font-size", "10px")
     .text(d => d.label);
 });
 
