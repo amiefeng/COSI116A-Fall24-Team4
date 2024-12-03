@@ -2,16 +2,22 @@ var margin = {top: 50, right: 50, bottom: 70, left: 85},
     width = 500 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
 
-// Define the SVG and dimensions
-var map = d3
-  .tubeMap()
-  .width(width * 0.9)
-  .height(height * 0.9);
-
-// Define scales for latitude and longitude
-const margin = { top: 20, right: 20, bottom: 20, left: 20 };
+// Define scales
 const xScale = d3.scaleLinear();
 const yScale = d3.scaleLinear();
+
+// Define the SVG and dimensions
+var svg = d3.select("#mbta-map")
+    .append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+    .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+var map = d3
+    .tubeMap()
+    .width(width * 0.9)
+    .height(height * 0.9)
 
 // Load the MBTA data
 d3.json('Data/transit_data.json').then(data => {
