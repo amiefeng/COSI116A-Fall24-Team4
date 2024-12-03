@@ -1,36 +1,75 @@
-// Data for dropdown options
-const months = [
-    "January", "February", "March", "April", "May", 
-    "June", "July", "August", "September", "October", 
-    "November", "December"
-  ];
-  const years = [2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024]; // Add or modify years as needed
-  const mbtaLines = ["Red Line", "Green Line", "Blue Line", "Orange Line"];
-  
-  // Populate the months dropdown
-  const monthSelect = document.querySelector('select[name="monthInput"]');
-  months.forEach(month => {
-    const option = document.createElement("option");
-    option.value = month; // Use the month name as the value
-    option.textContent = month;
-    monthSelect.appendChild(option);
-  });
-  
-  // Populate the years dropdown
-  const yearSelect = document.querySelector('select[name="yearInput"]');
-  years.forEach(year => {
-    const option = document.createElement("option");
-    option.value = year; // Use the year as the value
-    option.textContent = year;
-    yearSelect.appendChild(option);
-  });
-  
-  // Populate the MBTA lines dropdown
-  const lineSelect = document.querySelector('select[name="lineInput"]');
-  mbtaLines.forEach(line => {
-    const option = document.createElement("option");
-    option.value = line; // Use the line name as the value
-    option.textContent = line;
-    lineSelect.appendChild(option);
-  });
-  
+document.addEventListener('DOMContentLoaded', () => {
+  // Lines to include in the selection
+  const lines = ['All Lines', 'Red Line', 'Green Line', 'Blue Line', 'Orange Line'];
+
+  // Select the filter menu container in the HTML
+  const filterContainer = d3.select('#filterMenu');
+
+  // Create a container for the entire line filter section
+  const filterWrapper = filterContainer.append('div')
+      .attr('class', 'filter-wrapper');
+
+  // Add "Select Lines" heading
+  filterWrapper.append('div')
+      .attr('class', 'filter-heading')
+      .text('Select Line(s)');
+
+  // Create line selection grid
+  const lineGrid = filterWrapper.append('div')
+      .attr('class', 'line-grid');
+
+  // Store selected lines
+  let selectedLines = ['All Lines'];
+
+  // Function to toggle line selection
+  function toggleLineSelection(line) {
+      if (line === 'All Lines') {
+          // If "All Lines" is selected, clear other selections
+          selectedLines = ['All Lines'];
+          lineGrid.selectAll('.line-cell')
+              .classed('selected', false)
+              .classed('all-lines', d => d === 'All Lines');
+      } else {
+          // Remove "All Lines" if it's selected
+          if (selectedLines.includes('All Lines')) {
+              selectedLines = [];
+          }
+
+          // Toggle the specific line
+          if (selectedLines.includes(line)) {
+              selectedLines = selectedLines.filter(l => l !== line);
+          } else {
+              selectedLines.push(line);
+          }
+
+          // Update button styles
+          lineGrid.selectAll('.line-cell')
+              .classed('selected', d => selectedLines.includes(d) && d !== 'All Lines')
+              .classed('all-lines', false);
+      }
+  }
+
+  // Helper function to assign a class based on line name
+  const getLineClass = (line) => {
+      return line.toLowerCase().replace(' ', '-');
+  };
+
+  // Create line selection buttons
+  lineGrid.selectAll('.line-cell')
+      .data(lines)
+      .enter()
+      .append('div')
+      .attr('class', d => `line-cell ${getLineClass(d)}`)
+      .text(d => d)
+      .on('click', function(d) {
+          toggleLineSelection(d);
+      });
+
+  // Add reset button
+  const resetButton = filterWrapper.append('div')
+      .attr('class', 'filter-reset-button')
+      .text('Reset')
+      .on('click', () => {
+          toggleLineSelection('All Lines');
+      });
+});

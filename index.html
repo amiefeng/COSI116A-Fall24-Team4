@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   
   <!-- Title -->
-  <title>Project Team 4: Ridership vs Reliability, COSI 116A F24</title>
+  <title>Ridership vs Reliability Vizualization</title>
   
   <!-- CSS Styling -->
   <link rel="stylesheet" href="style.css">
@@ -16,21 +16,18 @@
 
 <!-- Main page content -->
 <body>
-  <div class = "nav_container">
     <!-- Navigation Bar -->
     <nav>
       <ul>
         <li><a href="#motivation">Motivation</a></li>
         <li><a href="#viz">Visualization</a></li>
         <li><a href="#demo">Demo Video</a></li>
-        <li><a href="#viz_explain">Explanation</a></li>
         <li><a href="#data">Data Analysis</a></li>
         <li><a href="#task">Task Analysis</a></li>
         <li><a href="#design">Design Process</a></li>
         <li><a href="#conclusion">Conclusion</a></li>
       </ul>
     </nav>
-  </div>
 
   <!-- Your writeup goes here -->
   <div class = "content-column">
@@ -41,53 +38,22 @@
     
     <p>A Project-long Course Project as part of COSI 116A: Information Visualization</a>, taught by <a href="https://cs.brandeis.edu/~dylan/">Prof. Dylan Cashman</a>, <a href="https://cs.brandeis.edu/">Brandeis University</a>.</p>
     
-    
-    <h1 id="motivation">Motivation</h1>
-    
-    <!-- <p><em>Summary of user needs and motivating questions.</em></p> -->
-    <!-- <p><em>Expectation: There is a clear focus, and a developed explanation of the problem, and a reasonable response is proposed.</em></p> -->
-    <p>As residents of the greater Boston area, public transportation can be essential based on accessibility and how potentially convenient it can be. Therefore, one of the main features that users look for in the MBTA is reliability. Generally, public transportation can be seen as convient and cost effective yet short on aspects such as reliability.</p>
-    <p>Based on this general sentiment, we are left asking: </p>
-    <ul>
-      <li>How does the reliability of the MBTA affect users’ decisions to rely on it regularly?</li>
-      <li>What kind of visualizations or data representations would help users and decision-makers understand the effectiveness of the MBTA system and identify areas for improvement?</li>
-    </ul>
-
-    
-    <h1 id="viz">Visualization</h1>
-    
-    <div class = "input-menus">
-      <!-- filter menu -->
-      <div id="filterMenu">
-        <p>Select Date & Line View:</p>
-        <table>
-          <td><span class="monthInput">
-              Month:
-              <select class="monthInput" name="monthInput"></select>
-            </span>
-            <br /></td>
-            <td><span class="yearInput">
-              Year:
-              <select class="yearInput" name="yearInput"></select>
-            </span><br /></td>
-            <td><span class="lineInput">
-              MBTA Color Line:
-              <select class="lineInput" name="lineInput"></select>
-            </span></td>
-        </table>
-      </div>
-
-      <!-- calendar -->
-      <div id="calendar"></div>
-
-      <!-- color lengend -->
-      <div id="legend">
-        <p>Legend</p>
-        <svg id="my_legend" height=200 width=450></svg>
-      </div>
+    <div class="section-cards">
+      <h1 id="motivation">Motivation</h1>
+      
+      <!-- <p><em>Summary of user needs and motivating questions.</em></p> -->
+      <!-- <p><em>Expectation: There is a clear focus, and a developed explanation of the problem, and a reasonable response is proposed.</em></p> -->
+      <p>As residents of the greater Boston area, public transportation can be essential based on accessibility and how potentially convenient it can be. Therefore, one of the main features that users look for in the MBTA is reliability. Generally, public transportation can be seen as convient and cost effective yet short on aspects such as reliability.</p>
+      <p>Based on this general sentiment, we are left asking: </p>
+      <ul>
+        <li>How does the reliability of the MBTA affect users’ decisions to rely on it regularly?</li>
+        <li>What kind of visualizations or data representations would help users and decision-makers understand the effectiveness of the MBTA system and identify areas for improvement?</li>
+      </ul>
     </div>
-    
 
+   
+    <h1 id="viz">Visualization</h1>
+  
     <p><em>Include the interactive visualization as part of this page. Static example follows.</em></p>
     
   </div>
@@ -96,10 +62,26 @@
   <div class="vis-holder">
     <!-- Change viewbox to whatever you want, e.g. "0 0 1000 6000" This determines your aspect ratio and coordinate system -->    
     <!-- Delete all the sample SVG code below after the viewbox to before the closing tag. Populate this part of the SVG with D3. -->
+
+    <h3>Calendar Selection</h3>
+    <div class = "input-menus">
+      <!-- calendar -->
+      <div id="calendar"></div>
+
+      <!-- mbta filter -->
+      <div id="filterMenu"></div>
+
+      <!-- color lengend -->
+      <div id="legend">
+        <svg id="my_legend" height=250 width=450></svg>
+      </div>
+    </div>
+
     <svg id="vis-svg">
 
     <!-- Don't delete the closing tag! -->
     </svg>
+  </div>
   </div>
   
   <!-- Your writeup goes here -->
@@ -130,9 +112,17 @@
 
     <p><em>Expectation: Clearly describes domain tasks, processes, goals and abstract tasks for domain problems.</em></p>
 
+    <p><b>Here is our original task table after conducting user interviews: </b></p>
+    <img src="images/task_table.png">
     <h1 id = "design">Design Process</h1>
     
     <p><em>Sketches and design choices to justify final visualization.</em></p>
+    <div class = "sketches">
+      <img src="images/sketches.png">
+      <img src="images/promise_mbtamap.png">
+      <img src="images/promise_scatterplot.png">
+      <img src="images/gabe_plot_and_heatmap.png">
+    </div>
 
     <p><em>Expectation: Evidence of iterative improvement.
     Logical discussion of design choices grounded in theory from course.
@@ -151,9 +141,10 @@
     <p><em>List here where any code, packages/libraries, text, images, designs, etc. that you leverage come from.</em></p>
     <ul>
       <li>Canva</li>
+      <li>Figma</li>
+      <li><a href="https://benclinkinbeard.com/d3tips/building-a-calendar-with-d3/?utm_content=bufferc1664&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer">Building a calendar with D3</a> Tutorial</li>
+      <li>Credits to <a href="http://www.d3noob.org"> d3noob</a> for clarifying d3 concepts and complexities </li>
     </ul>
-    
-    <p>credits to <a href="http://www.d3noob.org"> d3noob</a> for clarifying d3 concepts and complexities </p>
     
   </div>
 
