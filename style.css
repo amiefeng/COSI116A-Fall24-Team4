@@ -349,3 +349,10 @@ c a::after{
 .filter-reset-button:hover {
     background-color: rgb(139, 76, 139);
 }
+
+/**scatterplot styles*/
+circle.selected {
+	fill: pink;
+	stroke: red;
+	opacity: 5;
+  }
