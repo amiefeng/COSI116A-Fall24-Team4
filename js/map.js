@@ -1,9 +1,9 @@
 // Set up the SVG canvas dimensions
-const width = 800;
-const height = 600;
-
+var margin = {top: 50, right: 50, bottom: 70, left: 85},
+    width = 500 - margin.left - margin.right,
+    height = 500 - margin.top - margin.bottom;
 // Create an SVG element
-const svg = d3.select("#map").attr("width", width).attr("height", height);
+var svg = d3.select("#map").attr("width", width).attr("height", height);
 
 // Set up a projection and path generator
 const projection = d3
@@ -17,11 +17,20 @@ const path = d3.geoPath().projection(projection);
 // Function to draw the MBTA map
 function drawMap() {
   // Load the GeoJSON files for lines and stations
-  Promise.all([
-    d3.json("Data/mbta_lines.json"), 
-    d3.json("Data/mbta_stations.json"), // Replace with the path to your stations GeoJSON
-  ])
-    .then(([linesData, stationsData]) => {
+  d3.json("../data/mbta_lines.json", function(linesError, linesData) {
+    if (linesError) {
+      console.error("Error loading lines GeoJSON:", linesError);
+      return;
+    }
+    console.log(linesData);
+
+    d3.json("../data/mbta_stations.json", function(stationsError, stationsData) {
+      if (stationsError) {
+        console.error("Error loading stations GeoJSON:", stationsError);
+        return;
+      }
+      console.log(Data);
+
       // Draw the lines
       svg
         .selectAll(".line")
@@ -30,7 +39,7 @@ function drawMap() {
         .append("path")
         .attr("class", "line")
         .attr("d", path)
-        .attr("stroke", (d) => {
+        .attr("stroke", function(d) {
           // Assign colors based on line name
           switch (d.properties.LINE) {
             case "RED":
@@ -57,8 +66,12 @@ function drawMap() {
         .enter()
         .append("circle")
         .attr("class", "station")
-        .attr("cx", (d) => projection(d.geometry.coordinates)[0])
-        .attr("cy", (d) => projection(d.geometry.coordinates)[1])
+        .attr("cx", function(d) {
+          return projection(d.geometry.coordinates)[0];
+        })
+        .attr("cy", function(d) {
+          return projection(d.geometry.coordinates)[1];
+        })
         .attr("r", 5)
         .attr("fill", "red")
         .attr("stroke", "black")
@@ -71,15 +84,19 @@ function drawMap() {
         .enter()
         .append("text")
         .attr("class", "label")
-        .attr("x", (d) => projection(d.geometry.coordinates)[0])
-        .attr("y", (d) => projection(d.geometry.coordinates)[1] - 10)
-        .text((d) => d.properties.STATION)
+        .attr("x", function(d) {
+          return projection(d.geometry.coordinates)[0];
+        })
+        .attr("y", function(d) {
+          return projection(d.geometry.coordinates)[1] - 10;
+        })
+        .text(function(d) {
+          return d.properties.STATION;
+        })
         .attr("font-size", "10px")
         .attr("text-anchor", "middle");
-    })
-    .catch((error) => {
-      console.error("Error loading GeoJSON data:", error);
     });
+  });
 }
 
 // Call the function to draw the map
