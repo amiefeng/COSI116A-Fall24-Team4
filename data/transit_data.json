@@ -2,638 +2,638 @@
     "stations": {
         "Alewife": {
             "label": "Alewife",
-            "lon": -7114128,
-            "lat": 4239583
+            "lon": -71.141287,
+            "lat": 42.39583
         },
         "Allston Street": {
             "label": "Allston Street",
-            "lon": -7113795,
-            "lat": 4234870
+            "lon": -71.137955,
+            "lat": 42.348701
         },
         "Amory Street": {
             "label": "Amory Street",
-            "lon": -7111474,
-            "lat": 4235099
+            "lon": -71.114748,
+            "lat": 42.350992
         },
         "Andrew": {
             "label": "Andrew",
-            "lon": -7105765,
-            "lat": 4233015
+            "lon": -71.057655,
+            "lat": 42.330154
         },
         "Airport": {
             "label": "Airport",
-            "lon": -7103039,
-            "lat": 4237426
+            "lon": -71.030395,
+            "lat": 42.374262
         },
         "Aquarium": {
             "label": "Aquarium",
-            "lon": -7105165,
-            "lat": 4235978
+            "lon": -71.051652,
+            "lat": 42.359784
         },
         "Arlington": {
             "label": "Arlington",
-            "lon": -7107089,
-            "lat": 4235190
+            "lon": -71.070893,
+            "lat": 42.351902
         },
         "Ashmont": {
             "label": "Ashmont",
-            "lon": -7106377,
-            "lat": 4228452
+            "lon": -71.063777,
+            "lat": 42.28452
         },
         "Assembly": {
             "label": "Assembly",
-            "lon": -7107725,
-            "lat": 4239281
+            "lon": -71.077257,
+            "lat": 42.392811
         },
         "Babcock Street": {
             "label": "Babcock Street",
-            "lon": -7111992,
-            "lat": 4235161
+            "lon": -71.119924,
+            "lat": 42.351616
         },
         "Ball Square": {
             "label": "Ball Square",
-            "lon": -7111100,
-            "lat": 4239988
+            "lon": -71.111003,
+            "lat": 42.399889
         },
         "Back Bay": {
             "label": "Back Bay",
-            "lon": -7107572,
-            "lat": 4234735
+            "lon": -71.075727,
+            "lat": 42.34735
         },
         "Back of the Hill": {
             "label": "Back of the Hill",
-            "lon": -7111131,
-            "lat": 4233013
+            "lon": -71.111313,
+            "lat": 42.330139
         },
         "Beaconsfield": {
             "label": "Beaconsfield",
-            "lon": -7114045,
-            "lat": 4233576
+            "lon": -71.140455,
+            "lat": 42.335765
         },
         "Washington Square": {
             "label": "Washington Square",
-            "lon": -7113533,
-            "lat": 4233939
+            "lon": -71.13533,
+            "lat": 42.339394
         },
         "Blandford Street": {
             "label": "Blandford Street",
-            "lon": -7110025,
-            "lat": 4234929
+            "lon": -71.100258,
+            "lat": 42.349293
         },
         "Beachmont": {
             "label": "Beachmont",
-            "lon": -7099231,
-            "lat": 4239754
+            "lon": -70.992319,
+            "lat": 42.397542
         },
         "Brandon Hall": {
             "label": "Brandon Hall",
-            "lon": -7112908,
-            "lat": 4234002
+            "lon": -71.129082,
+            "lat": 42.340023
         },
         "Bowdoin": {
             "label": "Bowdoin",
-            "lon": -7106203,
-            "lat": 4236136
+            "lon": -71.062037,
+            "lat": 42.361365
         },
         "Boylston": {
             "label": "Boylston",
-            "lon": -7106459,
-            "lat": 4235302
+            "lon": -71.06459,
+            "lat": 42.35302
         },
         "Broadway": {
             "label": "Broadway",
-            "lon": -7105696,
-            "lat": 4234262
+            "lon": -71.056967,
+            "lat": 42.342622
         },
         "Packard's Corner": {
             "label": "Packard's Corner",
-            "lon": -7112503,
-            "lat": 4235196
+            "lon": -71.125031,
+            "lat": 42.351967
         },
         "Brookline Hills": {
             "label": "Brookline Hills",
-            "lon": -7112668,
-            "lat": 4233131
+            "lon": -71.126683,
+            "lat": 42.331316
         },
         "Brigham Circle": {
             "label": "Brigham Circle",
-            "lon": -7110460,
-            "lat": 4233422
+            "lon": -71.104609,
+            "lat": 42.334229
         },
         "Braintree": {
             "label": "Braintree",
-            "lon": -7100113,
-            "lat": 4220785
+            "lon": -71.001138,
+            "lat": 42.207854
         },
         "Boston University Central": {
             "label": "Boston University Central",
-            "lon": -7110686,
-            "lat": 4235008
+            "lon": -71.106865,
+            "lat": 42.350082
         },
         "Boston University East": {
             "label": "Boston University East",
-            "lon": -7110388,
-            "lat": 4234973
+            "lon": -71.103889,
+            "lat": 42.349735
         },
         "Butler": {
             "label": "Butler",
-            "lon": -7106251,
-            "lat": 4227242
+            "lon": -71.062519,
+            "lat": 42.272429
         },
         "Brookline Village": {
             "label": "Brookline Village",
-            "lon": -7111685,
-            "lat": 4233260
+            "lon": -71.116857,
+            "lat": 42.332608
         },
         "Capen Street": {
             "label": "Capen Street",
-            "lon": -7108733,
-            "lat": 4226756
+            "lon": -71.087338,
+            "lat": 42.267563
         },
         "Community College": {
             "label": "Community College",
-            "lon": -7106953,
-            "lat": 4237362
+            "lon": -71.069533,
+            "lat": 42.373622
         },
         "Cedar Grove": {
             "label": "Cedar Grove",
-            "lon": -7106039,
-            "lat": 4227962
+            "lon": -71.060394,
+            "lat": 42.279629
         },
         "Central Avenue": {
             "label": "Central Avenue",
-            "lon": -7107344,
-            "lat": 4227002
+            "lon": -71.073444,
+            "lat": 42.270027
         },
         "Chestnut Hill": {
             "label": "Chestnut Hill",
-            "lon": -7116469,
-            "lat": 4232675
+            "lon": -71.164699,
+            "lat": 42.326753
         },
         "Chestnut Hill Avenue": {
             "label": "Chestnut Hill Avenue",
-            "lon": -7115316,
-            "lat": 4233816
+            "lon": -71.15316,
+            "lat": 42.338169
         },
         "Charles/MGH": {
             "label": "Charles/MGH",
-            "lon": -7107062,
-            "lat": 4236116
+            "lon": -71.070628,
+            "lat": 42.361166
         },
         "Chinatown": {
             "label": "Chinatown",
-            "lon": -7106275,
-            "lat": 4235254
+            "lon": -71.062752,
+            "lat": 42.352547
         },
         "Chiswick Road": {
             "label": "Chiswick Road",
-            "lon": -7115071,
-            "lat": 4234080
+            "lon": -71.150711,
+            "lat": 42.340805
         },
         "Cleveland Circle": {
             "label": "Cleveland Circle",
-            "lon": -7114932,
-            "lat": 4233614
+            "lon": -71.149326,
+            "lat": 42.336142
         },
         "Central": {
             "label": "Central",
-            "lon": -7110380,
-            "lat": 4236548
+            "lon": -71.103802,
+            "lat": 42.365486
         },
         "Copley": {
             "label": "Copley",
-            "lon": -7107744,
-            "lat": 4234997
+            "lon": -71.077447,
+            "lat": 42.349974
         },
         "Silver Line Way": {
             "label": "Silver Line Way",
-            "lon": -7103838,
-            "lat": 4234715
+            "lon": -71.038385,
+            "lat": 42.347154
         },
         "Coolidge Corner": {
             "label": "Coolidge Corner",
-            "lon": -7112126,
-            "lat": 4234211
+            "lon": -71.121263,
+            "lat": 42.342116
         },
         "Davis": {
             "label": "Davis",
-            "lon": -7112181,
-            "lat": 4239674
+            "lon": -71.121815,
+            "lat": 42.39674
         },
         "Dean Road": {
             "label": "Dean Road",
-            "lon": -7114185,
-            "lat": 4233780
+            "lon": -71.141853,
+            "lat": 42.337807
         },
         "Downtown Crossing": {
             "label": "Downtown Crossing",
-            "lon": -7106022,
-            "lat": 4235551
+            "lon": -71.060225,
+            "lat": 42.355518
         },
         "Eliot": {
             "label": "Eliot",
-            "lon": -7121668,
-            "lat": 4231904
+            "lon": -71.216684,
+            "lat": 42.319045
         },
         "Englewood Avenue": {
             "label": "Englewood Avenue",
-            "lon": -7114566,
-            "lat": 4233697
+            "lon": -71.14566,
+            "lat": 42.336971
         },
         "East Somerville": {
             "label": "East Somerville",
-            "lon": -7108662,
-            "lat": 4237946
+            "lon": -71.086625,
+            "lat": 42.379467
         },
         "Fairbanks Street": {
             "label": "Fairbanks Street",
-            "lon": -7113107,
-            "lat": 4233972
+            "lon": -71.131073,
+            "lat": 42.339725
         },
         "Fenwood Road": {
             "label": "Fenwood Road",
-            "lon": -7110572,
-            "lat": 4233370
+            "lon": -71.105728,
+            "lat": 42.333706
         },
         "Fenway": {
             "label": "Fenway",
-            "lon": -7110421,
-            "lat": 4234540
+            "lon": -71.104213,
+            "lat": 42.345403
         },
         "Fields Corner": {
             "label": "Fields Corner",
-            "lon": -7106166,
-            "lat": 4230009
+            "lon": -71.061667,
+            "lat": 42.300093
         },
         "Forest Hills": {
             "label": "Forest Hills",
-            "lon": -7111394,
-            "lat": 4230071
+            "lon": -71.113943,
+            "lat": 42.300713
         },
         "Gilman Square": {
             "label": "Gilman Square",
-            "lon": -7109676,
-            "lat": 4238792
+            "lon": -71.096766,
+            "lat": 42.387928
         },
         "Government Center": {
             "label": "Government Center",
-            "lon": -7105921,
-            "lat": 4235970
+            "lon": -71.059215,
+            "lat": 42.359705
         },
         "Griggs Street": {
             "label": "Griggs Street",
-            "lon": -7113494,
-            "lat": 4234854
+            "lon": -71.134949,
+            "lat": 42.348545
         },
         "Green Street": {
             "label": "Green Street",
-            "lon": -7110741,
-            "lat": 4231052
+            "lon": -71.107414,
+            "lat": 42.310525
         },
         "Haymarket": {
             "label": "Haymarket",
-            "lon": -7105829,
-            "lat": 4236302
+            "lon": -71.05829,
+            "lat": 42.363021
         },
         "Harvard": {
             "label": "Harvard",
-            "lon": -7111895,
-            "lat": 4237336
+            "lon": -71.118956,
+            "lat": 42.373362
         },
         "Harvard Avenue": {
             "label": "Harvard Avenue",
-            "lon": -7113135,
-            "lat": 4235024
+            "lon": -71.131355,
+            "lat": 42.350243
         },
         "Heath Street": {
             "label": "Heath Street",
-            "lon": -7111025,
-            "lat": 4232831
+            "lon": -71.110252,
+            "lat": 42.328316
         },
         "Hawes Street": {
             "label": "Hawes Street",
-            "lon": -7111114,
-            "lat": 4234490
+            "lon": -71.111145,
+            "lat": 42.344906
         },
         "Hynes Convention Center": {
             "label": "Hynes Convention Center",
-            "lon": -7108790,
-            "lat": 4234788
+            "lon": -71.087903,
+            "lat": 42.347888
         },
         "Jackson Square": {
             "label": "Jackson Square",
-            "lon": -7109959,
-            "lat": 4232313
+            "lon": -71.099592,
+            "lat": 42.323132
         },
         "JFK/UMass": {
             "label": "JFK/UMass",
-            "lon": -7105239,
-            "lat": 4232068
+            "lon": -71.052391,
+            "lat": 42.320685
         },
         "Kenmore": {
             "label": "Kenmore",
-            "lon": -7109516,
-            "lat": 4234894
+            "lon": -71.095169,
+            "lat": 42.348949
         },
         "Kendall/MIT": {
             "label": "Kendall/MIT",
-            "lon": -7108617,
-            "lat": 4236249
+            "lon": -71.086176,
+            "lat": 42.362491
         },
         "Kent Street": {
             "label": "Kent Street",
-            "lon": -7111419,
-            "lat": 4234407
+            "lon": -71.114197,
+            "lat": 42.344074
         },
         "Boston College": {
             "label": "Boston College",
-            "lon": -7116676,
-            "lat": 4234008
+            "lon": -71.166769,
+            "lat": 42.340081
         },
         "Lechmere": {
             "label": "Lechmere",
-            "lon": -7107658,
-            "lat": 4237157
+            "lon": -71.076584,
+            "lat": 42.371572
         },
         "Longwood Medical Area": {
             "label": "Longwood Medical Area",
-            "lon": -7110005,
-            "lat": 4233596
+            "lon": -71.100052,
+            "lat": 42.33596
         },
         "Longwood": {
             "label": "Longwood",
-            "lon": -7110995,
-            "lat": 4234170
+            "lon": -71.109956,
+            "lat": 42.341702
         },
         "Massachusetts Avenue": {
             "label": "Massachusetts Avenue",
-            "lon": -7108342,
-            "lat": 4234151
+            "lon": -71.083423,
+            "lat": 42.341512
         },
         "Mattapan": {
             "label": "Mattapan",
-            "lon": -7109248,
-            "lat": 4226762
+            "lon": -71.092486,
+            "lat": 42.26762
         },
         "Medford/Tufts": {
             "label": "Medford/Tufts",
-            "lon": -7111704,
-            "lat": 4240797
+            "lon": -71.117044,
+            "lat": 42.407975
         },
         "Museum of Fine Arts": {
             "label": "Museum of Fine Arts",
-            "lon": -7109551,
-            "lat": 4233771
+            "lon": -71.095512,
+            "lat": 42.337711
         },
         "Magoun Square": {
             "label": "Magoun Square",
-            "lon": -7110638,
-            "lat": 4239368
+            "lon": -71.106388,
+            "lat": 42.393682
         },
         "Milton": {
             "label": "Milton",
-            "lon": -7106726,
-            "lat": 4227034
+            "lon": -71.067266,
+            "lat": 42.270349
         },
         "Mission Park": {
             "label": "Mission Park",
-            "lon": -7110975,
-            "lat": 4233319
+            "lon": -71.109756,
+            "lat": 42.333195
         },
         "Malden Center": {
             "label": "Malden Center",
-            "lon": -7107411,
-            "lat": 4242663
+            "lon": -71.07411,
+            "lat": 42.426632
         },
         "Maverick": {
             "label": "Maverick",
-            "lon": -7103953,
-            "lat": 4236911
+            "lon": -71.03953,
+            "lat": 42.369119
         },
         "Newton Highlands": {
             "label": "Newton Highlands",
-            "lon": -7120550,
-            "lat": 4232238
+            "lon": -71.205509,
+            "lat": 42.322381
         },
         "Newton Centre": {
             "label": "Newton Centre",
-            "lon": -7119241,
-            "lat": 4232944
+            "lon": -71.192414,
+            "lat": 42.329443
         },
         "North Station": {
             "label": "North Station",
-            "lon": -7106129,
-            "lat": 4236557
+            "lon": -71.06129,
+            "lat": 42.365577
         },
         "North Quincy": {
             "label": "North Quincy",
-            "lon": -7102958,
-            "lat": 4227527
+            "lon": -71.029583,
+            "lat": 42.275275
         },
         "Nubian": {
             "label": "Nubian",
-            "lon": -7108398,
-            "lat": 4232954
+            "lon": -71.083982,
+            "lat": 42.329544
         },
         "Northeastern University": {
             "label": "Northeastern University",
-            "lon": -7108880,
-            "lat": 4234040
+            "lon": -71.088806,
+            "lat": 42.340401
         },
         "Oak Grove": {
             "label": "Oak Grove",
-            "lon": -7107109,
-            "lat": 4243668
+            "lon": -71.071097,
+            "lat": 42.43668
         },
         "Orient Heights": {
             "label": "Orient Heights",
-            "lon": -7100473,
-            "lat": 4238686
+            "lon": -71.004736,
+            "lat": 42.386867
         },
         "Park Street": {
             "label": "Park Street",
-            "lon": -7106242,
-            "lat": 4235639
+            "lon": -71.062424,
+            "lat": 42.356395
         },
         "Porter": {
             "label": "Porter",
-            "lon": -7111914,
-            "lat": 4238840
+            "lon": -71.119149,
+            "lat": 42.3884
         },
         "Prudential": {
             "label": "Prudential",
-            "lon": -7108169,
-            "lat": 4234557
+            "lon": -71.081696,
+            "lat": 42.34557
         },
         "Quincy Adams": {
             "label": "Quincy Adams",
-            "lon": -7100715,
-            "lat": 4223339
+            "lon": -71.007153,
+            "lat": 42.233391
         },
         "Quincy Center": {
             "label": "Quincy Center",
-            "lon": -7100540,
-            "lat": 4225180
+            "lon": -71.005409,
+            "lat": 42.251809
         },
         "Revere Beach": {
             "label": "Revere Beach",
-            "lon": -7099253,
-            "lat": 4240784
+            "lon": -70.992533,
+            "lat": 42.407843
         },
         "Roxbury Crossing": {
             "label": "Roxbury Crossing",
-            "lon": -7109545,
-            "lat": 4233139
+            "lon": -71.095451,
+            "lat": 42.331397
         },
         "Riverside": {
             "label": "Riverside",
-            "lon": -7125268,
-            "lat": 4233735
+            "lon": -71.252685,
+            "lat": 42.337352
         },
         "Reservoir": {
             "label": "Reservoir",
-            "lon": -7114875,
-            "lat": 4233508
+            "lon": -71.148758,
+            "lat": 42.335088
         },
         "Ruggles": {
             "label": "Ruggles",
-            "lon": -7108896,
-            "lat": 4233637
+            "lon": -71.088961,
+            "lat": 42.336377
         },
         "Riverway": {
             "label": "Riverway",
-            "lon": -7111193,
-            "lat": 4233168
+            "lon": -71.111931,
+            "lat": 42.331684
         },
         "Stony Brook": {
             "label": "Stony Brook",
-            "lon": -7110424,
-            "lat": 4231706
+            "lon": -71.104248,
+            "lat": 42.317062
         },
         "Suffolk Downs": {
             "label": "Suffolk Downs",
-            "lon": -7099712,
-            "lat": 4239050
+            "lon": -70.997123,
+            "lat": 42.390501
         },
         "Savin Hill": {
             "label": "Savin Hill",
-            "lon": -7105333,
-            "lat": 4231129
+            "lon": -71.053331,
+            "lat": 42.31129
         },
         "Saint Mary's Street": {
             "label": "Saint Mary's Street",
-            "lon": -7110735,
-            "lat": 4234597
+            "lon": -71.107353,
+            "lat": 42.345974
         },
         "Shawmut": {
             "label": "Shawmut",
-            "lon": -7106573,
-            "lat": 4229312
+            "lon": -71.065738,
+            "lat": 42.293126
         },
         "South Street": {
             "label": "South Street",
-            "lon": -7115766,
-            "lat": 4233960
+            "lon": -71.157661,
+            "lat": 42.3396
         },
         "Science Park/West End": {
             "label": "Science Park/West End",
-            "lon": -7106766,
-            "lat": 4236666
+            "lon": -71.067666,
+            "lat": 42.366664
         },
         "South Station": {
             "label": "South Station",
-            "lon": -7105524,
-            "lat": 4235227
+            "lon": -71.055242,
+            "lat": 42.352271
         },
         "State": {
             "label": "State",
-            "lon": -7105759,
-            "lat": 4235897
+            "lon": -71.057598,
+            "lat": 42.358978
         },
         "Sutherland Road": {
             "label": "Sutherland Road",
-            "lon": -7114620,
-            "lat": 4234161
+            "lon": -71.146202,
+            "lat": 42.341614
         },
         "Saint Paul Street": {
             "label": "Saint Paul Street",
-            "lon": -7111699,
-            "lat": 4234332
+            "lon": -71.116997,
+            "lat": 42.343327
         },
         "Sullivan Square": {
             "label": "Sullivan Square",
-            "lon": -7107699,
-            "lat": 4238397
+            "lon": -71.076994,
+            "lat": 42.383975
         },
         "Summit Avenue": {
             "label": "Summit Avenue",
-            "lon": -7112560,
-            "lat": 4234111
+            "lon": -71.12561,
+            "lat": 42.34111
         },
         "Symphony": {
             "label": "Symphony",
-            "lon": -7108505,
-            "lat": 4234268
+            "lon": -71.085056,
+            "lat": 42.342687
         },
         "Tappan Street": {
             "label": "Tappan Street",
-            "lon": -7113870,
-            "lat": 4233845
+            "lon": -71.138702,
+            "lat": 42.338459
         },
         "Tufts Medical Center": {
             "label": "Tufts Medical Center",
-            "lon": -7106391,
-            "lat": 4234966
+            "lon": -71.063917,
+            "lat": 42.349662
         },
         "Union Square": {
             "label": "Union Square",
-            "lon": -7109476,
-            "lat": 4237735
+            "lon": -71.094761,
+            "lat": 42.377359
         },
         "Valley Road": {
             "label": "Valley Road",
-            "lon": -7108134,
-            "lat": 4226834
+            "lon": -71.081343,
+            "lat": 42.268347
         },
         "Waban": {
             "label": "Waban",
-            "lon": -7123060,
-            "lat": 4232584
+            "lon": -71.230609,
+            "lat": 42.325845
         },
         "Washington Street": {
             "label": "Washington Street",
-            "lon": -7114285,
-            "lat": 4234386
+            "lon": -71.142853,
+            "lat": 42.343864
         },
         "Wellington": {
             "label": "Wellington",
-            "lon": -7107708,
-            "lat": 4240237
+            "lon": -71.077082,
+            "lat": 42.40237
         },
         "Wood Island": {
             "label": "Wood Island",
-            "lon": -7102286,
-            "lat": 4237964
+            "lon": -71.022865,
+            "lat": 42.37964
         },
         "Wollaston": {
             "label": "Wollaston",
-            "lon": -7102033,
-            "lat": 4226651
+            "lon": -71.020337,
+            "lat": 42.266514
         },
         "Wonderland": {
             "label": "Wonderland",
-            "lon": -7099164,
-            "lat": 4241342
+            "lon": -70.991648,
+            "lat": 42.41342
         },
         "Woodland": {
             "label": "Woodland",
-            "lon": -7124336,
-            "lat": 4233290
+            "lon": -71.243362,
+            "lat": 42.332902
         },
         "Warren Street": {
             "label": "Warren Street",
-            "lon": -7114045,
-            "lat": 4234834
+            "lon": -71.140457,
+            "lat": 42.348343
         }
     },
     "lines": [
@@ -647,152 +647,152 @@
             "nodes": [
                 {
                     "coords": [
-                        -7107089,
-                        4235190
+                        -71.070893,
+                        42.351902
                     ],
                     "name": "Arlington",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7106459,
-                        4235302
+                        -71.06459,
+                        42.35302
                     ],
                     "name": "Boylston",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7107744,
-                        4234997
+                        -71.077447,
+                        42.349974
                     ],
                     "name": "Copley",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7105921,
-                        4235970
+                        -71.059215,
+                        42.359705
                     ],
                     "name": "Government Center",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7105829,
-                        4236302
+                        -71.05829,
+                        42.363021
                     ],
                     "name": "Haymarket",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7108790,
-                        4234788
+                        -71.087903,
+                        42.347888
                     ],
                     "name": "Hynes Convention Center",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7109516,
-                        4234894
+                        -71.095169,
+                        42.348949
                     ],
                     "name": "Kenmore",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7106129,
-                        4236557
+                        -71.06129,
+                        42.365577
                     ],
                     "name": "North Station",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7106242,
-                        4235639
+                        -71.062424,
+                        42.356395
                     ],
                     "name": "Park Street",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7108169,
-                        4234557
+                        -71.081696,
+                        42.34557
                     ],
                     "name": "Prudential",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7125268,
-                        4233735
+                        -71.252685,
+                        42.337352
                     ],
                     "name": "Riverside",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7108505,
-                        4234268
+                        -71.085056,
+                        42.342687
                     ],
                     "name": "Symphony",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7111100,
-                        4239988
+                        -71.111003,
+                        42.399889
                     ],
                     "name": "Ball Square",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7107658,
-                        4237157
+                        -71.076584,
+                        42.371572
                     ],
                     "name": "Lechmere",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7109676,
-                        4238792
+                        -71.096766,
+                        42.387928
                     ],
                     "name": "Gilman Square",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7111704,
-                        4240797
+                        -71.117044,
+                        42.407975
                     ],
                     "name": "Medford/Tufts",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7109476,
-                        4237735
+                        -71.094761,
+                        42.377359
                     ],
                     "name": "Union Square",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7108662,
-                        4237946
+                        -71.086625,
+                        42.379467
                     ],
                     "name": "East Somerville",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7110638,
-                        4239368
+                        -71.106388,
+                        42.393682
                     ],
                     "name": "Magoun Square",
                     "labelPos": "N"
@@ -809,152 +809,152 @@
             "nodes": [
                 {
                     "coords": [
-                        -7107089,
-                        4235190
+                        -71.070893,
+                        42.351902
                     ],
                     "name": "Arlington",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7106459,
-                        4235302
+                        -71.06459,
+                        42.35302
                     ],
                     "name": "Boylston",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7107744,
-                        4234997
+                        -71.077447,
+                        42.349974
                     ],
                     "name": "Copley",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7105921,
-                        4235970
+                        -71.059215,
+                        42.359705
                     ],
                     "name": "Government Center",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7105829,
-                        4236302
+                        -71.05829,
+                        42.363021
                     ],
                     "name": "Haymarket",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7108790,
-                        4234788
+                        -71.087903,
+                        42.347888
                     ],
                     "name": "Hynes Convention Center",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7109516,
-                        4234894
+                        -71.095169,
+                        42.348949
                     ],
                     "name": "Kenmore",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7106129,
-                        4236557
+                        -71.06129,
+                        42.365577
                     ],
                     "name": "North Station",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7106242,
-                        4235639
+                        -71.062424,
+                        42.356395
                     ],
                     "name": "Park Street",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7108169,
-                        4234557
+                        -71.081696,
+                        42.34557
                     ],
                     "name": "Prudential",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7125268,
-                        4233735
+                        -71.252685,
+                        42.337352
                     ],
                     "name": "Riverside",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7108505,
-                        4234268
+                        -71.085056,
+                        42.342687
                     ],
                     "name": "Symphony",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7111100,
-                        4239988
+                        -71.111003,
+                        42.399889
                     ],
                     "name": "Ball Square",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7107658,
-                        4237157
+                        -71.076584,
+                        42.371572
                     ],
                     "name": "Lechmere",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7109676,
-                        4238792
+                        -71.096766,
+                        42.387928
                     ],
                     "name": "Gilman Square",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7111704,
-                        4240797
+                        -71.117044,
+                        42.407975
                     ],
                     "name": "Medford/Tufts",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7109476,
-                        4237735
+                        -71.094761,
+                        42.377359
                     ],
                     "name": "Union Square",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7108662,
-                        4237946
+                        -71.086625,
+                        42.379467
                     ],
                     "name": "East Somerville",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7110638,
-                        4239368
+                        -71.106388,
+                        42.393682
                     ],
                     "name": "Magoun Square",
                     "labelPos": "N"
@@ -971,152 +971,152 @@
             "nodes": [
                 {
                     "coords": [
-                        -7107089,
-                        4235190
+                        -71.070893,
+                        42.351902
                     ],
                     "name": "Arlington",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7106459,
-                        4235302
+                        -71.06459,
+                        42.35302
                     ],
                     "name": "Boylston",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7107744,
-                        4234997
+                        -71.077447,
+                        42.349974
                     ],
                     "name": "Copley",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7105921,
-                        4235970
+                        -71.059215,
+                        42.359705
                     ],
                     "name": "Government Center",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7105829,
-                        4236302
+                        -71.05829,
+                        42.363021
                     ],
                     "name": "Haymarket",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7108790,
-                        4234788
+                        -71.087903,
+                        42.347888
                     ],
                     "name": "Hynes Convention Center",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7109516,
-                        4234894
+                        -71.095169,
+                        42.348949
                     ],
                     "name": "Kenmore",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7106129,
-                        4236557
+                        -71.06129,
+                        42.365577
                     ],
                     "name": "North Station",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7106242,
-                        4235639
+                        -71.062424,
+                        42.356395
                     ],
                     "name": "Park Street",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7108169,
-                        4234557
+                        -71.081696,
+                        42.34557
                     ],
                     "name": "Prudential",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7125268,
-                        4233735
+                        -71.252685,
+                        42.337352
                     ],
                     "name": "Riverside",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7108505,
-                        4234268
+                        -71.085056,
+                        42.342687
                     ],
                     "name": "Symphony",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7111100,
-                        4239988
+                        -71.111003,
+                        42.399889
                     ],
                     "name": "Ball Square",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7107658,
-                        4237157
+                        -71.076584,
+                        42.371572
                     ],
                     "name": "Lechmere",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7109676,
-                        4238792
+                        -71.096766,
+                        42.387928
                     ],
                     "name": "Gilman Square",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7111704,
-                        4240797
+                        -71.117044,
+                        42.407975
                     ],
                     "name": "Medford/Tufts",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7109476,
-                        4237735
+                        -71.094761,
+                        42.377359
                     ],
                     "name": "Union Square",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7108662,
-                        4237946
+                        -71.086625,
+                        42.379467
                     ],
                     "name": "East Somerville",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7110638,
-                        4239368
+                        -71.106388,
+                        42.393682
                     ],
                     "name": "Magoun Square",
                     "labelPos": "N"
@@ -1133,152 +1133,152 @@
             "nodes": [
                 {
                     "coords": [
-                        -7107089,
-                        4235190
+                        -71.070893,
+                        42.351902
                     ],
                     "name": "Arlington",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7106459,
-                        4235302
+                        -71.06459,
+                        42.35302
                     ],
                     "name": "Boylston",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7107744,
-                        4234997
+                        -71.077447,
+                        42.349974
                     ],
                     "name": "Copley",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7105921,
-                        4235970
+                        -71.059215,
+                        42.359705
                     ],
                     "name": "Government Center",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7105829,
-                        4236302
+                        -71.05829,
+                        42.363021
                     ],
                     "name": "Haymarket",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7108790,
-                        4234788
+                        -71.087903,
+                        42.347888
                     ],
                     "name": "Hynes Convention Center",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7109516,
-                        4234894
+                        -71.095169,
+                        42.348949
                     ],
                     "name": "Kenmore",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7106129,
-                        4236557
+                        -71.06129,
+                        42.365577
                     ],
                     "name": "North Station",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7106242,
-                        4235639
+                        -71.062424,
+                        42.356395
                     ],
                     "name": "Park Street",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7108169,
-                        4234557
+                        -71.081696,
+                        42.34557
                     ],
                     "name": "Prudential",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7125268,
-                        4233735
+                        -71.252685,
+                        42.337352
                     ],
                     "name": "Riverside",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7108505,
-                        4234268
+                        -71.085056,
+                        42.342687
                     ],
                     "name": "Symphony",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7111100,
-                        4239988
+                        -71.111003,
+                        42.399889
                     ],
                     "name": "Ball Square",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7107658,
-                        4237157
+                        -71.076584,
+                        42.371572
                     ],
                     "name": "Lechmere",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7109676,
-                        4238792
+                        -71.096766,
+                        42.387928
                     ],
                     "name": "Gilman Square",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7111704,
-                        4240797
+                        -71.117044,
+                        42.407975
                     ],
                     "name": "Medford/Tufts",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7109476,
-                        4237735
+                        -71.094761,
+                        42.377359
                     ],
                     "name": "Union Square",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7108662,
-                        4237946
+                        -71.086625,
+                        42.379467
                     ],
                     "name": "East Somerville",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7110638,
-                        4239368
+                        -71.106388,
+                        42.393682
                     ],
                     "name": "Magoun Square",
                     "labelPos": "N"
@@ -1304,152 +1304,152 @@
             "nodes": [
                 {
                     "coords": [
-                        -7107572,
-                        4234735
+                        -71.075727,
+                        42.34735
                     ],
                     "name": "Back Bay",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7106275,
-                        4235254
+                        -71.062752,
+                        42.352547
                     ],
                     "name": "Chinatown",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7106022,
-                        4235551
+                        -71.060225,
+                        42.355518
                     ],
                     "name": "Downtown Crossing",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7111394,
-                        4230071
+                        -71.113943,
+                        42.300713
                     ],
                     "name": "Forest Hills",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7110741,
-                        4231052
+                        -71.107414,
+                        42.310525
                     ],
                     "name": "Green Street",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7105829,
-                        4236302
+                        -71.05829,
+                        42.363021
                     ],
                     "name": "Haymarket",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7109959,
-                        4232313
+                        -71.099592,
+                        42.323132
                     ],
                     "name": "Jackson Square",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7108342,
-                        4234151
+                        -71.083423,
+                        42.341512
                     ],
                     "name": "Massachusetts Avenue",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7106129,
-                        4236557
+                        -71.06129,
+                        42.365577
                     ],
                     "name": "North Station",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7107109,
-                        4243668
+                        -71.071097,
+                        42.43668
                     ],
                     "name": "Oak Grove",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7109545,
-                        4233139
+                        -71.095451,
+                        42.331397
                     ],
                     "name": "Roxbury Crossing",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7108896,
-                        4233637
+                        -71.088961,
+                        42.336377
                     ],
                     "name": "Ruggles",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7110424,
-                        4231706
+                        -71.104248,
+                        42.317062
                     ],
                     "name": "Stony Brook",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7106391,
-                        4234966
+                        -71.063917,
+                        42.349662
                     ],
                     "name": "Tufts Medical Center",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7107699,
-                        4238397
+                        -71.076994,
+                        42.383975
                     ],
                     "name": "Sullivan Square",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7106953,
-                        4237362
+                        -71.069533,
+                        42.373622
                     ],
                     "name": "Community College",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7107725,
-                        4239281
+                        -71.077257,
+                        42.392811
                     ],
                     "name": "Assembly",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7107708,
-                        4240237
+                        -71.077082,
+                        42.40237
                     ],
                     "name": "Wellington",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7107411,
-                        4242663
+                        -71.07411,
+                        42.426632
                     ],
                     "name": "Malden Center",
                     "labelPos": "N"
@@ -1466,176 +1466,176 @@
             "nodes": [
                 {
                     "coords": [
-                        -7114128,
-                        4239583
+                        -71.141287,
+                        42.39583
                     ],
                     "name": "Alewife",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7105765,
-                        4233015
+                        -71.057655,
+                        42.330154
                     ],
                     "name": "Andrew",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7106377,
-                        4228452
+                        -71.063777,
+                        42.28452
                     ],
                     "name": "Ashmont",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7105696,
-                        4234262
+                        -71.056967,
+                        42.342622
                     ],
                     "name": "Broadway",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7100113,
-                        4220785
+                        -71.001138,
+                        42.207854
                     ],
                     "name": "Braintree",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7107062,
-                        4236116
+                        -71.070628,
+                        42.361166
                     ],
                     "name": "Charles/MGH",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7110380,
-                        4236548
+                        -71.103802,
+                        42.365486
                     ],
                     "name": "Central",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7112181,
-                        4239674
+                        -71.121815,
+                        42.39674
                     ],
                     "name": "Davis",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7106022,
-                        4235551
+                        -71.060225,
+                        42.355518
                     ],
                     "name": "Downtown Crossing",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7106166,
-                        4230009
+                        -71.061667,
+                        42.300093
                     ],
                     "name": "Fields Corner",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7111895,
-                        4237336
+                        -71.118956,
+                        42.373362
                     ],
                     "name": "Harvard",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7105239,
-                        4232068
+                        -71.052391,
+                        42.320685
                     ],
                     "name": "JFK/UMass",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7108617,
-                        4236249
+                        -71.086176,
+                        42.362491
                     ],
                     "name": "Kendall/MIT",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7102958,
-                        4227527
+                        -71.029583,
+                        42.275275
                     ],
                     "name": "North Quincy",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7106242,
-                        4235639
+                        -71.062424,
+                        42.356395
                     ],
                     "name": "Park Street",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7111914,
-                        4238840
+                        -71.119149,
+                        42.3884
                     ],
                     "name": "Porter",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7100540,
-                        4225180
+                        -71.005409,
+                        42.251809
                     ],
                     "name": "Quincy Center",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7105524,
-                        4235227
+                        -71.055242,
+                        42.352271
                     ],
                     "name": "South Station",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7102033,
-                        4226651
+                        -71.020337,
+                        42.266514
                     ],
                     "name": "Wollaston",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7105333,
-                        4231129
+                        -71.053331,
+                        42.31129
                     ],
                     "name": "Savin Hill",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7106573,
-                        4229312
+                        -71.065738,
+                        42.293126
                     ],
                     "name": "Shawmut",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7100715,
-                        4223339
+                        -71.007153,
+                        42.233391
                     ],
                     "name": "Quincy Adams",
                     "labelPos": "N"
@@ -1652,88 +1652,88 @@
             "nodes": [
                 {
                     "coords": [
-                        -7103039,
-                        4237426
+                        -71.030395,
+                        42.374262
                     ],
                     "name": "Airport",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7105165,
-                        4235978
+                        -71.051652,
+                        42.359784
                     ],
                     "name": "Aquarium",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7099231,
-                        4239754
+                        -70.992319,
+                        42.397542
                     ],
                     "name": "Beachmont",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7106203,
-                        4236136
+                        -71.062037,
+                        42.361365
                     ],
                     "name": "Bowdoin",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7105921,
-                        4235970
+                        -71.059215,
+                        42.359705
                     ],
                     "name": "Government Center",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7103953,
-                        4236911
+                        -71.03953,
+                        42.369119
                     ],
                     "name": "Maverick",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7100473,
-                        4238686
+                        -71.004736,
+                        42.386867
                     ],
                     "name": "Orient Heights",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7099253,
-                        4240784
+                        -70.992533,
+                        42.407843
                     ],
                     "name": "Revere Beach",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7099712,
-                        4239050
+                        -70.997123,
+                        42.390501
                     ],
                     "name": "Suffolk Downs",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7102286,
-                        4237964
+                        -71.022865,
+                        42.37964
                     ],
                     "name": "Wood Island",
                     "labelPos": "N"
                 },
                 {
                     "coords": [
-                        -7099164,
-                        4241342
+                        -70.991648,
+                        42.41342
                     ],
                     "name": "Wonderland",
                     "labelPos": "N"
