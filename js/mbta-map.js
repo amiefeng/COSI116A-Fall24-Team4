@@ -15,10 +15,10 @@ var map = d3
   .width(width)
   .height(height)
   .margin({
-    top: height / 50,
-    right: width / 7,
-    bottom: height / 10,
-    left: width / 7,
+    top: height ,
+    right: width ,
+    bottom: height ,
+    left: width,
   });
 
 // Load the data using d3.json with a callback
