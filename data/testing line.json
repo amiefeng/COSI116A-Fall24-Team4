@@ -2,22 +2,43 @@
     "stations": {},
     "lines": [
       {
-        "name": "Town",
-        "label": "Town",
-        "color": "#B0E0E6",
+        "name": "Orange Line",
+        "label": "Orange Line",
+        "color": "#ED8B00",
         "shiftCoords": [0, 0],
         "nodes": [
           {
             "coords": [0, 0]
           },
           {
+            "coords": [0, 1]
+          },
+          {
             "coords": [0, 2]
+          },
+          {
+            "coords": [0, 3]
           },
           {
             "coords": [0, 4]
           },
           {
-            "coords": [2, 5]
+            "coords": [0, 5]
+          },
+          {
+            "coords": [0, 6]
+          },
+          {
+            "coords": [0, 7]
+          },
+          {
+            "coords": [0, 8]
+          },
+          {
+            "coords": [0, 9]
+          },
+          {
+            "coords": [0, 10]
           }
         ]
       }
