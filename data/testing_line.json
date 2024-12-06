@@ -1,5 +1,9 @@
 {
-    "stations": {},
+    "stations": {
+      "Oak Grove":{
+        "label": "Oak Grove"
+      }
+    },
     "lines": [
       {
         "name": "Orange Line",
@@ -8,7 +12,9 @@
         "shiftCoords": [0, 0],
         "nodes": [
           {
-            "coords": [0, 0]
+            "coords": [0, 0],
+            "name": "Oak Grove",
+            "labelPos": "N"
           },
           {
             "coords": [0, 1]
@@ -39,7 +45,8 @@
           },
           {
             "coords": [0, 10]
-          }
+          },
+
         ]
       }
     ]
