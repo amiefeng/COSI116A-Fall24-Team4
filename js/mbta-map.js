@@ -24,7 +24,7 @@ var map = d3
   });
 
 // Load the data
-d3.json("./data/testing line.json", function (error, data) {
+d3.json("data/testing_line.json", function (error, data) {
   if (error) {
     console.error("Error loading data:", error);
     return;

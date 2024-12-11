@@ -23,7 +23,11 @@
       },
       "Haymarket":{
         "label":"Haymarket"
+      },
+      "State":{
+        "label":"State"
       }
+
     },
     "lines": [
       {
@@ -90,42 +94,85 @@
             "coords": [0, 12]
           },
           {
-            "coords": [0, 13]
+            "coords": [1, 13]
           },
           {
-            "coords": [0, 14]
+            "coords": [2, 14]
           },
           {
-            "coords": [0, 15]
+            "coords": [3, 15]
           },         
           {
-            "coords": [0, 16]
+            "coords": [4, 16]
           },
           {
-            "coords": [0, 17]
+            "coords": [5, 17]
           },
           {
-            "coords": [0, 18]
+            "coords": [6, 18]
           },          
           {
-            "coords": [0, 19]
+            "coords": [7, 19]
           },
           {
-            "coords": [0, 20]
+            "coords": [8, 20]
           },
           {
-            "coords": [0, 21]
+            "coords": [9, 21]
           },
           {
-            "coords": [0, 22]
+            "coords": [10, 22]
           },
           {
-            "coords": [0, 23]
+            "coords": [11, 23]
           },
           {
-            "coords": [0, 24]
+            "coords": [12, 24]
           }
         ]
+      },
+      {
+        "name": "Blue Line",
+        "label": "Blue Line",
+        "color": "#ED8B00",
+        "shiftCoords": [0, 0],
+        "nodes": [
+          {
+            "coords": [0, 0],
+            "name": "Oak Grove",
+            "labelPos": "N"
+          }
+        ]
+
+      },      
+      {
+        "name": "Red Line",
+        "label": "Blue Line",
+        "color": "#ED8B00",
+        "shiftCoords": [0, 0],
+        "nodes": [
+          {
+            "coords": [0, 0],
+            "name": "Oak Grove",
+            "labelPos": "N"
+          }
+        ]
+
+      },
+      {
+        "name": "Green Line",
+        "label": "Green Line",
+        "color": "#ED8B00",
+        "shiftCoords": [0, 0],
+        "nodes": [
+          {
+            "coords": [0, 0],
+            "name": "Oak Grove",
+            "labelPos": "N"
+          }
+        ]
+
       }
+
     ]
   }
