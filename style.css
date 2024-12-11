@@ -330,9 +330,6 @@ c a::after{
     background-color: rgb(109, 46, 109);
     color: #fff;
 }
-.line-cell:hover, .line-cell.all-lines:hover {
-	background-color: rgb(237, 214, 237);
-}
 
 .filter-reset-button {
     background-color: rgb(109, 46, 109);
