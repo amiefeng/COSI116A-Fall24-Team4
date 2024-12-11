@@ -2,6 +2,27 @@
     "stations": {
       "Oak Grove":{
         "label": "Oak Grove"
+      },
+      "Malden Center":{
+        "label": "Malden Center"
+      },
+      "Wellington":{
+        "label": "Wellington"
+      },      
+      "Assembly":{
+        "label": "Assembly"
+      },
+      "Sullivan Square":{
+        "label": "Sullivan Square"
+      },     
+      "Community College":{
+        "label": "Community College"
+      },
+      "North Station":{
+        "label": "North Station"
+      },
+      "Haymarket":{
+        "label":"Haymarket"
       }
     },
     "lines": [
@@ -17,36 +38,93 @@
             "labelPos": "N"
           },
           {
-            "coords": [0, 1]
+            "coords": [0, 1],
+            "name": "Malden Center",
+            "labelPos": "E"
           },
           {
-            "coords": [0, 2]
+            "coords": [0, 2],
+            "name": "Wellington",
+            "labelPos" :"E"
           },
           {
-            "coords": [0, 3]
+            "coords": [0, 3],
+            "name":"Assembly",
+            "labelPos":"E"
           },
           {
-            "coords": [0, 4]
+            "coords": [0, 4],
+            "name":"Sulivan Sq",
+            "labelPos":"E"
           },
           {
-            "coords": [0, 5]
+            "coords": [0, 5],
+            "name":"Community College",
+            "labelPos":"E"
           },
           {
             "coords": [0, 6]
           },
           {
-            "coords": [0, 7]
+            "coords": [0, 7],
+            "name":"North Station",
+            "labelPos":"E"
           },
           {
             "coords": [0, 8]
           },
           {
-            "coords": [0, 9]
+            "coords": [0, 9],
+            "name":"Haymarket",
+            "labelPos":"W"
           },
           {
             "coords": [0, 10]
+          },
+          {
+            "coords": [0, 11],
+            "name":"State",
+            "labelPos":"W"
+          },
+          {
+            "coords": [0, 12]
+          },
+          {
+            "coords": [0, 13]
+          },
+          {
+            "coords": [0, 14]
+          },
+          {
+            "coords": [0, 15]
+          },         
+          {
+            "coords": [0, 16]
+          },
+          {
+            "coords": [0, 17]
+          },
+          {
+            "coords": [0, 18]
+          },          
+          {
+            "coords": [0, 19]
+          },
+          {
+            "coords": [0, 20]
+          },
+          {
+            "coords": [0, 21]
+          },
+          {
+            "coords": [0, 22]
+          },
+          {
+            "coords": [0, 23]
+          },
+          {
+            "coords": [0, 24]
           }
-
         ]
       }
     ]
