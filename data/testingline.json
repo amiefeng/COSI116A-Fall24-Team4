@@ -130,49 +130,6 @@
             "coords": [12, 24]
           }
         ]
-      },
-      {
-        "name": "Blue Line",
-        "label": "Blue Line",
-        "color": "#ED8B00",
-        "shiftCoords": [0, 0],
-        "nodes": [
-          {
-            "coords": [0, 0],
-            "name": "Oak Grove",
-            "labelPos": "N"
-          }
-        ]
-
-      },      
-      {
-        "name": "Red Line",
-        "label": "Blue Line",
-        "color": "#ED8B00",
-        "shiftCoords": [0, 0],
-        "nodes": [
-          {
-            "coords": [0, 0],
-            "name": "Oak Grove",
-            "labelPos": "N"
-          }
-        ]
-
-      },
-      {
-        "name": "Green Line",
-        "label": "Green Line",
-        "color": "#ED8B00",
-        "shiftCoords": [0, 0],
-        "nodes": [
-          {
-            "coords": [0, 0],
-            "name": "Oak Grove",
-            "labelPos": "N"
-          }
-        ]
-
       }
-
     ]
   }

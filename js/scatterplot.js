@@ -15,7 +15,7 @@ function scatterplot(){
 
 
     // load CSV
-    d3.csv("../data/rapid_transit_ridership_and_reliability_m_y_l.csv", function(error, data) {
+    d3.csv("data/rapid_transit_ridership_and_reliability_m_y_l.csv", function(error, data) {
 
 
         console.log(data);
@@ -129,7 +129,7 @@ function scatterplot(){
         /**
          * 
          * @param {*} data_subset 
-         * @returns slope and intercept for linear regression of subse t of data
+         * @returns slope and intercept for linear regression of subset of data
          */
         function linearRegression(data_subset){
             const n_elements = data_subset.length;
