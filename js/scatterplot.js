@@ -3,8 +3,23 @@ function scatterplot(){
     width = 600 - margin.left - margin.right,
     height = 600 - margin.top - margin.bottom;
     selectableElements = d3.select(null);
+    let ourBrush = null
+
+    var tooltip = d3.select("body").append("div")
+        .attr("class", "tooltip")
+        .style("opacity", 0)
+        .style("position", "absolute")
+        .style("background-color", "white")
+        .style("border", "solid")
+        .style("border-width", "1px")
+        .style("border-radius", "2.5px")
+        .style("padding", "5px");
+
+    
 
     function chart(){
+        
+
     //define SVG
     var svg = d3.select("#vis-svg")
         .append("svg")
@@ -64,7 +79,57 @@ function scatterplot(){
         var color = d3.scaleOrdinal()
             .domain(["Red Line", "Blue Line", "Green Line", "Orange Line"])
             .range(["#ff0000", "#0000ff", "#00ff00", "#ff8000"]);
-
+                   // Highlight points when brushed
+                   function brush(g) {
+                    const brush = d3.brush() // Create a 2D interactive brush
+                    
+                    .on("start brush", highlight) // When the brush starts/continues do...
+                    .on("end", brushEnd) // When the brush ends do...
+                    .extent([
+                        [-margin.left, -margin.bottom],
+                        [width + margin.right, height + margin.top]
+                    ]);
+                    
+                    ourBrush = brush;
+            
+                    g.call(brush); // Adds the brush to this element
+            
+                    // Highlight the selected circles
+                    function highlight() {
+        
+                    if (d3.event.selection === null) return;
+                    const [
+                        [x0, y0],
+                        [x1, y1]
+                    ] = d3.event.selection;
+                    console.log(x0)
+            
+                    // If within the bounds of the brush, select it
+                    selectableElements.classed("selected", d =>
+                        x0 <= x(d.reliability_quotient) && x(d.reliability_quotient) <= x1 && y0 <= y(d.average_monthly_ridership) && y(d.average_monthly_ridership) <= y1
+                    )
+            
+                    // Get the name of our dispatcher's event
+                    let dispatchString = "selectionUpdated";
+            
+                    console.log(dispatchString);
+                    // Let other charts know about our selection
+                    scatPlotDispatcher.call(dispatchString, this, svg.selectAll(".selected").data());
+                    }
+                    
+                    function brushEnd(){
+                    // We don't want infinite recursion
+                    if(d3.event.sourceEvent.type!="end"){
+                        d3.select(this).call(brush.move, null);
+                        selectableElements.classed("selected", false);
+        
+                    }         
+                    }
+                }
+        
+                svg.append("g")
+                    .attr("class", "brush")
+                    .call(brush);
         // populate
         selectableElements = svg.append("g")
             .selectAll("circle")
@@ -76,55 +141,25 @@ function scatterplot(){
             .attr("r", 2) // Radius
             .style("fill", function(d) { return color(d.route_or_line); })
             .attr("class", d => String(d.route_or_line).split(" ")[0])
-        
+            .on("mouseover", function(d) {
+                tooltip.transition()
+                    .duration(200)
+                    .style("opacity",8);
+                tooltip.html(`Line: ${d.route_or_line}<br/>` + 
+                            `Reliability: ${(parseFloat(d.reliability_quotient).toFixed(2))}<br/>` +
+                            `Ridership: ${d.average_monthly_ridership}`)
+                    .style("left", (d3.event.pageX + 5) + "px")
+                    .style("top", (d3.event.pageY - 28) + "px");
+            })
+            // Add mouseout event
+            .on("mouseout", function(d) {
+                tooltip.transition()
+                    .duration(500)
+                    .style("opacity", 0);
+            })
 
-            // Highlight points when brushed
-        function brush(g) {
-            const brush = d3.brush() // Create a 2D interactive brush
-            
-            .on("start brush", highlight) // When the brush starts/continues do...
-            .on("end", brushEnd) // When the brush ends do...
-            .extent([
-                [-margin.left, -margin.bottom],
-                [width + margin.right, height + margin.top]
-            ]);
-            
-            ourBrush = brush;
-    
-            g.call(brush); // Adds the brush to this element
-    
-            // Highlight the selected circles
-            function highlight() {
 
-            if (d3.event.selection === null) return;
-            const [
-                [x0, y0],
-                [x1, y1]
-            ] = d3.event.selection;
-            console.log(x0)
-    
-            // If within the bounds of the brush, select it
-            selectableElements.classed("selected", d =>
-                x0 <= x(d.reliability_quotient) && x(d.reliability_quotient) <= x1 && y0 <= y(d.average_monthly_ridership) && y(d.average_monthly_ridership) <= y1
-            )
-    
-            // Get the name of our dispatcher's event
-            let dispatchString = "selectionUpdated";
-    
-            console.log(dispatchString);
-            // Let other charts know about our selection
-            scatPlotDispatcher.call(dispatchString, this, svg.selectAll(".selected").data());
-            }
-            
-            function brushEnd(){
-            // We don't want infinite recursion
-            if(d3.event.sourceEvent.type!="end"){
-                d3.select(this).call(brush.move, null);
-                selectableElements.classed("selected", false);
-
-            }         
-            }
-        }
+ 
         
         /**
          * 
@@ -211,14 +246,14 @@ function scatterplot(){
             selectableElements.each(function(d){
 
                if(lines[0] === 'All Lines'){
-                    d3.select(this).classed("unfiltered", false)
+                    d3.select(this).classed("unfiltered", false) //set to unfiltered if we want everything filteredgit
                 } else{
                     d3.select(this).classed("unfiltered", true)
                     for(i = 0; i < lines.length; i ++){
                         console.log(d3.select(this))
                         console.log(lines[i].split(" ")[0])
                         console.log(d3.select(this).classed(lines[i].split(" ")[0]))
-                        d3.select(this).classed("unfiltered", d3.select(this).classed("unfiltered") && !d3.select(this).classed(lines[i].split(" ")[0]))
+                        d3.select(this).classed("unfiltered", d3.select(this).classed("unfiltered") && !d3.select(this).classed(lines[i].split(" ")[0])) //update unfiltered to false if it is in one of the filtered classes, keep false if already set to false
                     }
                 }
 
