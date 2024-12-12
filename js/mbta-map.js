@@ -1,65 +1,74 @@
-var margin = {top: 50, right: 50, bottom: 70, left: 85};
-var width = 1600;
-var height = 1024;
-selectableElements = d3.select(null);
+// var margin = {top: 50, right: 50, bottom: 70, left: 85},
+// width = 500 - margin.left - margin.right,
+// height = 500 - margin.top - margin.bottom;
+// selectableElements = d3.select(null);
 
-// Select the container
+// // Select the container
+// var svg = d3.select("#mbta-map")
+//   .append("svg")
+//   .attr("width", width)
+//   .attr("height", height);
+
+// // Define the tube map
+// var map = d3
+//   .tubeMap()
+//   .width(width)
+//   .height(height)
+//   .margin({
+//     top: height ,
+//     right: width ,
+//     bottom: height ,
+//     left: width,
+//   });
+
+// // Load the data using d3.json with a callback
+// d3.json("./data/london-tube.json", function (error, data) {
+//   if (error) {
+//     console.error("Error loading data:", error);
+//     return;
+//   }
+//   console.log(data);
+
+//   // Bind the data to the container and call the tube map
+//   svg.datum(data).call(map);
+// });
 var container = d3.select("#mbta-map");
+var width = 1600;
+var height = 1600;
 
-// Define the tube map
 var map = d3
   .tubeMap()
-  .width(width*0.9)
-  .height(height*0.9)
-  .on('click',function(line){
-    show_line_average(line);
+  .width(width)
+  .height(height)
+  .margin({
+    top: 20,
+    right: 20,
+    bottom: 40,
+    left: 100,
+  })
+  .on("click", function (name) {
+    console.log(name);
   });
 
-
-// Check if the browser is safari
-function isSafari() {
-  return /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
-}
-
-// Load the data
-d3.json("data/london-tube.json", function (error, data) {
-  if (error) {
-    console.error("Error loading data. Full error details:", error);
-    return;
-  }
-
-  // Check data structure
-  console.log("Loaded data:", data);
-
-  // Bind the data and render the map
+d3.json("./data/london-tube.json", function (error, data) {
   container.datum(data).call(map);
 
   var svg = container.select("svg");
-  var g = svg.select("g"); // Select the group containing the map elements
 
-  // Set up zoom
-  var zoom = d3
-    .zoom()
-    .scaleExtent([0.5, 10])
-    .on("zoom", zoomed);
+  zoom = d3.zoom().scaleExtent([0.1, 6]).on("zoom", zoomed);
 
-  svg.call(zoom);
-
-  // Initial zoom and translate
-  var initialScale = 1;
+  var zoomContainer = svg.call(zoom);
+  var initialScale = 0.5;
   var initialTranslate = [(width * 0.9) / 2, (height * 0.9) / 2];
 
-  zoom.scaleTo(svg, initialScale);
+  zoom.scaleTo(zoomContainer, initialScale);
+  zoom.translateTo(
+    zoomContainer,
+    initialTranslate[0],
+    initialTranslate[1]
+  );
 
-  if (isSafari()) {
-    zoom.translateTo(svg, -100, 0);
-  } else {
-    zoom.translateTo(svg, initialTranslate[0], initialTranslate[1]);
-  }
-
-  // Handle zoom events
   function zoomed() {
-    g.attr("transform", d3.event.transform.toString());
+    svg.select("g").attr("transform", d3.event.transform.toString());
   }
-
 });
