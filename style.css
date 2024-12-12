@@ -7,8 +7,12 @@ body {
 
 	min-height: 100vh;
 	max-width: 100%;
-    overflow-x: hidden;
 	scroll-behavior: smooth;
+}
+
+#site-wrapper {
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 
 h1, h2, h3 {
@@ -69,7 +73,7 @@ img {
 .input-menus {
 	display: flex;
 	max-width: 1300px;
-	justify-content: space-between;
+	justify-content: space-evenly;
 	gap:20px;
 }
 
@@ -78,7 +82,9 @@ img {
 	text-align: center;
 }
 #legend {
+	max-width: 400px;
 	text-align: center;
+	margin-right: 80px;
 }
 
 
@@ -91,23 +97,28 @@ img {
 
 #main-interactions {
 	display: flex;
+	gap: 50px;
+	margin-top: 50px;
+	max-width: 1300px;
 }
 
 #vis-svg {
-	width: 700px;
-	height: 700px; /* Set height explicitly */
+	width: 600px;
+	height: 600px; /* Set height explicitly */
+	border: rgb(109, 46, 109) solid 2px;
+	border-radius: 10px;
   }
 
 #vis-svg svg {
-	width: 700px;
-	height: 700px; /* Set height explicitly */
 	background-color: #f9f9f9; 
 	border: 1px solid #ccc;
 }
 
 #mbta-map {
-	width: 700px;
-	height: 700px;
+	border: rgb(109, 46, 109) solid 2px;
+	border-radius: 10px;
+	width: 600px;
+	height: 600px;
 }
 
 

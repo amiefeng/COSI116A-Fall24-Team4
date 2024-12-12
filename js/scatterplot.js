@@ -1,7 +1,7 @@
 function scatterplot(){
     var margin = {top: 50, right: 50, bottom: 70, left: 85},
-    width = 500 - margin.left - margin.right,
-    height = 500 - margin.top - margin.bottom;
+    width = 600 - margin.left - margin.right,
+    height = 600 - margin.top - margin.bottom;
     selectableElements = d3.select(null);
 
     function chart(){
