@@ -89,17 +89,27 @@ img {
   margin-left:100px;
 }
 
+#main-interactions {
+	display: flex;
+}
+
 #vis-svg {
-	width: 100%;
-	height: 500px; /* Set height explicitly */
+	width: 700px;
+	height: 700px; /* Set height explicitly */
   }
 
-  #vis-svg svg {
-	width: 100%;
-	height: 500px; /* Set height explicitly */
+#vis-svg svg {
+	width: 700px;
+	height: 700px; /* Set height explicitly */
 	background-color: #f9f9f9; 
 	border: 1px solid #ccc;
 }
+
+#mbta-map {
+	width: 700px;
+	height: 700px;
+}
+
 
 .sketches {
 	display:flex;
