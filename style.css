@@ -372,5 +372,12 @@ c a::after{
 circle.selected {
 	fill: pink;
 	stroke: red;
+  }
+
+  circle.filtered {
 	opacity: 5;
+  }
+
+  circle.unfiltered {
+	opacity: 0;
   }
