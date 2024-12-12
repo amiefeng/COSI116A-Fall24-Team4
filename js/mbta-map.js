@@ -33,8 +33,8 @@
 //   svg.datum(data).call(map);
 // });
 var container = d3.select("#mbta-map");
-var width = 1600;
-var height = 1600;
+var width = 1000;
+var height = 1000;
 
 var map = d3
   .tubeMap()
