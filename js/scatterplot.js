@@ -157,7 +157,6 @@ function scatterplot(){
                     .duration(500)
                     .style("opacity", 0);
             })
-            .on('click', function(d){console.log("yomama")});
 
 
  
