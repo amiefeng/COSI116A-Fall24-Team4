@@ -17,6 +17,7 @@ const monthsToNumbers = {
 };
 
 function calendar(){
+    let dispatcher;
   function chart(){
   document.addEventListener('DOMContentLoaded', () => {
       const monthNames = [

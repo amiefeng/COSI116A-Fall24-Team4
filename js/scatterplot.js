@@ -74,10 +74,10 @@ function scatterplot(){
             .attr("cx", function(d) { return x(+d.reliability_quotient); }) 
             .attr("cy", function(d) { return y(+d.average_monthly_ridership); }) 
             .attr("r", 2) // Radius
-            .style("fill", function(d) { return color(d.route_or_line); }); 
+            .style("fill", function(d) { return color(d.route_or_line); })
+            .attr("class", d => String(d.route_or_line).split(" ")[0])
         
 
-            svg.call(brush);
             // Highlight points when brushed
         function brush(g) {
             const brush = d3.brush() // Create a 2D interactive brush
@@ -205,33 +205,54 @@ function scatterplot(){
 
         // Given selected data from another visualization 
     // select the relevant elements here (linking)
-    chart.updateSelection = function (monthString) {
-        if (!arguments.length) return;
-        console.log(monthString + ":D")
-        if(monthString === "CLEAR"){                               //if we get a CLEAR message, just clear everything
-            selectableElements.classed("selected", false);
-        } else{
-            let year_and_month = monthString.split("/");
+    chart.updateSelection = function (dispatchString) {
+        if(dispatchString[0] === "filter"){
+            lines = dispatchString[1]
+            selectableElements.each(function(d){
 
-            selectableElements.each(function(d){                                //for each selectable element
-                let isSelected = d3.select(this).classed("selected");           //whether element currently selected
-                if(year_and_month[0]=== "All Years"){                            //if all years
-                    if(year_and_month[1] === "All Months"){                             //and all months
-                        d3.select(this).classed("selected", true);                         //we want the element to be selected regardless of contents
-                    } else if(d.year_month.split("/")[1] === year_and_month[1]){       //if element matches month
-                        d3.select(this).classed("selected", !isSelected);                  //we want it toggled
-                    }
-                } else if(year_and_month[1] === "All Months"){                   //if all months
-                    if(d.year_month.split("/")[0] === year_and_month[0]){        //if we have a month match
-                        d3.select(this).classed("selected", !isSelected);        //toggle selection
-                    }
-                } else{                            
-                    if(d.year_month === monthString){                           //if we have a year/month match
-                        d3.select(this).classed("selected", !isSelected);       //toggle selection
+               if(lines[0] === 'All Lines'){
+                    d3.select(this).classed("unfiltered", false)
+                } else{
+                    d3.select(this).classed("unfiltered", true)
+                    for(i = 0; i < lines.length; i ++){
+                        console.log(d3.select(this))
+                        console.log(lines[i].split(" ")[0])
+                        console.log(d3.select(this).classed(lines[i].split(" ")[0]))
+                        d3.select(this).classed("unfiltered", d3.select(this).classed("unfiltered") && !d3.select(this).classed(lines[i].split(" ")[0]))
                     }
                 }
-            
+
             })
+        }
+        else{
+            if (!arguments.length) return;
+            console.log(dispatchString + ":D")
+            dispatchString = dispatchString[0]
+            if(dispatchString === "CLEAR"){                               //if we get a CLEAR message, just clear everything
+                selectableElements.classed("selected", false);
+            } else{
+                let year_and_month = dispatchString.split("/");
+
+                selectableElements.each(function(d){                                //for each selectable element
+                    let isSelected = d3.select(this).classed("selected");           //whether element currently selected
+                    if(year_and_month[0]=== "All Years"){                            //if all years
+                        if(year_and_month[1] === "All Months"){                             //and all months
+                            d3.select(this).classed("selected", true);                         //we want the element to be selected regardless of contents
+                        } else if(d.year_month.split("/")[1] === year_and_month[1]){       //if element matches month
+                            d3.select(this).classed("selected", !isSelected);                  //we want it toggled
+                        }
+                    } else if(year_and_month[1] === "All Months"){                   //if all months
+                        if(d.year_month.split("/")[0] === year_and_month[0]){        //if we have a month match
+                            d3.select(this).classed("selected", !isSelected);        //toggle selection
+                        }
+                    } else{                            
+                        if(d.year_month === dispatchString){                           //if we have a year/month match
+                            d3.select(this).classed("selected", !isSelected);       //toggle selection
+                        }
+                    }
+                
+                })
+            }
         }
 
       
