@@ -27,7 +27,6 @@
       "State":{
         "label":"State"
       }
-
     },
     "lines": [
       {
@@ -39,95 +38,65 @@
           {
             "coords": [0, 0],
             "name": "Oak Grove",
+            "marker": "interchange",
             "labelPos": "N"
           },
           {
-            "coords": [0, 1],
+            "coords": [0, -4],
             "name": "Malden Center",
-            "labelPos": "E"
+            "marker": "interchange",
+            "labelPos": "W"
           },
           {
-            "coords": [0, 2],
+            "coords": [0, -8],
             "name": "Wellington",
-            "labelPos" :"E"
+            "marker": "interchange",
+            "labelPos" :"W"
           },
           {
-            "coords": [0, 3],
+            "coords": [0, -16],
             "name":"Assembly",
-            "labelPos":"E"
+            "marker": "interchange",
+            "labelPos":"W"
           },
           {
-            "coords": [0, 4],
-            "name":"Sulivan Sq",
-            "labelPos":"E"
+            "coords": [0, -32],
+            "name":"Sullivan Square",
+            "marker": "interchange",
+            "labelPos":"W"
           },
           {
-            "coords": [0, 5],
+            "coords": [0, -40],
             "name":"Community College",
-            "labelPos":"E"
+            "marker": "interchange",
+            "labelPos":"W"
           },
           {
-            "coords": [0, 6]
-          },
-          {
-            "coords": [0, 7],
+            "coords": [0, -45],
             "name":"North Station",
-            "labelPos":"E"
+            "marker": "interchange",
+            "canonical": true,
+            "labelPos":"W"
           },
           {
-            "coords": [0, 8]
-          },
-          {
-            "coords": [0, 9],
+            "coords": [0, -48],
             "name":"Haymarket",
+            "marker": "interchange",
             "labelPos":"W"
           },
           {
-            "coords": [0, 10]
-          },
-          {
-            "coords": [0, 11],
+            "coords": [0, -58],
             "name":"State",
+            "marker": "interchange",
             "labelPos":"W"
           },
           {
-            "coords": [0, 12]
+            "coords": [0, -66]
           },
           {
-            "coords": [1, 13]
-          },
-          {
-            "coords": [2, 14]
-          },
-          {
-            "coords": [3, 15]
-          },         
-          {
-            "coords": [4, 16]
-          },
-          {
-            "coords": [5, 17]
-          },
-          {
-            "coords": [6, 18]
-          },          
-          {
-            "coords": [7, 19]
-          },
-          {
-            "coords": [8, 20]
-          },
-          {
-            "coords": [9, 21]
-          },
-          {
-            "coords": [10, 22]
-          },
-          {
-            "coords": [11, 23]
-          },
-          {
-            "coords": [12, 24]
+            "coords": [-2, -67],
+            "name":"Assemb"
+
           }
         ]
       }
