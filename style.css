@@ -399,3 +399,7 @@ circle.selected {
   circle.unfiltered {
 	opacity: 0;
   }
+
+  line.unfiltered{
+	opacity: 0;
+  }
