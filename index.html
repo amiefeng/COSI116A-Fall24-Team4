@@ -55,7 +55,7 @@
     
       <h1 id="viz">Visualization</h1>
     
-      <p><em>Include the interactive visualization as part of this page. Static example follows.</em></p>
+      <p><em>View our interactive visualizations and click around to explore!</em></p>
       
     </div>
     
@@ -64,7 +64,7 @@
       <!-- Change viewbox to whatever you want, e.g. "0 0 1000 6000" This determines your aspect ratio and coordinate system -->    
       <!-- Delete all the sample SVG code below after the viewbox to before the closing tag. Populate this part of the SVG with D3. -->
 
-      <h3>Calendar Selection</h3>
+      <h3 id="calendar-selection">Calendar Selection</h3>
 
       <div class = "input-menus">
 
@@ -105,88 +105,102 @@
         a <a href="http://www.ccs.neu.edu/home/cody/courses/shared/d3-flexible-transitions.mp4">link to the video</a> instead.</p>
       </video>
 
-      <h1 id = "viz_explanation">Visualization explanation</h1>
-      
-      <p><em>Final visualization screenshots (PNG images), design justifications, UI walk-through, and linked presentation slides.</em></p>
-
-      <h1>Data Analysis</h1>
-      <p><em>Summary of data, data types, and data preprocessing.</em></p>
-
-      <p>Our data source consists of a spreadsheet, of which the following fields are utilized:</p>
-      <ul>
-        <li><strong>year_month:</strong> reflects the year and month of the data entry</li>
-        <li><strong>route_or_line:</strong> reflects the line of the data entry</li>
-        <li><strong>average_monthly_ridership:</strong> reflects the average daily ridership over the given month for the line on that year</li>
-        <li><strong>expected_time:</strong> reflects the expected wait time</li>
-        <li><strong>actual_time:</strong> reflects the actual wait time (both expected and actual time are sums over the entire month)</li>
-      </ul>
-      
-      <p>The two variables whose relationship we are examining are average monthly ridership and reliability. We followed the MBTA's lead by considering reliability to be the quotient of the expected time and the actual time. This means that a perfectly reliable (100%) data entry would have an identical expected time and actual time (early trains don't appear to be particularly common in the MBTA system).</p>
-      
-      <p>Our data source for the expected/actual time was <a href="https://mbta-massdot.opendata.arcgis.com/datasets/MassDOT::mbta-bus-commuter-rail-rapid-transit-reliability/explore?filters=eyJyb3V0ZV9jYXRlZ29yeSI6WyJHcmVlbiBMaW5lIiwiQmx1ZSBMaW5lIiwiUmVkIExpbmUiLCJPcmFuZ2UgTGluZSJdfQ%3D%3D" target="_blank" rel="noopener">MBTA Bus, Commuter Rail, and Rapid Transit Reliability</a>.</p>
-      
-      <p>From this table, we extracted a date, route_category column, and 'otp_numerator' (expected time) / 'otp_denominator' (actual time).</p>
-      
-      <p>Our data source for ridership was <a href="https://mbta-massdot.opendata.arcgis.com/datasets/MassDOT::mbta-monthly-ridership-by-mode/explore?filters=eyJyb3V0ZV9vcl9saW5lIjpbIkdyZWVuIExpbmUiLCJPcmFuZ2UgTGluZSIsIlJlZCBMaW5lIiwiQmx1ZSBMaW5lIl19" target="_blank" rel="noopener">MBTA Monthly Ridership by Mode</a>.</p>
-      
-      <p>This contained a date, line, and average monthly ridership. The relevant columns of these two tables were then joined in Excel based on the data and route/line. The date was converted from a 'complete date' to a string containing only the year/month in order to better work with the data points in JavaScript.</p>
-      
-
-
-      <p><em>Expectation: Data sources match the problem statement and are appropriate. These descriptions should be very explicit so someone could read your page and properly reproduce your results.</em></p>
-
-      <h1>Task Analysis</h1>
-
-      <p><em>Summary of task table.</em></p>
-
-      <p>Our task definition for our project initially consisted of more concrete tasks that would naturally develop into the solution of our overarching goal. These tasks essentially aimed to determine the extent to which there was a relationship between reliability and ridership.</p>
-
-      <p>Two of our tasks involved identifying times during which there were higher and lower rates of reliability and ridership. Although this was initially defined in terms of time, over the course of the project, this evolved to include a spatial element as well, examining different lines in addition to different time periods. Identifying which spatial and temporal groupings had elevated levels of reliability and ridership, we reasoned, would allow us to investigate whether these two phenomena were related. This formed the basis for our third task, into which the first two tasks dovetail.</p>
-      
-      <p>Once we developed mechanisms to analyze reliability and ridership across different time periods and spatial groups, the next task was to determine the extent of overlap between high-reliability data points and high-ridership data points. Such an overlap would indicate a correlation between high reliability and high ridership, with significant implications.</p>
-      
-      <p>Our final and most abstract task was to determine whether there was a relationship between train reliability and train ridership based on the visualizations we created.</p>
-      
-      <p><em>Expectation: Clearly describes domain tasks, processes, goals and abstract tasks for domain problems.</em></p>
-
-      <p><em>Expectation: Clearly describes domain tasks, processes, goals and abstract tasks for domain problems.</em></p>
-
-      <p><b>Here is our original task table after conducting user interviews: </b></p>
-      <img src="images/task_table.png">
-      <h1 id = "design">Design Process</h1>
-      
-      <p><em>Sketches and design choices to justify final visualization.</em></p>
-      <div class = "sketches">
-        <img src="images/sketches.png">
-        <img src="images/promise_mbtamap.png">
-        <img src="images/promise_scatterplot.png">
-        <img src="images/gabe_plot_and_heatmap.png">
+      <div class="section-cards">
+          <h1 id = "viz_explanation">Visualization explanation</h1>
+        
+        <p><em>Final visualization screenshots (PNG images), design justifications, UI walk-through, and linked presentation slides.</em></p>
       </div>
 
-      <p><em>Expectation: Evidence of iterative improvement.
-      Logical discussion of design choices grounded in theory from course.
-      Discusses feedback from usability testing.</em></p>
+      <div class="section-cards">
+        <h1>Data Analysis</h1>
+        <p><em>Summary of data, data types, and data preprocessing.</em></p>
+
+        <p>Our data source consists of a spreadsheet, of which the following fields are utilized:</p>
+        <ul>
+          <li><strong>year_month:</strong> reflects the year and month of the data entry</li>
+          <li><strong>route_or_line:</strong> reflects the line of the data entry</li>
+          <li><strong>average_monthly_ridership:</strong> reflects the average daily ridership over the given month for the line on that year</li>
+          <li><strong>expected_time:</strong> reflects the expected wait time</li>
+          <li><strong>actual_time:</strong> reflects the actual wait time (both expected and actual time are sums over the entire month)</li>
+        </ul>
+        
+        <p>The two variables whose relationship we are examining are average monthly ridership and reliability. We followed the MBTA's lead by considering reliability to be the quotient of the expected time and the actual time. This means that a perfectly reliable (100%) data entry would have an identical expected time and actual time (early trains don't appear to be particularly common in the MBTA system).</p>
+        
+        <p>Our data source for the expected/actual time was <a href="https://mbta-massdot.opendata.arcgis.com/datasets/MassDOT::mbta-bus-commuter-rail-rapid-transit-reliability/explore?filters=eyJyb3V0ZV9jYXRlZ29yeSI6WyJHcmVlbiBMaW5lIiwiQmx1ZSBMaW5lIiwiUmVkIExpbmUiLCJPcmFuZ2UgTGluZSJdfQ%3D%3D" target="_blank" rel="noopener">MBTA Bus, Commuter Rail, and Rapid Transit Reliability</a>.</p>
+        
+        <p>From this table, we extracted a date, route_category column, and 'otp_numerator' (expected time) / 'otp_denominator' (actual time).</p>
+        
+        <p>Our data source for ridership was <a href="https://mbta-massdot.opendata.arcgis.com/datasets/MassDOT::mbta-monthly-ridership-by-mode/explore?filters=eyJyb3V0ZV9vcl9saW5lIjpbIkdyZWVuIExpbmUiLCJPcmFuZ2UgTGluZSIsIlJlZCBMaW5lIiwiQmx1ZSBMaW5lIl19" target="_blank" rel="noopener">MBTA Monthly Ridership by Mode</a>.</p>
+        
+        <p>This contained a date, line, and average monthly ridership. The relevant columns of these two tables were then joined in Excel based on the data and route/line. The date was converted from a 'complete date' to a string containing only the year/month in order to better work with the data points in JavaScript.</p>
+        
 
 
-      <h1 id = "conclusion">Conclusion</h1>
+        <p><em>Expectation: Data sources match the problem statement and are appropriate. These descriptions should be very explicit so someone could read your page and properly reproduce your results.</em></p>
+      </div>
 
-    
-      <p><em>Short summary of work completed and areas for improvement/future-work.</em></p>
+      <div class="section-cards">
+        <h1>Task Analysis</h1>
+
+        <p><em>Summary of task table.</em></p>
+
+        <p>Our task definition for our project initially consisted of more concrete tasks that would naturally develop into the solution of our overarching goal. These tasks essentially aimed to determine the extent to which there was a relationship between reliability and ridership.</p>
+
+        <p>Two of our tasks involved identifying times during which there were higher and lower rates of reliability and ridership. Although this was initially defined in terms of time, over the course of the project, this evolved to include a spatial element as well, examining different lines in addition to different time periods. Identifying which spatial and temporal groupings had elevated levels of reliability and ridership, we reasoned, would allow us to investigate whether these two phenomena were related. This formed the basis for our third task, into which the first two tasks dovetail.</p>
+        
+        <p>Once we developed mechanisms to analyze reliability and ridership across different time periods and spatial groups, the next task was to determine the extent of overlap between high-reliability data points and high-ridership data points. Such an overlap would indicate a correlation between high reliability and high ridership, with significant implications.</p>
+        
+        <p>Our final and most abstract task was to determine whether there was a relationship between train reliability and train ridership based on the visualizations we created.</p>
+        
+        <p><em>Expectation: Clearly describes domain tasks, processes, goals and abstract tasks for domain problems.</em></p>
+
+        <p><em>Expectation: Clearly describes domain tasks, processes, goals and abstract tasks for domain problems.</em></p>
+
+        <p><b>Here is our original task table after conducting user interviews: </b></p>
+        
+        <img src="images/task_table.png" id="task-table">
+
+      </div>
+
+      <div class="section-cards">
+        <h1 id = "design">Design Process</h1>
+        
+        <p><em>Sketches and design choices to justify final visualization.</em></p>
+        <div class = "sketches">
+          <img src="images/sketches.png">
+          <img src="images/promise_mbtamap.png">
+          <img src="images/promise_scatterplot.png">
+          <img src="images/gabe_plot_and_heatmap.png">
+        </div>
+
+        <p><em>Expectation: Evidence of iterative improvement.
+        Logical discussion of design choices grounded in theory from course.
+        Discusses feedback from usability testing.</em></p>
+      </div>
+
+      <div class="section-cards">
+        <h1 id = "conclusion">Conclusion</h1>
+
       
-      <p><em>Expectation: Meaningfully wraps up project and has good future directions.</em></p>
+        <p><em>Short summary of work completed and areas for improvement/future-work.</em></p>
+        
+        <p><em>Expectation: Meaningfully wraps up project and has good future directions.</em></p>
 
-      
-      <h1>Acknowledgments</h1>
+      </div>
 
-      <p><em>List here where any code, packages/libraries, text, images, designs, etc. that you leverage come from.</em></p>
-      <ul>
-        <li>Canva</li>
-        <li>Figma</li>
-        <li><a href="https://benclinkinbeard.com/d3tips/building-a-calendar-with-d3/?utm_content=bufferc1664&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer">Building a calendar with D3</a> Tutorial</li>
-        <li>Credits to <a href="http://www.d3noob.org"> d3noob</a> for clarifying d3 concepts and complexities </li>
-        <li> The brushing and linking was heavily dependent on the work done by Gabriel Oscar in HW4</li>
-        <li> Gabriel Oscar used ChatGPT to assist with errors for certain portions of the code</li>
-      </ul>
+      <div class="section-cards">
+        <h1>Acknowledgments</h1>
+
+        <p><em>List here where any code, packages/libraries, text, images, designs, etc. that you leverage come from.</em></p>
+        <ul>
+          <li>Canva</li>
+          <li>Figma</li>
+          <li><a href="https://benclinkinbeard.com/d3tips/building-a-calendar-with-d3/?utm_content=bufferc1664&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer">Building a calendar with D3</a> Tutorial</li>
+          <li>Credits to <a href="http://www.d3noob.org"> d3noob</a> for clarifying d3 concepts and complexities </li>
+          <li> The brushing and linking was heavily dependent on the work done by Gabriel Oscar in HW4</li>
+          <li> Gabriel Oscar used ChatGPT to assist with errors for certain portions of the code</li>
+        </ul>
+      </div>
       
     </div>
 
@@ -198,10 +212,10 @@
     <script src="lib/d3.v4/d3.v4.js"></script>
     <script src="lib/d3-tube-map/d3-tube-map.js"></script>
     <script src="js/legend.js"></script>
+    <script src="js/cal.js"></script>
+    <script src="js/filter.js"></script>
     <script src="js/scatterplot.js"></script>
     <script src="js/mbta-map.js"></script>
-    <script src="js/filter.js"></script>
-    <script src="js/cal.js"></script>
     <script src="js/visualization.js"></script>
 
   </div>
