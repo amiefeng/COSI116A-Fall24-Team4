@@ -1,6 +1,21 @@
 var container = d3.select("#mbta-map");
 var width = 1000;
 var height = 1000;
+const LinesToNumbers = {
+  "O": 1,
+  "February": 2,
+  "March": 3,
+  "April": 4,
+  "May": 5,
+  "June": 6,
+  "July": 7,
+  "August": "08",
+  "September": "09",
+  "October": "10",
+  "November": "11",
+  "December": "12",
+  "All Months": "All Months"
+};
 
 var map = d3
   .tubeMap()
