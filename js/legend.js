@@ -13,7 +13,7 @@ var svg = d3.select("#my_legend")
 
 //appending 'Legend' text
 svg.append("text")
-  .attr("x", 70)
+  .attr("x", 110)
   .attr("y", 40)
   .attr("font-size", 20)
   .attr("font-weight", "bold")
