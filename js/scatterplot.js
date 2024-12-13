@@ -14,11 +14,13 @@ function scatterplot(){
         .style("border-width", "1px")
         .style("border-radius", "2.5px")
         .style("padding", "5px");
+    var color = d3.scaleOrdinal()
+    .domain(["Red Line", "Blue Line", "Green Line", "Orange Line"])
+    .range([d3.rgb(255, 0, 0), d3.rgb(0, 0, 255), d3.rgb(0,255,0), d3.rgb(255, 128, 0)]);
 
-    
 
     function chart(){
-        
+    // define colors corresponding to lines
 
     //define SVG
     var svg = d3.select("#vis-svg")
@@ -33,7 +35,6 @@ function scatterplot(){
     d3.csv("../data/rapid_transit_ridership_and_reliability_m_y_l.csv", function(error, data) {
 
 
-        console.log(data);
 
         data.forEach(d => {
             d.reliability_quotient =  +d.expected_time / +d.actual_time * 100; // create reliability quotient by dividing expected time by actual time and multplying by 100
@@ -75,10 +76,7 @@ function scatterplot(){
         svg.append("g")
             .call(d3.axisLeft(y)); 
 
-        // define colors corresponding to lines
-        var color = d3.scaleOrdinal()
-            .domain(["Red Line", "Blue Line", "Green Line", "Orange Line"])
-            .range(["#ff0000", "#0000ff", "#00ff00", "#ff8000"]);
+
                    // Highlight points when brushed
                    function brush(g) {
                     const brush = d3.brush() // Create a 2D interactive brush
@@ -102,7 +100,6 @@ function scatterplot(){
                         [x0, y0],
                         [x1, y1]
                     ] = d3.event.selection;
-                    console.log(x0)
             
                     // If within the bounds of the brush, select it
                     selectableElements.classed("selected", d =>
@@ -112,7 +109,6 @@ function scatterplot(){
                     // Get the name of our dispatcher's event
                     let dispatchString = "selectionUpdated";
             
-                    console.log(dispatchString);
                     // Let other charts know about our selection
                     scatPlotDispatcher.call(dispatchString, this, svg.selectAll(".selected").data());
                     }
@@ -173,21 +169,18 @@ function scatterplot(){
             const sum_x_y = d3.sum(data_subset, d => d.reliability_quotient*d.average_monthly_ridership);
             const sum_x_2 = d3.sum(data_subset, d => d.reliability_quotient*d.reliability_quotient);
 
-            console.log(n_elements, sum_x, sum_y, sum_x_y, sum_x_2)
 
             const slope = (n_elements * sum_x_y - sum_x * sum_y) / (n_elements * sum_x_2 - sum_x * sum_x);
             const intercept = (sum_y - slope * sum_x) / n_elements;
-            console.log(slope, intercept)
 
             return {slope, intercept};
         }
-        console.log("Invalid Rows:", data.filter(d => d.route_or_line == null));
 
 
         //groups data by line for linear regression of each group
         const groupedData = d3.nest()
         .key(d => d.route_or_line)
-        .entries(data);        console.log("Grouped Data:", groupedData);
+        .entries(data);        
 
                 
         groupedData.forEach(group => {
@@ -199,7 +192,6 @@ function scatterplot(){
             const x2 = d3.max(values, d => d.reliability_quotient);
             const y1 = slope * x1 + intercept;
             const y2 = slope * x2 + intercept;
-            console.log({x1, x2, y1, y2});
         
 
             svg.append("line")
@@ -211,16 +203,11 @@ function scatterplot(){
                 .style("stroke-width", 2);
         });
 
-        console.log("data", data)
         var {slope, intercept} = linearRegression(data);
         var x1_total = d3.min(data, d => d.reliability_quotient);
             var x2_total = d3.max(data, d => d.reliability_quotient);
             var y1_total = slope * x1_total + intercept;
             var y2_total = slope * x2_total + intercept;
-            console.log("total_slope:", slope)
-            console.log("total_intercept:", intercept)
-            console.log("y1_total, y2_total:", y1_total, y2_total);
-            console.log("y scale domain:", y.domain());
             svg.append("line")
                 .attr("x1", x(x1_total))
                 .attr("y1", y(y1_total))
@@ -243,16 +230,26 @@ function scatterplot(){
     chart.updateSelection = function (dispatchString) {
         if(dispatchString[0] === "filter"){
             lines = dispatchString[1]
+            d3.selectAll("line").each(function(){
+                if(lines[0] === 'All Lines'){
+                    d3.select(this).classed("unfiltered", false) //set to unfiltered if we want everything filteredgit
+                } else{
+                    console.log(">:(")
+                    console.log(d3.select(this))
+                    console.log(lines.map(line => color(line)))
+                    console.log(lines.map(line => color(line)).includes(d3.rgb(d3.select(this).style("stroke"))))
+                    console.log(d3.rgb(d3.select(this).style("stroke")))
+                    let strokeColor = d3.rgb(d3.select(this).style("stroke"));
+                    let colorList = lines.map(line => color(line));
+                    d3.select(this).classed("unfiltered", !colorList.map(c => c.toString()).includes(strokeColor.toString()));
+                }
+            })
             selectableElements.each(function(d){
-
                if(lines[0] === 'All Lines'){
                     d3.select(this).classed("unfiltered", false) //set to unfiltered if we want everything filteredgit
                 } else{
                     d3.select(this).classed("unfiltered", true)
                     for(i = 0; i < lines.length; i ++){
-                        console.log(d3.select(this))
-                        console.log(lines[i].split(" ")[0])
-                        console.log(d3.select(this).classed(lines[i].split(" ")[0]))
                         d3.select(this).classed("unfiltered", d3.select(this).classed("unfiltered") && !d3.select(this).classed(lines[i].split(" ")[0])) //update unfiltered to false if it is in one of the filtered classes, keep false if already set to false
                     }
                 }
@@ -261,7 +258,6 @@ function scatterplot(){
         }
         else{
             if (!arguments.length) return;
-            console.log(dispatchString + ":D")
             dispatchString = dispatchString[0]
             if(dispatchString === "CLEAR"){                               //if we get a CLEAR message, just clear everything
                 selectableElements.classed("selected", false);
