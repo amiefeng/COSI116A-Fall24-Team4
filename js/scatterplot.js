@@ -3,8 +3,23 @@ function scatterplot(){
     width = 600 - margin.left - margin.right,
     height = 600 - margin.top - margin.bottom;
     selectableElements = d3.select(null);
+    let ourBrush = null
+
+    var tooltip = d3.select("body").append("div")
+        .attr("class", "tooltip")
+        .style("opacity", 0)
+        .style("position", "absolute")
+        .style("background-color", "white")
+        .style("border", "solid")
+        .style("border-width", "1px")
+        .style("border-radius", "2.5px")
+        .style("padding", "5px");
+
+    
 
     function chart(){
+        
+
     //define SVG
     var svg = d3.select("#vis-svg")
         .append("svg")
@@ -64,7 +79,57 @@ function scatterplot(){
         var color = d3.scaleOrdinal()
             .domain(["Red Line", "Blue Line", "Green Line", "Orange Line"])
             .range(["#ff0000", "#0000ff", "#00ff00", "#ff8000"]);
-
+                   // Highlight points when brushed
+                   function brush(g) {
+                    const brush = d3.brush() // Create a 2D interactive brush
+                    
+                    .on("start brush", highlight) // When the brush starts/continues do...
+                    .on("end", brushEnd) // When the brush ends do...
+                    .extent([
+                        [-margin.left, -margin.bottom],
+                        [width + margin.right, height + margin.top]
+                    ]);
+                    
+                    ourBrush = brush;
+            
+                    g.call(brush); // Adds the brush to this element
+            
+                    // Highlight the selected circles
+                    function highlight() {
+        
+                    if (d3.event.selection === null) return;
+                    const [
+                        [x0, y0],
+                        [x1, y1]
+                    ] = d3.event.selection;
+                    console.log(x0)
+            
+                    // If within the bounds of the brush, select it
+                    selectableElements.classed("selected", d =>
+                        x0 <= x(d.reliability_quotient) && x(d.reliability_quotient) <= x1 && y0 <= y(d.average_monthly_ridership) && y(d.average_monthly_ridership) <= y1
+                    )
+            
+                    // Get the name of our dispatcher's event
+                    let dispatchString = "selectionUpdated";
+            
+                    console.log(dispatchString);
+                    // Let other charts know about our selection
+                    scatPlotDispatcher.call(dispatchString, this, svg.selectAll(".selected").data());
+                    }
+                    
+                    function brushEnd(){
+                    // We don't want infinite recursion
+                    if(d3.event.sourceEvent.type!="end"){
+                        d3.select(this).call(brush.move, null);
+                        selectableElements.classed("selected", false);
+        
+                    }         
+                    }
+                }
+        
+                svg.append("g")
+                    .attr("class", "brush")
+                    .call(brush);
         // populate
         selectableElements = svg.append("g")
             .selectAll("circle")
@@ -74,57 +139,27 @@ function scatterplot(){
             .attr("cx", function(d) { return x(+d.reliability_quotient); }) 
             .attr("cy", function(d) { return y(+d.average_monthly_ridership); }) 
             .attr("r", 2) // Radius
-            .style("fill", function(d) { return color(d.route_or_line); }); 
-        
+            .style("fill", function(d) { return color(d.route_or_line); })
+            .attr("class", d => String(d.route_or_line).split(" ")[0])
+            .on("mouseover", function(d) {
+                tooltip.transition()
+                    .duration(200)
+                    .style("opacity",8);
+                tooltip.html(`Line: ${d.route_or_line}<br/>` + 
+                            `Reliability: ${(parseFloat(d.reliability_quotient).toFixed(2))}<br/>` +
+                            `Ridership: ${d.average_monthly_ridership}`)
+                    .style("left", (d3.event.pageX + 5) + "px")
+                    .style("top", (d3.event.pageY - 28) + "px");
+            })
+            // Add mouseout event
+            .on("mouseout", function(d) {
+                tooltip.transition()
+                    .duration(500)
+                    .style("opacity", 0);
+            })
 
-            svg.call(brush);
-            // Highlight points when brushed
-        function brush(g) {
-            const brush = d3.brush() // Create a 2D interactive brush
-            
-            .on("start brush", highlight) // When the brush starts/continues do...
-            .on("end", brushEnd) // When the brush ends do...
-            .extent([
-                [-margin.left, -margin.bottom],
-                [width + margin.right, height + margin.top]
-            ]);
-            
-            ourBrush = brush;
-    
-            g.call(brush); // Adds the brush to this element
-    
-            // Highlight the selected circles
-            function highlight() {
 
-            if (d3.event.selection === null) return;
-            const [
-                [x0, y0],
-                [x1, y1]
-            ] = d3.event.selection;
-            console.log(x0)
-    
-            // If within the bounds of the brush, select it
-            selectableElements.classed("selected", d =>
-                x0 <= x(d.reliability_quotient) && x(d.reliability_quotient) <= x1 && y0 <= y(d.average_monthly_ridership) && y(d.average_monthly_ridership) <= y1
-            )
-    
-            // Get the name of our dispatcher's event
-            let dispatchString = "selectionUpdated";
-    
-            console.log(dispatchString);
-            // Let other charts know about our selection
-            scatPlotDispatcher.call(dispatchString, this, svg.selectAll(".selected").data());
-            }
-            
-            function brushEnd(){
-            // We don't want infinite recursion
-            if(d3.event.sourceEvent.type!="end"){
-                d3.select(this).call(brush.move, null);
-                selectableElements.classed("selected", false);
-
-            }         
-            }
-        }
+ 
         
         /**
          * 
@@ -205,33 +240,54 @@ function scatterplot(){
 
         // Given selected data from another visualization 
     // select the relevant elements here (linking)
-    chart.updateSelection = function (monthString) {
-        if (!arguments.length) return;
-        console.log(monthString + ":D")
-        if(monthString === "CLEAR"){                               //if we get a CLEAR message, just clear everything
-            selectableElements.classed("selected", false);
-        } else{
-            let year_and_month = monthString.split("/");
+    chart.updateSelection = function (dispatchString) {
+        if(dispatchString[0] === "filter"){
+            lines = dispatchString[1]
+            selectableElements.each(function(d){
 
-            selectableElements.each(function(d){                                //for each selectable element
-                let isSelected = d3.select(this).classed("selected");           //whether element currently selected
-                if(year_and_month[0]=== "All Years"){                            //if all years
-                    if(year_and_month[1] === "All Months"){                             //and all months
-                        d3.select(this).classed("selected", true);                         //we want the element to be selected regardless of contents
-                    } else if(d.year_month.split("/")[1] === year_and_month[1]){       //if element matches month
-                        d3.select(this).classed("selected", !isSelected);                  //we want it toggled
-                    }
-                } else if(year_and_month[1] === "All Months"){                   //if all months
-                    if(d.year_month.split("/")[0] === year_and_month[0]){        //if we have a month match
-                        d3.select(this).classed("selected", !isSelected);        //toggle selection
-                    }
-                } else{                            
-                    if(d.year_month === monthString){                           //if we have a year/month match
-                        d3.select(this).classed("selected", !isSelected);       //toggle selection
+               if(lines[0] === 'All Lines'){
+                    d3.select(this).classed("unfiltered", false) //set to unfiltered if we want everything filteredgit
+                } else{
+                    d3.select(this).classed("unfiltered", true)
+                    for(i = 0; i < lines.length; i ++){
+                        console.log(d3.select(this))
+                        console.log(lines[i].split(" ")[0])
+                        console.log(d3.select(this).classed(lines[i].split(" ")[0]))
+                        d3.select(this).classed("unfiltered", d3.select(this).classed("unfiltered") && !d3.select(this).classed(lines[i].split(" ")[0])) //update unfiltered to false if it is in one of the filtered classes, keep false if already set to false
                     }
                 }
-            
+
             })
+        }
+        else{
+            if (!arguments.length) return;
+            console.log(dispatchString + ":D")
+            dispatchString = dispatchString[0]
+            if(dispatchString === "CLEAR"){                               //if we get a CLEAR message, just clear everything
+                selectableElements.classed("selected", false);
+            } else{
+                let year_and_month = dispatchString.split("/");
+
+                selectableElements.each(function(d){                                //for each selectable element
+                    let isSelected = d3.select(this).classed("selected");           //whether element currently selected
+                    if(year_and_month[0]=== "All Years"){                            //if all years
+                        if(year_and_month[1] === "All Months"){                             //and all months
+                            d3.select(this).classed("selected", true);                         //we want the element to be selected regardless of contents
+                        } else if(d.year_month.split("/")[1] === year_and_month[1]){       //if element matches month
+                            d3.select(this).classed("selected", !isSelected);                  //we want it toggled
+                        }
+                    } else if(year_and_month[1] === "All Months"){                   //if all months
+                        if(d.year_month.split("/")[0] === year_and_month[0]){        //if we have a month match
+                            d3.select(this).classed("selected", !isSelected);        //toggle selection
+                        }
+                    } else{                            
+                        if(d.year_month === dispatchString){                           //if we have a year/month match
+                            d3.select(this).classed("selected", !isSelected);       //toggle selection
+                        }
+                    }
+                
+                })
+            }
         }
 
       
