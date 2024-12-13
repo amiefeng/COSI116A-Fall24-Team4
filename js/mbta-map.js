@@ -21,6 +21,21 @@ d3.json("./data/testingline.json", function (error, data) {
 
   var svg = container.select("svg");
 
+  svg.selectAll(".line")
+    .on("click", function (event, d) {
+      d3.selectAll(".line").classed("selected", false); // Deselect all lines
+      d3.select(this).classed("selected", true); // Select the clicked line
+
+      // Optional: Show line details in a sidebar or log them
+      console.log("Selected Line:", d);
+    })
+    .on("mouseover", function () {
+      d3.select(this).classed("hover", true);
+    })
+    .on("mouseout", function () {
+      d3.select(this).classed("hover", false);
+    });
+
   zoom = d3.zoom().scaleExtent([0.1, 6]).on("zoom", zoomed);
 
   var zoomContainer = svg.call(zoom);

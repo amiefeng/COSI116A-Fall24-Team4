@@ -1,104 +1,255 @@
 {
-    "stations": {
-      "Oak Grove":{
-        "label": "Oak Grove"
-      },
-      "Malden Center":{
-        "label": "Malden Center"
-      },
-      "Wellington":{
-        "label": "Wellington"
-      },      
-      "Assembly":{
-        "label": "Assembly"
-      },
-      "Sullivan Square":{
-        "label": "Sullivan Square"
-      },     
-      "Community College":{
-        "label": "Community College"
-      },
-      "North Station":{
-        "label": "North Station"
-      },
-      "Haymarket":{
-        "label":"Haymarket"
-      },
-      "State":{
-        "label":"State"
-      }
+  "stations": {
+    "Oak Grove": { "label": "Oak Grove" },
+    "Malden Center": { "label": "Malden Center" },
+    "Wellington": { "label": "Wellington" },
+    "Assembly": { "label": "Assembly" },
+    "Sullivan Square": { "label": "Sullivan Square" },
+    "Community College": { "label": "Community College" },
+    "North Station": { "label": "North Station" },
+    "Haymarket": { "label": "Haymarket" },
+    "State": { "label": "State" },
+    "Downtown Crossing": { "label": "Downtown Crossing" },
+    "Chinatown": { "label": "Chinatown" },
+    "Tufts Medical Center": { "label": "Tufts Medical Center" },
+    "Back Bay": { "label": "Back Bay" },
+    "Mass. Ave": { "label": "Mass. Ave" },
+    "Ruggles": { "label": "Ruggles" },
+    "Roxbury Crossing": { "label": "Roxbury Crossing" },
+    "Jackson Square": { "label": "Jackson Square" },
+    "Stony Brook": { "label": "Stony Brook" },
+    "Green Street": { "label": "Green Street" },
+    "Forest Hills": { "label": "Forest Hills" },
+    "Alewife": { "label": "Alewife" },
+    "Davis": { "label": "Davis" },
+    "Porter": { "label": "Porter" },
+    "Harvard": { "label": "Harvard" },
+    "Central": { "label": "Central" },
+    "Kendall/MIT": { "label": "Kendall/MIT" },
+    "Charles/MGH": { "label": "Charles/MGH" },
+    "Park Street": { "label": "Park Street" },
+    "South Station": { "label": "South Station" },
+    "Broadway": { "label": "Broadway" },
+    "Andrew": { "label": "Andrew" },
+    "JFK/UMass": { "label": "JFK/UMass" },
+    "North Quincy": { "label": "North Quincy" },
+    "Wollaston": { "label": "Wollaston" },
+    "Quincy Center": { "label": "Quincy Center" },
+    "Quincy Adams": { "label": "Quincy Adams" },
+    "Braintree": { "label": "Braintree" },
+    "Wonderland": { "label": "Wonderland" },
+    "Revere Beach": { "label": "Revere Beach" },
+    "Beachmont": { "label": "Beachmont" },
+    "Suffolk Downs": { "label": "Suffolk Downs" },
+    "Orient Heights": { "label": "Orient Heights" },
+    "Wood Island": { "label": "Wood Island" },
+    "Airport": { "label": "Airport" },
+    "Maverick": { "label": "Maverick" },
+    "Aquarium": { "label": "Aquarium" },
+    "Government Center": { "label": "Government Center" },
+    "Bowdoin": { "label": "Bowdoin" },
+    "Boylston": { "label": "Boylston" },
+    "Arlington": { "label": "Arlington" },
+    "Copley": { "label": "Copley" },
+    "Kenmore": { "label": "Kenmore" },
+    "Boston College": { "label": "Boston College" },
+    "Cleveland Circle": { "label": "Cleveland Circle" },
+    "Riverside": { "label": "Riverside" },
+    "Heath Street": { "label": "Heath Street" },
+    "Lechmere": {
+      "label": "Lechmere" },
+    "Science Park": {
+      "label": "Science Park"
     },
-    "lines": [
-      {
-        "name": "Orange Line",
-        "label": "Orange Line",
-        "color": "#ED8B00",
-        "shiftCoords": [0, 0],
-        "nodes": [
-          {
-            "coords": [0, 0],
-            "name": "Oak Grove",
-            "marker": "interchange",
-            "labelPos": "N"
-          },
-          {
-            "coords": [0, -4],
-            "name": "Malden Center",
-            "marker": "interchange",
-            "labelPos": "W"
-          },
-          {
-            "coords": [0, -8],
-            "name": "Wellington",
-            "marker": "interchange",
-            "labelPos" :"W"
-          },
-          {
-            "coords": [0, -16],
-            "name":"Assembly",
-            "marker": "interchange",
-            "labelPos":"W"
-          },
-          {
-            "coords": [0, -32],
-            "name":"Sullivan Square",
-            "marker": "interchange",
-            "labelPos":"W"
-          },
-          {
-            "coords": [0, -40],
-            "name":"Community College",
-            "marker": "interchange",
-            "labelPos":"W"
-          },
-          {
-            "coords": [0, -45],
-            "name":"North Station",
-            "marker": "interchange",
-            "canonical": true,
-            "labelPos":"W"
-          },
-          {
-            "coords": [0, -48],
-            "name":"Haymarket",
-            "marker": "interchange",
-            "labelPos":"W"
-          },
-          {
-            "coords": [0, -58],
-            "name":"State",
-            "marker": "interchange",
-            "labelPos":"W"
-          },
-          {
-            "coords": [0, -66]
-          },
-          {
-            "coords": [-2, -67],
-            "name":"Assemb"
+    "Hynes Convention Center": {
+      "label": "Hynes Convention Center"
+    },
+    "Fenway": {
+      "label": "Fenway"
+    },
+    "Longwood": {
+      "label": "Longwood"
+    },
+    "Brookline Village": {
+      "label": "Brookline Village"
+    }
+  },
+  "lines": [
+    {
+      "name": "Orange Line",
+      "label": "Orange Line",
+      "color": "#ED8B00",
+      "shiftCoords": [0, 0],
+      "nodes": [
+        { "coords": [35,7], "name": "Oak Grove", "canonical": true, "labelPos": "N", "marker": "interchange" },
+        { "coords": [35, 2], "name": "Malden Center", "labelPos": "W", "marker": "interchange" },
+        { "coords": [35, -2], "name": "Wellington", "labelPos": "W", "marker": "interchange" },
+        { "coords": [35, -6], "name": "Assembly", "labelPos": "W", "marker": "interchange" },
+        { "coords": [35, -10], "name": "Sullivan Square", "labelPos": "W", "marker": "interchange" },
+        { "coords": [35, -14], "name": "Community College", "labelPos": "W", "marker": "interchange" },
+        { "coords": [35, -16], "name": "North Station", "labelPos": "W", "marker": "interchange" },
+        { "coords": [35, -18], "name": "Haymarket", "labelPos": "W", "marker": "interchange" },
+        { "coords": [35, -21], "name": "State", "labelPos": "W", "marker": "interchange" },
+        { "coords": [35,-22]},
+        { "coords": [34,-24]},
+        { "coords": [33, -25], "name": "Downtown Crossing", "labelPos": "W", "marker": "interchange" },
+        { "coords": [29, -29], "name": "Chinatown", "labelPos": "W", "marker": "interchange" },
+        { "coords": [25, -33], "name": "Tufts Medical Center", "labelPos": "W", "marker": "interchange" },
+        { "coords": [21, -37], "name": "Back Bay", "labelPos": "W", "marker": "interchange" },
+        { "coords": [17, -41], "name": "Mass. Ave", "labelPos": "W", "marker": "interchange" },
+        { "coords": [13, -45], "name": "Ruggles", "labelPos": "W", "marker": "interchange" },
+        { "coords": [9, -49], "name": "Roxbury Crossing", "labelPos": "W", "marker": "interchange" },
+        { "coords": [5, -53], "name": "Jackson Square", "labelPos": "W", "marker": "interchange" },
+        { "coords": [1, -57], "name": "Stony Brook", "labelPos": "W", "marker": "interchange" },
+        { "coords": [-3, -61], "name": "Green Street", "labelPos": "W", "marker": "interchange" },
+        { "coords": [-7, -65], "name": "Forest Hills","canonical": true, "labelPos": "W", "marker": "interchange" }
+      ]
+    },
+    {
+      "name": "Red Line",
+      "label": "Red Line",
+      "color": "#DA291C",
+      "shiftCoords": [0, 0],
+      "nodes": [
+        { "coords": [1, 7], "name": "Alewife", "canonical": true, "labelPos": "N", "marker": "interchange" },
+        { "coords": [5, 3], "name": "Davis", "labelPos": "W", "marker": "interchange" },
+        { "coords": [9, -1], "name": "Porter", "labelPos": "W", "marker": "interchange" },
+        { "coords": [13, -5], "name": "Harvard", "labelPos": "W", "marker": "interchange" },
+        { "coords": [17, -9], "name": "Central", "labelPos": "W", "marker": "interchange" },
+        { "coords": [21, -13], "name": "Kendall/MIT", "labelPos": "W", "marker": "interchange" },
+        { "coords": [25, -17], "name": "Charles/MGH", "labelPos": "W", "marker": "interchange" },
+        { "coords": [29, -21], "name": "Park Street", "labelPos": "W", "marker": "interchange" },
+        { "coords": [33, -25], "name": "Downtown Crossing", "labelPos": "W", "marker": "interchange" },
+        { "coords": [37, -29], "name": "South Station", "labelPos": "W", "marker": "interchange" },
+        { "coords": [39, -31]},
+        { "coords": [40, -32]},
+        { "coords": [41, -34], "name": "Broadway", "labelPos": "W", "marker": "interchange" },
+        { "coords": [41, -36], "name": "Andrew", "labelPos": "W", "marker": "interchange" },
+        { "coords": [41, -38], "name": "JFK/UMass", "labelPos": "W", "marker": "interchange" },
+        { "coords": [41, -40]},
+        { "coords": [41, -42], "name": "North Quincy", "labelPos": "W", "marker": "interchange" },
+        { "coords": [41, -44], "name": "Wollaston", "labelPos": "W", "marker": "interchange" },
+        { "coords": [41, -46], "name": "Quincy Center", "labelPos": "W", "marker": "interchange" },
+        { "coords": [41, -48], "name": "Quincy Adams", "labelPos": "W", "marker": "interchange" },
+        { "coords": [41, -50], "name": "Braintree", "labelPos": "W", "marker": "interchange" }
+      ]
+    },
+    {
+      "name": "Blue Line",
+      "label": "Blue Line",
+      "color": "#003DA5",
+      "shiftCoords": [0, 0],
+      "nodes": [
+        { "coords": [45, -10], "name": "Wonderland", "canonical": true, "labelPos": "N", "marker": "interchange" },
+        { "coords": [44, -11], "name": "Revere Beach", "labelPos": "SE", "marker": "interchange" },
+        { "coords": [43, -12], "name": "Beachmont", "labelPos": "SE", "marker": "interchange" },
+        { "coords": [42, -13], "name": "Suffolk Downs", "labelPos": "SE", "marker": "interchange" },
+        { "coords": [41, -14], "name": "Orient Heights", "labelPos": "SE", "marker": "interchange" },
+        { "coords": [40, -15], "name": "Wood Island", "labelPos": "SE", "marker": "interchange" },
+        { "coords": [39, -16], "name": "Airport", "labelPos": "SE", "marker": "interchange" },
+        { "coords": [38, -17], "name": "Maverick", "labelPos": "SE", "marker": "interchange" },
+        { "coords": [37, -18], "name": "Aquarium", "labelPos": "SE", "marker": "interchange" },
+        { "coords": [36, -20]},
+        { "coords": [35, -21], "name": "State", "labelPos": "SE", "marker": "interchange" },
+        { "coords": [34, -20]},
+        { "coords": [33, -19], "name": "Government Center", "labelPos": "SE", "marker": "interchange" },
+        { "coords": [32, -18], "name": "Bowdoin", "labelPos": "SE", "marker": "interchange" }
+      ]
+    },
+    {
+      "name": "Green Line B",
+      "label": "Green Line B",
+      "color": "#00843D",
+      "shiftCoords": [0, 0],
+      "nodes": [
+        { "coords": [32, -18], "name": "Kenmore", "labelPos": "SE", "marker": "interchange" },
 
-          }
-        ]
-      }
-    ]
-  }
+        { "coords": [32, -18], "name": "Bladford", "labelPos": "SE", "marker": "interchange" },
+        { "coords": [32, -18], "name": "BU East", "labelPos": "SE", "marker": "interchange" },
+        { "coords": [32, -18], "name": "BU Central", "labelPos": "SE", "marker": "interchange" },
+        { "coords": [32, -18], "name": "BU West", "labelPos": "SE", "marker": "interchange" },
+        { "coords": [32, -18], "name": "St. Paul Street", "labelPos": "SE", "marker": "interchange" },
+        { "coords": [32, -18], "name": "Pleasant Street", "labelPos": "SE", "marker": "interchange" },
+        { "coords": [32, -18], "name": "Babcock Street", "labelPos": "SE", "marker": "interchange" },
+        { "coords": [32, -18], "name": "Packards Corner", "labelPos": "SE", "marker": "interchange" },
+
+        { "coords": [32, -18], "name": "Union Square", "labelPos": "SE", "marker": "interchange" },
+
+        { "coords": [32, -18], "name": "Harvard Ave", "labelPos": "SE", "marker": "interchange" },
+        { "coords": [32, -18], "name": "Griggs Street", "labelPos": "SE", "marker": "interchange" },
+        { "coords": [32, -18], "name": "AlLston Street", "labelPos": "SE", "marker": "interchange" },
+        { "coords": [32, -18], "name": "Warren Sreet", "labelPos": "SE", "marker": "interchange" },
+        { "coords": [32, -18], "name": "Washington Street", "labelPos": "SE", "marker": "interchange" },
+        { "coords": [32, -18], "name": "Sutherland Road", "labelPos": "SE", "marker": "interchange" },
+        { "coords": [32, -18], "name": "Chiswick Road", "labelPos": "SE", "marker": "interchange" },
+        { "coords": [32, -18], "name": "Chestnut Hill Ave", "labelPos": "SE", "marker": "interchange" },
+        { "coords": [32, -18], "name": "South Street", "labelPos": "SE", "marker": "interchange" },
+        { "coords": [32, -18], "name": "Boston College", "labelPos": "SE", "marker": "interchange" }
+      ]
+    },
+    {
+      "name": "Green Line C",
+      "label": "Green Line C",
+      "color": "#00843D",
+      "shiftCoords": [0, 0],
+      "nodes": [
+        { "coords": [32, -18], "name": "Kenmore", "labelPos": "SE", "marker": "interchange" },
+
+
+
+        { "coords": [32, -18], "name": "St. Mary's St", "labelPos": "SE", "marker": "interchange" },
+        { "coords": [32, -18], "name": "Hawes St", "labelPos": "SE", "marker": "interchange" },
+
+        { "coords": [32, -18], "name": "Kent St", "labelPos": "SE", "marker": "interchange" },
+
+        { "coords": [32, -18], "name": "St. Paul St2", "labelPos": "SE", "marker": "interchange" },
+        { "coords": [32, -18], "name": "Coolidge Corner", "labelPos": "SE", "marker": "interchange" },
+        { "coords": [32, -18], "name": "Summit Ave", "labelPos": "SE", "marker": "interchange" },
+        { "coords": [32, -18], "name": "Brandon Hall", "labelPos": "SE", "marker": "interchange" },
+        { "coords": [32, -18], "name": "Fairbanks St", "labelPos": "SE", "marker": "interchange" },
+        { "coords": [32, -18], "name": "Washington Sq", "labelPos": "SE", "marker": "interchange" },
+        { "coords": [32, -18], "name": "Tappan St", "labelPos": "SE", "marker": "interchange" },
+        { "coords": [32, -18], "name": "Dean Rd", "labelPos": "SE", "marker": "interchange" },
+        { "coords": [32, -18], "name": "Englewood Ave", "labelPos": "SE", "marker": "interchange" },
+        { "coords": [32, -18], "name": "Cleavland Circle", "labelPos": "SE", "marker": "interchange" }
+
+      ]
+    },
+    {
+      "name": "Green Line D",
+      "label": "Green Line D",
+      "color": "#00843D",
+      "shiftCoords": [0, 0],
+      "nodes": [
+      ]
+    },
+    {
+      "name": "Green Line E",
+      "label": "Green Line E",
+      "color": "#00843D",
+      "shiftCoords": [0, 0],
+      "nodes": [
+      ]
+    },
+    {
+      "name": "Green Line",
+      "label": "Green Line",
+      "color": "#00843D",
+      "shiftCoords": [0, 0],
+      "nodes": [
+        { "coords": [0, 0], "name": "Lechmere", "marker": "interchange", "labelPos": "N" },
+        { "coords": [0, -5], "name": "Science Park", "marker": "interchange", "labelPos": "N" },
+        { "coords": [35, -16], "name": "North Station", "marker": "interchange", "labelPos": "N" },
+
+        { "coords": [35, -18], "name": "Haymarket", "marker": "interchange", "labelPos": "N" },
+        { "coords": [33, -19], "name": "Government Center", "marker": "interchange", "labelPos": "N" },
+        { "coords": [29, -21], "name": "Park Street", "marker": "interchange", "labelPos": "N" },
+        { "coords": [0, -5], "name": "Boylston", "marker": "interchange", "labelPos": "N" },
+        { "coords": [0, -5], "name": "Arlington", "marker": "interchange", "labelPos": "N" },
+        { "coords": [0, -5], "name": "Copley", "marker": "interchange", "labelPos": "N" },
+        { "coords": [0, -5], "name": "Hyenes Convention Center", "marker": "interchange", "labelPos": "N" },
+        { "coords": [0, -5], "name": "Kenmore", "marker": "interchange", "labelPos": "N" }
+      ]
+    }
+  ]
+}
