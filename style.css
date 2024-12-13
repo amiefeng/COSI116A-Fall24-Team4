@@ -1,8 +1,4 @@
 /* General formatting */
-html {
-	box-sizing: border-box;
-}
-
 body {
 	padding: 0 10px;
 	font: 18px/1.5 -apple-system, BlinkMacSystemFont, "avenir next",avenir, "Segoe UI", "lucida grande", "helvetica neue", helvetica, "Fira Sans",roboto, noto, "Droid Sans", cantarell, oxygen, ubuntu, "franklin gothic medium", "century gothic", "Liberation Sans",
@@ -27,10 +23,12 @@ h1, h2, h3 {
 
 nav {
 	display: flex;
-	justify-content: flex-end;
-	position: sticky;
+	position: fixed;
 	top: 0;
 	z-index: 1;
+	margin-left:500px;
+	
+
   }
 
 nav ul{
@@ -74,6 +72,9 @@ img {
 	width: 1013px;
 	display:block;
 
+}
+video {
+	border-radius: 10px;
 }
 /* Your text should be in a nice narrow column */
 .content-column {
