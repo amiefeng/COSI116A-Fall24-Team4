@@ -143,7 +143,8 @@ function scatterplot() {
                         .style("opacity", 8);
                     tooltip.html(`Line: ${d.route_or_line}<br/>` +
                         `Reliability: ${(parseFloat(d.reliability_quotient).toFixed(2))}<br/>` +
-                        `Ridership: ${d.average_monthly_ridership}`)
+                        `Ridership: ${d.average_monthly_ridership}<br/>`  +
+                        `Time Frame: ${d.year_month.split("/")[1] + "/" + d.year_month.split('/')[0]}`)
                         .style("left", (d3.event.pageX + 5) + "px")
                         .style("top", (d3.event.pageY - 28) + "px");
                 })
@@ -270,8 +271,8 @@ function scatterplot() {
                     let d_y_m = d.year_month.split("/")
                     let y = d_y_m[0]
                     let m = d_y_m[1]                           //for each selectable element
-                    d3.select(this).classed("selected", (years[0] === '' || years.includes (y)) && (months[0] === '' || months.includes(m)));                  //we want it toggled
-                    })
+                    d3.select(this).classed("selected", (years[0] === '' || years.includes(y)) && (months[0] === '' || months.includes(m)));                  //we want it toggled
+                })
 
             }
         }
