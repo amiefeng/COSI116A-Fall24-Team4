@@ -389,14 +389,18 @@ c a::after{
 
 /**scatterplot styles*/
 circle.selected {
-	fill: pink;
-	stroke: red;
+	fill: yellow;
+	stroke: black;
+	size:2px
+	opacity: 1;
   }
 
-  circle.filtered {
-	opacity: 5;
-  }
+
 
   circle.unfiltered {
+	opacity: 0;
+  }
+
+  line.unfiltered{
 	opacity: 0;
   }
