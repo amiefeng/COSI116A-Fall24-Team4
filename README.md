@@ -25,7 +25,8 @@ This project explores the relationship between MBTA ridership and system reliabi
     ├── js/              # All visualizations and styling as written in D3.js
     ├── lib/             # D3.js libraries used
     └── README.md        # Documentation
-**Running Locally**
+
+## Running Locally
 
 1. Clone this repository to your local machine:
 2. git clone <https://github.com/amiefeng/COSI116A-Group4>
