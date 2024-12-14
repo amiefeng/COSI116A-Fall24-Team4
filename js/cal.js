@@ -31,6 +31,12 @@ function calendar(){
       const years = ['All Years', ...Array.from({ length: 9 }, (_, i) => 2016 + i)];
   
   
+      function dispatchMonth(monthString){         
+          console.log("called")                                     //let other charts know what has been selected (table.js)
+          dispatcher.call("monthUpdated", this, monthString);
+        }
+  
+  
       // Select the calendar container in the HTML
       const calendarContainer = d3.select('#calendar');
   
@@ -65,47 +71,43 @@ function calendar(){
           .style('grid-gap', '10px');
   
       // Store selected years
-      let selectedYears = [];
+      let selectedYears = ['All Years'];
   
       // Function to toggle year selection
       function toggleYearSelection(year) {
           if (year === 'All Years') {
-              console.log("toggled")
               // If "All Years" is selected, clear other selections
-              selectedYears = [];
+              selectedYears = ['All Years'];
               yearGrid.selectAll('.year-cell')
                   .style('background-color', d => d === 'All Years' ? 'rgb(109, 46, 109)' : '#fff')
                   .style('color', d => d === 'All Years' ? '#fff' : '#000');
           } else {
+              // Remove "All Years" if it's selected
+              if (selectedYears.includes('All Years')) {
+                  selectedYears = [];
+              }
   
               // Toggle the specific year
               if (selectedYears.includes(year)) {
                   selectedYears = selectedYears.filter(y => y !== year);
-                  console.log(selectedYears.length)
               } else {
                   selectedYears.push(year);
               }
   
-              if(selectedYears.length == 0){
-                console.log("toggling")
-                toggleYearSelection('All Years')
-              } else{
-                // Update button styles
-                yearGrid.selectAll('.year-cell')
-                    .style('background-color', d => {
-                        if (d === 'All Years') return '#fff';
-                        return selectedYears.includes(d) ? 'rgb(109, 46, 109)' : '#fff';
-                    })
-                    .style('color', d => {
-                        if (d === 'All Years') return '#000';
-                        return selectedYears.includes(d) ? '#fff' : '#000';
-                    });
-                }
+              // Update button styles
+              yearGrid.selectAll('.year-cell')
+                  .style('background-color', d => {
+                      if (d === 'All Years') return '#fff';
+                      return selectedYears.includes(d) ? 'rgb(109, 46, 109)' : '#fff';
+                  })
+                  .style('color', d => {
+                      if (d === 'All Years') return '#000';
+                      return selectedYears.includes(d) ? '#fff' : '#000';
+                  });
           }
   
           // Update calendar based on selected years
           updateCalendar();
-          dispatchProtocol();
       }
   
       // Create year selection buttons
@@ -123,7 +125,6 @@ function calendar(){
           .text(d => d)
           .on('click', function(d) {
               toggleYearSelection(d);
-              dispatchProtocol();
           });
   
       // Create a container for the calendar grid
@@ -146,6 +147,7 @@ function calendar(){
           .style('font-size', '12px')
           .text('Reset')
           .on('click', () => {
+              dispatchMonth('CLEAR');
               toggleYearSelection('All Years');
               toggleMonthSelection('All Months');
           });
@@ -207,8 +209,8 @@ function calendar(){
               })
               .text(d => d)
               .on('click', function(d) {
+                  dispatchProtocol(year, d)
                   toggleMonthSelection(d);
-                  dispatchProtocol()
 
                  
               });
@@ -220,17 +222,15 @@ function calendar(){
        * @param {*} year 
        * @param {*} month 
        */
-      function dispatchProtocol(){
-                
-                console.log(selectedYears, selectedMonths);
-                  //if(selectedMonths[0] === "All Months" || selectedMonths.length == 0){
-                  //  console.log("clearing!" + "yaer: " + year + "month: " + month + " :D")
-                    //dispatchMonth("CLEAR")
-                  //}
+      function dispatchProtocol(year, month){
+        date = year + "/" + monthsToNumbers[month]
+                  console.log(selectedYears, selectedMonths);
+                  if(monthsToNumbers[month] === "All Months" || selectedMonths.length == 0){
+                    console.log("clearing!" + "yaer: " + year + "month: " + month + " :D")
+                    dispatchMonth("CLEAR")
+                  }
                   console.log("updating!" + ":D")
-
-                  dispatcher.call("calendarUpdated", this, (selectedYears).join() + "|" + selectedMonths.map((x) => monthsToNumbers[x]).join());
-
+                  dispatchMonth(date)
       }
   
   
