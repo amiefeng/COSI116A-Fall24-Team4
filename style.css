@@ -232,6 +232,10 @@ c a::after{
     .month-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+
+	nav{
+		display:none;
+	}
 }
 
 .month-cell {
