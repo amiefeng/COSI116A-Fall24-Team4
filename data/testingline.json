@@ -196,7 +196,7 @@
       "name": "Blue Line",
       "label": "Blue Line",
       "color": "#003DA5",
-      "shiftCoords": [0, 0],
+      "shiftCoords": [-1, -1],
       "nodes": [
         { "coords": [54, 0], "name": "Wonderland", "canonical": true, "labelPos": "N", "marker": "station" },
         { "coords": [52, -2], "name": "Revere Beach", "labelPos": "SE", "marker": "station" },
@@ -355,10 +355,28 @@
         { "coords": [-48, -18], "name": "Chestnut Hill Ave", "labelPos": "SE", "marker": "station" },
         { "coords": [-50, -20], "name": "South Street", "labelPos": "SE", "marker": "station" },
         { "coords": [-52, -22], "name": "Boston College", "labelPos": "SE", "marker": "station" }
+        
+
 
 
       ]
-    }
+    },
+    {
+      "name": "Blue Line B",
+      "label": "Blue line B",
+      "color": "##003DA5",
+      "shiftCoords": [-1, 0],
+      "nodes": [
+        { "coords": [35, -19], "name": "State", "labelPos": "SE", "marker": "station" },
+        { "coords": [34, -18]},
+        { "coords": [33, -17]},
+        { "coords": [32, -16], "name": "Government Center", "labelPos": "N", "marker": "station"},
+        { "coords": [31, -15]},
+        { "coords": [30, -14]},
+        { "coords": [29, -13]},
+        { "coords": [28, -14], "name": "Bowdoin", "labelPos": "N", "marker": "station" }
 
+      ]
+    }
   ]
 }
