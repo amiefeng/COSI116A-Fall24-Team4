@@ -232,6 +232,10 @@ c a::after{
     .month-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+
+	nav{
+		display:none;
+	}
 }
 
 .month-cell {
@@ -389,18 +393,14 @@ c a::after{
 
 /**scatterplot styles*/
 circle.selected {
-	fill: yellow;
-	stroke: black;
-	size:2px
-	opacity: 1;
+	fill: pink;
+	stroke: red;
   }
 
-
+  circle.filtered {
+	opacity: 5;
+  }
 
   circle.unfiltered {
-	opacity: 0;
-  }
-
-  line.unfiltered{
 	opacity: 0;
   }
