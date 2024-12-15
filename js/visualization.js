@@ -29,4 +29,6 @@ filterDispatcher.on(dispatchLine, function(lines){
     mapLine.processDispatch(["filter", lines])
 
 })
+
+
 ourFilter();
