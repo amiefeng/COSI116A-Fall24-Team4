@@ -50,7 +50,7 @@
     "Boylston": { "label": "Boylston" },
     "Arlington": { "label": "Arlington" },
     "Copley": { "label": "Copley" },
-    "Bowdoin": { "label": "Bowdin"},
+    "Bowdoin": { "label": "Bowdoin"},
     "Predential": { "label": "Predential"},
     "Symphony": { "label": "Symphony"},
     "Northeastern": { "label":"Northeastern" },
@@ -213,8 +213,7 @@
         { "coords": [33, -17]},
         { "coords": [32, -17], "name": "Government Center", "labelPos": "N", "marker": "station"},
         { "coords": [31, -16]},
-        { "coords": [30, -15]},
-        { "coords": [28, -14], "name": "Bowdoin", "labelPos": "N", "marker": "station" }
+        { "coords": [30, -15]}
       ]
     },
     {
