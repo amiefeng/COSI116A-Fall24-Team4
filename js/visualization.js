@@ -3,7 +3,6 @@ const dispatchCalendar = "calendarUpdated"; //this corresponds ot a specific com
                                       //corresponding to this combination being selected
 const dispatchLine = "lineUpdated"
 
-const dispatchMap = "selectionUpdated"
                                       //create dispatchers for different events
 let scatterPlotDispatcher = d3.dispatch(dispatchString);
 let calendarDispatcher = d3.dispatch(dispatchCalendar);
@@ -28,10 +27,5 @@ filterDispatcher.on(dispatchLine, function(lines){
     scatterPlot.processDispatch(["filter", lines]) // Update scatterplot
     mapLine.processDispatch(["filter", lines]) // Update map lines
 })
-
-mapLine.on(dispatchMap, function(selectedLines) {
-    filterDispatcher.call(dispatchLine, this, selectedLines); // Inform filter
-});
-
 
 ourFilter();
