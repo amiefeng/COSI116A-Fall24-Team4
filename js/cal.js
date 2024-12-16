@@ -148,6 +148,7 @@ function calendar(){
           .on('click', () => {
               toggleYearSelection('All Years');
               toggleMonthSelection('All Months');
+              dispatchProtocol();
           });
   
       // Function to update calendar
