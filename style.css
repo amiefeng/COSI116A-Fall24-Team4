@@ -24,11 +24,10 @@ h1, h2, h3 {
 nav {
 	display: flex;
 	position: fixed;
-	top: 0;
-	z-index: 1;
-	margin-left:500px;
-	
-
+    top: 35px;
+    z-index: 1000;
+	margin-left:390px;
+	width:1100px;
   }
 
 nav ul{
@@ -73,13 +72,14 @@ img {
 	display:block;
 
 }
+  
 video {
 	border-radius: 10px;
 }
 /* Your text should be in a nice narrow column */
 .content-column {
 	max-width: 1050px;
-	margin: 0px auto;
+	margin: 70px auto;
 }
 
 #calendar-selection{
@@ -145,6 +145,20 @@ video {
 	flex-wrap: wrap;
 	border: rgb(109, 46, 109) solid 2px;
 	border-radius: 10px;
+}
+
+#viz_screenshots {
+	display:flex;
+	flex-direction: row;
+	border: rgb(109, 46, 109) solid 2px;
+	border-radius: 10px;
+	flex-wrap: wrap;
+}
+
+#viz_screenshots img {
+	width: 510px;
+	height: 300px;
+	object-fit: cover;
 }
 
 
