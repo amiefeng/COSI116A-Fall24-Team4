@@ -313,16 +313,16 @@
         { "coords": [-21, -17], "name": "Kent St", "labelPos": "N", "marker": "station" },
         { "coords": [-22, -17] },
         { "coords": [-24, -18] },
-        { "coords": [-26, -20], "name": "St. Paul St2", "labelPos": "SE", "marker": "station" },
-        { "coords": [-28, -22], "name": "Coolidge Corner", "labelPos": "SE", "marker": "station" },
-        { "coords": [-30, -24], "name": "Summit Ave", "labelPos": "SE", "marker": "station" },
-        { "coords": [-32, -26], "name": "Brandon Hall", "labelPos": "SE", "marker": "station" },
-        { "coords": [-34, -28], "name": "Fairbanks St", "labelPos": "SE", "marker": "station" },
-        { "coords": [-36, -30], "name": "Washington Sq", "labelPos": "SE", "marker": "station" },
-        { "coords": [-38, -32], "name": "Tappan St", "labelPos": "SE", "marker": "station" },
-        { "coords": [-40, -34], "name": "Dean Rd", "labelPos": "SE", "marker": "station" },
-        { "coords": [-42, -36], "name": "Englewood Ave", "labelPos": "SE", "marker": "station" },
-        { "coords": [-44, -38], "name": "Cleavland Circle", "labelPos": "SE", "marker": "station" }
+        { "coords": [-26, -20], "name": "St. Paul St2", "labelPos": "W", "marker": "station" },
+        { "coords": [-28, -22], "name": "Coolidge Corner", "labelPos": "W", "marker": "station" },
+        { "coords": [-30, -24], "name": "Summit Ave", "labelPos": "W", "marker": "station" },
+        { "coords": [-32, -26], "name": "Brandon Hall", "labelPos": "W", "marker": "station" },
+        { "coords": [-34, -28], "name": "Fairbanks St", "labelPos": "W", "marker": "station" },
+        { "coords": [-36, -30], "name": "Washington Sq", "labelPos": "W", "marker": "station" },
+        { "coords": [-38, -32], "name": "Tappan St", "labelPos": "W", "marker": "station" },
+        { "coords": [-40, -34], "name": "Dean Rd", "labelPos": "W", "marker": "station" },
+        { "coords": [-42, -36], "name": "Englewood Ave", "labelPos": "W", "marker": "station" },
+        { "coords": [-44, -38], "name": "Cleavland Circle", "labelPos": "SW", "marker": "station" }
       ]
     },
     {
@@ -348,15 +348,15 @@
         { "coords": [-31, -3], "name": "Harvard Ave", "labelPos": "N", "marker": "station" },
         { "coords": [-32, -3]},
         { "coords": [-34, -4]},
-        { "coords": [-36, -6], "name": "Griggs Street", "labelPos": "SE", "marker": "station" },
-        { "coords": [-38, -8], "name": "Allston Street", "labelPos": "SE", "marker": "station" },
-        { "coords": [-40, -10], "name": "Warren Street", "labelPos": "SE", "marker": "station" },
-        { "coords": [-42, -12], "name": "Washington Street", "labelPos": "SE", "marker": "station" },
-        { "coords": [-44, -14], "name": "Sutherland Road", "labelPos": "SE", "marker": "station" },
-        { "coords": [-46, -16], "name": "Chiswick Road", "labelPos": "SE", "marker": "station" },
-        { "coords": [-48, -18], "name": "Chestnut Hill Ave", "labelPos": "SE", "marker": "station" },
-        { "coords": [-50, -20], "name": "South Street", "labelPos": "SE", "marker": "station" },
-        { "coords": [-52, -22], "name": "Boston College", "labelPos": "SE", "marker": "station" }
+        { "coords": [-36, -6], "name": "Griggs Street", "labelPos": "W", "marker": "station" },
+        { "coords": [-38, -8], "name": "Allston Street", "labelPos": "W", "marker": "station" },
+        { "coords": [-40, -10], "name": "Warren Street", "labelPos": "W", "marker": "station" },
+        { "coords": [-42, -12], "name": "Washington Street", "labelPos": "W", "marker": "station" },
+        { "coords": [-44, -14], "name": "Sutherland Road", "labelPos": "W", "marker": "station" },
+        { "coords": [-46, -16], "name": "Chiswick Road", "labelPos": "W", "marker": "station" },
+        { "coords": [-48, -18], "name": "Chestnut Hill Ave", "labelPos": "W", "marker": "station" },
+        { "coords": [-50, -20], "name": "South Street", "labelPos": "W", "marker": "station" },
+        { "coords": [-52, -22], "name": "Boston College", "labelPos": "SW", "marker": "station" }
       ]
     },
     {
@@ -381,10 +381,10 @@
       "shiftCoords": [-1, 0],
       "nodes": [
           { "coords": [17, 12], "name": "Medford/Tufts", "labelPos": "NW", "marker": "station" },
-          { "coords": [19, 10], "name": "Ball Sq", "labelPos": "NW", "marker": "station" },
-          { "coords": [21, 8], "name": "Magoun Sq", "labelPos": "NW", "marker": "station" },
-          { "coords": [23, 6], "name": "Gilman Sq", "labelPos": "NW", "marker": "station" },
-          { "coords": [25, 4], "name": "East Somerville", "labelPos": "NW", "marker": "station" },
+          { "coords": [19, 10], "name": "Ball Sq", "labelPos": "W", "marker": "station" },
+          { "coords": [21, 8], "name": "Magoun Sq", "labelPos": "W", "marker": "station" },
+          { "coords": [23, 6], "name": "Gilman Sq", "labelPos": "W", "marker": "station" },
+          { "coords": [25, 4], "name": "East Somerville", "labelPos": "W", "marker": "station" },
           { "coords": [29, 0] },
           { "coords": [31, -1], "name": "Lechmere", "labelPos": "W", "marker": "station" }
       ]
