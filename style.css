@@ -408,7 +408,7 @@ c a::after{
 /**scatterplot styles*/
 circle.selected {
 	fill: pink;
-	stroke: red;
+	stroke: black;
   }
 
   circle.filtered {
@@ -416,5 +416,9 @@ circle.selected {
   }
 
   circle.unfiltered {
+	opacity: 0;
+  }
+
+  line.unfiltered{
 	opacity: 0;
   }

@@ -60,13 +60,26 @@ function mbtamap() {
       if (dispatchString[0] === "filter") {
           const lines = dispatchString[1];
           container.selectAll(".line").each(function (d) {
+              console.log(d.name, d.color); 
               if (lines[0] === "All Lines") {
                   d3.select(this).classed("unfiltered", false).attr("stroke", d.color);
               } else {
-                  const isVisible = lines.includes(d.name);
-                  d3.select(this)
-                      .classed("unfiltered", !isVisible)
-                      .attr("stroke", isVisible ? d.color : "grey");
+                const isVisible = lines.includes(d.name);
+        
+                if (isVisible) {
+                    // Apply the color to all lines with the same color as the selected line
+                    container.selectAll(".line")
+                        .filter(function (line) {
+                            return line.color === d.color; // Match lines by color
+                        })
+                        .classed("unfiltered", false) // Ensure they are marked as visible
+                        .attr("stroke", d.color); // Set stroke color to their original color
+                } else {
+                    // Hide or grey out non-matching lines
+                    d3.select(this)
+                        .classed("unfiltered", true)
+                        .attr("stroke", "grey"); // Dim non-matching lines
+                }
               }
           });
       }

@@ -128,15 +128,7 @@
     "Chiswick Road": { "label": "Chiswick Road" },
     "Chestnut Hill Ave": { "label": "Chestnut Hill Ave" },
     "South Street": { "label": "South Street" },
-    "Boston College": { "label": "Boston College" },
-    "Union Sq": {"label": "Union Sq"},
-    "Lechmere": {"label": "Lechmere" },
-    "Science Park/West End": {"label": "Science Park/West End"},
-    "Medford/Tufts": {"label": "Medford/Tufts"},
-    "Ball Sq":{"label": "Ball Sq"},
-    "Magoun Sq": {"label": "Magoun Sq"},
-    "Gilman Sq": {"label": "Gilman Sq"},
-    "East Somerville": {"label": "East Somerville"}
+    "Boston College": { "label": "Boston College" }
 
 
   },
@@ -216,12 +208,18 @@
         { "coords": [40, -14], "name": "Maverick", "labelPos": "SE", "marker": "station" },
         { "coords": [38, -16], "name": "Aquarium", "labelPos": "SE", "marker": "station" },
         { "coords": [36, -18]},
-        { "coords": [35, -19], "name": "State", "labelPos": "SE", "marker": "station" }
+        { "coords": [35, -19], "name": "State", "labelPos": "SE", "marker": "station" },
+        { "coords": [34, -18]},
+        { "coords": [33, -17]},
+        { "coords": [32, -17], "name": "Government Center", "labelPos": "N", "marker": "station"},
+        { "coords": [31, -16]},
+        { "coords": [30, -15]},
+        { "coords": [28, -14], "name": "Bowdoin", "labelPos": "N", "marker": "station" }
       ]
     },
     {
-      "name": "Green Line",
-      "label": "Green Line",
+      "name": "Green Line E",
+      "label": "Green Line E",
       "color": "#00843D",
       "shiftCoords": [-1, 0],
       "nodes": [
@@ -258,8 +256,8 @@
       ]
     },
     {
-      "name": "Green Line",
-      "label": "Green Line",
+      "name": "Green Line D",
+      "label": "Green Line D",
       "color": "#00843D",
       "shiftCoords": [-1, 0],
       "nodes": [
@@ -298,8 +296,8 @@
       ]
     },
     {
-      "name": "Green Line",
-      "label": "Green Line",
+      "name": "Green Line C",
+      "label": "Green Line C",
       "color": "#00843D",
       "shiftCoords": [-1, 0],
       "nodes": [
@@ -326,8 +324,8 @@
       ]
     },
     {
-      "name": "Green Line",
-      "label": "Green Line",
+      "name": "Green Line B",
+      "label": "Green Line B",
       "color": "#00843D",
       "shiftCoords": [-1, 0],
       "nodes": [
@@ -358,51 +356,7 @@
         { "coords": [-50, -20], "name": "South Street", "labelPos": "SE", "marker": "station" },
         { "coords": [-52, -22], "name": "Boston College", "labelPos": "SE", "marker": "station" }
       ]
-    },
-    {
-      "name": "Green Line",
-      "label": "Green Line",
-      "color": "#00843D",
-      "shiftCoords": [-1, 0],
-      "nodes": [
-        { "coords": [24, 0], "name": "Union Sq", "labelPos": "NW", "marker": "station" },
-        { "coords": [27, 0]},
-        { "coords": [29, 0]},
-        { "coords": [31, -1], "name": "Lechmere", "labelPos": "W", "marker": "station" },
-        { "coords": [33, -3], "name": "Science Park/West End", "labelPos": "W", "marker": "station" },
-        { "coords": [34, -4]},
-        { "coords": [35, -5], "name": "North Station", "labelPos": "W", "marker": "station" }
-      ]
-    },
-    {
-      "name": "Green Line",
-      "label": "Green Line",
-      "color": "#00843D",
-      "shiftCoords": [-1, 0],
-      "nodes": [
-          { "coords": [17, 12], "name": "Medford/Tufts", "labelPos": "NW", "marker": "station" },
-          { "coords": [19, 10], "name": "Ball Sq", "labelPos": "NW", "marker": "station" },
-          { "coords": [21, 8], "name": "Magoun Sq", "labelPos": "NW", "marker": "station" },
-          { "coords": [23, 6], "name": "Gilman Sq", "labelPos": "NW", "marker": "station" },
-          { "coords": [25, 4], "name": "East Somerville", "labelPos": "NW", "marker": "station" },
-          { "coords": [29, 0] },
-          { "coords": [31, -1], "name": "Lechmere", "labelPos": "W", "marker": "station" }
-      ]
-    },
-    {
-      "name": "Blue Line",
-      "label": "Blue Line",
-      "color": "#003DA5",
-      "shiftCoords": [0, 0],
-      "nodes": [
-        { "coords": [35, -19], "name": "State", "labelPos": "SE", "marker": "station" },
-        { "coords": [34, -18]},
-        { "coords": [33, -17]},
-        { "coords": [32, -16], "name": "Government Center", "labelPos": "N", "marker": "station"},
-        { "coords": [31, -15]},
-        { "coords": [30, -14]},
-        { "coords": [28, -12], "name": "Bowdoin", "labelPos": "N", "marker": "station" }
-      ]
     }
+
   ]
 }
