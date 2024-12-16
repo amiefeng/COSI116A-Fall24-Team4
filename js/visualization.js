@@ -15,22 +15,21 @@ scatterPlot();
 // Initialize the calendar and connect it to the dispatcher
 let ourCalendar = calendar().selectionDispatcher(calendarDispatcher);
 ourCalendar();
+
 //listen for monthUpdated event (this is currently the only linking we have)
 calendarDispatcher.on(dispatchCalendar, function (calenderString) {
     scatterPlot.processDispatch([dispatchCalendar, calenderString]);
 });
 
 // Initialize the map and connect it to the dispatcher
-let mapComponent = map().selectionDispatcher(mapDispatcher);
-mapComponent();
-
-d3.select("#mbta-map") // Ensure this matches your HTML container
-  .datum('data/testingline.json')          // Provide your data here
-  .call(mapComponent);
+let mbtaMap = mbtamap().selectionDispatcher(mapDispatcher);
+d3.select("#mbta-map").call(mbtaMap);
 
 // Initialize the filter and connect it to the dispatcher
 let ourFilter = filter().selectionDispatcher(filterDispatcher);
 filterDispatcher.on(dispatchLine, function(lines){
-    scatterPlot.processDispatch(["filter", lines])
+    scatterPlot.processDispatch(["filter", lines]);
+    mbtaMap.processDispatch(["filter", lines]);
+    
 })
 ourFilter();
