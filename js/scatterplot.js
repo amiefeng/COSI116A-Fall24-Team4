@@ -32,7 +32,7 @@ function scatterplot() {
 
 
         // load CSV
-        d3.csv("../data/rapid_transit_ridership_and_reliability_m_y_l.csv", function (error, data) {
+        d3.csv("./data/rapid_transit_ridership_and_reliability_m_y_l.csv", function (error, data) {
 
 
 
