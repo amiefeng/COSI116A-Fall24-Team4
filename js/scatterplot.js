@@ -266,7 +266,6 @@ function scatterplot() {
         else if (dispatchString[0] === "calendarUpdated") {
             if (!arguments.length) return;
             message = dispatchString[1]
-            selected = d3.selectAll('circle').filter(function(){return d3.select(this).attr("type") === "scatterplot" && !this.classList.contains("unfiltered")})
             if (message === "|") {                               //if no selection (equivalent to all years / all months), don't select
                 selectableElements.classed("selected", false);
             } else {
@@ -281,28 +280,35 @@ function scatterplot() {
                     let m = d_y_m[1]                           //for each selectable element
                     d3.select(this).classed("selected", (years[0] === '' || years.includes(y)) && (months[0] === '' || months.includes(m)));                  //we want it toggled
                 })
-                selected = selected.filter(function () {return this.classList.contains("selected")  })
-                //groups data by line for linear regression of each group
 
             }
-            console.log(selected)
 
-            //groups data by line for linear regression of each group
-            const groupedData = d3.nest()
-            .key(d => d.route_or_line)
-            .entries(selected.data());
-            
-            chart.drawTrendLine(linearRegression(selected.data()), "All Lines")
-
-            groupedData.forEach(group => {
-                const key = group.key;
-                const values = group.values;
-
-                chart.drawTrendLine(linearRegression(values), key);
-
-            });
 
         }
+        trend_points = d3.selectAll('circle').filter(function(){return d3.select(this).attr("type") === "scatterplot" && !this.classList.contains("unfiltered")})
+        selected = trend_points.filter(function () {return this.classList.contains("selected")  })
+        if(!selected.empty()){
+            trend_points = selected
+        }
+        //groups data by line for linear regression of each group
+
+        console.log(selected)
+
+        //groups data by line for linear regression of each group
+        const groupedData = d3.nest()
+        .key(d => d.route_or_line)
+        .entries(trend_points.data());
+        
+        
+        chart.drawTrendLine(linearRegression(trend_points.data()), "All Lines")
+
+        groupedData.forEach(group => {
+            const key = group.key;
+            const values = group.values;
+
+            chart.drawTrendLine(linearRegression(values), key);
+
+        });
 
 
 
