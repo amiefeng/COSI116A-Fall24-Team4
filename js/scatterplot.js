@@ -1,7 +1,44 @@
 function scatterplot() {
+
+    /**
+ * 
+ * @param {*} data_subset 
+ * @returns slope and intercept for linear regression of subse t of data
+ */
+    function linearRegression(data_subset) {
+        //console.log(data_subset)
+        const n_elements = data_subset.length;
+        const sum_x = d3.sum(data_subset, d => d.reliability_quotient);
+        const sum_y = d3.sum(data_subset, d => d.average_monthly_ridership);
+        const sum_x_y = d3.sum(data_subset, d => d.reliability_quotient * d.average_monthly_ridership);
+        const sum_x_2 = d3.sum(data_subset, d => d.reliability_quotient * d.reliability_quotient);
+
+
+        const slope = (n_elements * sum_x_y - sum_x * sum_y) / (n_elements * sum_x_2 - sum_x * sum_x);
+        const intercept = (sum_y - slope * sum_x) / n_elements;
+
+        const x1 = d3.min(data_subset, d => d.reliability_quotient);
+        const x2 = d3.max(data_subset, d => d.reliability_quotient);
+        const y1 = slope * x1 + intercept;
+        const y2 = slope * x2 + intercept;
+
+        return { slope, intercept, x1, x2, y1, y2};
+    }
+
+    
     var margin = { top: 50, right: 50, bottom: 70, left: 85 },
         width = 600 - margin.left - margin.right,
         height = 600 - margin.top - margin.bottom;
+
+     //define x-scale
+     const x = d3.scaleLinear()
+     .domain([65, 100])
+     .range([0, width]);
+
+    //define y-scale
+    const y = d3.scaleLinear()
+        .domain([0, 250000])
+        .range([height, 0]);
     selectableElements = d3.select(null);
     let ourBrush = null
 
@@ -15,11 +52,36 @@ function scatterplot() {
         .style("border-radius", "2.5px")
         .style("padding", "5px");
     var color = d3.scaleOrdinal()
-        .domain(["Red Line", "Blue Line", "Green Line", "Orange Line"])
-        .range([d3.rgb(255, 0, 0), d3.rgb(0, 0, 255), d3.rgb(0, 255, 0), d3.rgb(255, 128, 0)]);
+        .domain(["Red Line", "Blue Line", "Green Line", "Orange Line", "All Lines"])
+        .range([d3.rgb(255, 0, 0), d3.rgb(0, 0, 255), d3.rgb(0, 255, 0), d3.rgb(255, 128, 0), d3.rgb(0,0,0)]);
 
+    
 
+    
     function chart() {
+
+        function drawTrendLine({slope, intercept, x1, x2, y1, y2}, key){
+    
+
+            console.log(key)
+    
+    
+    
+            console.log(x(+x1), y(+y1))
+            d3.selectAll('line').filter(function () { return d3.select(this).style("stroke") == color(key)}).remove()
+
+            svg.append("line")  
+                .attr("x1", x(+x1))
+                .attr("y1", y(y1))
+                .attr("x2", x(x2))
+                .attr("y2", y(y2))
+                .style("stroke", color(key))
+                .style("stroke-width", 2)            
+
+            
+        }
+        chart.drawTrendLine = drawTrendLine
+        
         // define colors corresponding to lines
 
         //define SVG
@@ -42,15 +104,7 @@ function scatterplot() {
             });
 
 
-            //define x-scale
-            var x = d3.scaleLinear()
-                .domain([65, 100])
-                .range([0, width]);
-
-            //define y-scale
-            var y = d3.scaleLinear()
-                .domain([0, 250000])
-                .range([height, 0]);
+           
 
             // add x-axis
             svg.append("g")
@@ -137,13 +191,14 @@ function scatterplot() {
                 .attr("r", 2) // Radius
                 .style("fill", function (d) { return color(d.route_or_line); })
                 .attr("class", d => String(d.route_or_line).split(" ")[0])
+                .attr("type", "scatterplot")
                 .on("mouseover", function (d) {
                     tooltip.transition()
                         .duration(200)
                         .style("opacity", 8);
                     tooltip.html(`Line: ${d.route_or_line}<br/>` +
                         `Reliability: ${(parseFloat(d.reliability_quotient).toFixed(2))}<br/>` +
-                        `Ridership: ${d.average_monthly_ridership}<br/>`  +
+                        `Ridership: ${d.average_monthly_ridership}<br/>` +
                         `Time Frame: ${d.year_month.split("/")[1] + "/" + d.year_month.split('/')[0]}`)
                         .style("left", (d3.event.pageX + 5) + "px")
                         .style("top", (d3.event.pageY - 28) + "px");
@@ -157,27 +212,6 @@ function scatterplot() {
 
 
 
-
-            /**
-             * 
-             * @param {*} data_subset 
-             * @returns slope and intercept for linear regression of subse t of data
-             */
-            function linearRegression(data_subset) {
-                const n_elements = data_subset.length;
-                const sum_x = d3.sum(data_subset, d => d.reliability_quotient);
-                const sum_y = d3.sum(data_subset, d => d.average_monthly_ridership);
-                const sum_x_y = d3.sum(data_subset, d => d.reliability_quotient * d.average_monthly_ridership);
-                const sum_x_2 = d3.sum(data_subset, d => d.reliability_quotient * d.reliability_quotient);
-
-
-                const slope = (n_elements * sum_x_y - sum_x * sum_y) / (n_elements * sum_x_2 - sum_x * sum_x);
-                const intercept = (sum_y - slope * sum_x) / n_elements;
-
-                return { slope, intercept };
-            }
-
-
             //groups data by line for linear regression of each group
             const groupedData = d3.nest()
                 .key(d => d.route_or_line)
@@ -188,34 +222,11 @@ function scatterplot() {
                 const key = group.key;
                 const values = group.values;
 
-                const { slope, intercept } = linearRegression(values);
-                const x1 = d3.min(values, d => d.reliability_quotient);
-                const x2 = d3.max(values, d => d.reliability_quotient);
-                const y1 = slope * x1 + intercept;
-                const y2 = slope * x2 + intercept;
+                drawTrendLine(linearRegression(values), key);
 
-
-                svg.append("line")
-                    .attr("x1", x(x1))
-                    .attr("y1", y(y1))
-                    .attr("x2", x(x2))
-                    .attr("y2", y(y2))
-                    .style("stroke", color(key))
-                    .style("stroke-width", 2);
             });
 
-            var { slope, intercept } = linearRegression(data);
-            var x1_total = d3.min(data, d => d.reliability_quotient);
-            var x2_total = d3.max(data, d => d.reliability_quotient);
-            var y1_total = slope * x1_total + intercept;
-            var y2_total = slope * x2_total + intercept;
-            svg.append("line")
-                .attr("x1", x(x1_total))
-                .attr("y1", y(y1_total))
-                .attr("x2", x(x2_total))
-                .attr("y2", y(y2_total))
-                .style("stroke", "#000000")
-                .style("stroke-width", 2);
+            drawTrendLine(linearRegression(data), "All Lines");
 
 
         });
@@ -255,17 +266,14 @@ function scatterplot() {
         else if (dispatchString[0] === "calendarUpdated") {
             if (!arguments.length) return;
             message = dispatchString[1]
+            selected = d3.selectAll('circle').filter(function(){return d3.select(this).attr("type") === "scatterplot" && !this.classList.contains("unfiltered")})
             if (message === "|") {                               //if no selection (equivalent to all years / all months), don't select
                 selectableElements.classed("selected", false);
             } else {
-                console.log(dispatchString)
                 let years_and_months = message.split("|")
-                console.log(years_and_months)
                 let years = years_and_months[0].split(",")
-                console.log(years)
                 let months = years_and_months[1].split(",")
-                console.log("y/m", years, months)
-                console.log(years.length, months.length)
+
 
                 selectableElements.each(function (d) {
                     let d_y_m = d.year_month.split("/")
@@ -273,9 +281,33 @@ function scatterplot() {
                     let m = d_y_m[1]                           //for each selectable element
                     d3.select(this).classed("selected", (years[0] === '' || years.includes(y)) && (months[0] === '' || months.includes(m)));                  //we want it toggled
                 })
+                selected = selected.filter(function () {return this.classList.contains("selected")  })
+                //groups data by line for linear regression of each group
 
             }
+            console.log(selected)
+
+            //groups data by line for linear regression of each group
+            const groupedData = d3.nest()
+            .key(d => d.route_or_line)
+            .entries(selected.data());
+            if(groupedData.length > 1){
+                chart.drawTrendLine(linearRegression(selected.data()), "All Lines")
+            }
+
+            groupedData.forEach(group => {
+                const key = group.key;
+                const values = group.values;
+
+                chart.drawTrendLine(linearRegression(values), key);
+
+            });
+
+            d3.selectAll("line").lower()
+
         }
+
+
 
 
 
