@@ -291,7 +291,9 @@ function scatterplot() {
             const groupedData = d3.nest()
             .key(d => d.route_or_line)
             .entries(selected.data());
-            chart.drawTrendLine(linearRegression(selected.data()), "All Lines")
+            if(groupedData.length > 1){
+                chart.drawTrendLine(linearRegression(selected.data()), "All Lines")
+            }
 
             groupedData.forEach(group => {
                 const key = group.key;
@@ -300,6 +302,8 @@ function scatterplot() {
                 chart.drawTrendLine(linearRegression(values), key);
 
             });
+
+            d3.selectAll("line").lower()
 
         }
 
