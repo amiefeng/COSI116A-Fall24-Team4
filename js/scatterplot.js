@@ -68,7 +68,6 @@ function scatterplot() {
     
     
             console.log(x(+x1), y(+y1))
-            d3.selectAll('line').filter(function () { return d3.select(this).style("stroke") == color(key)}).remove()
 
             svg.append("line")  
                 .attr("x1", x(+x1))
@@ -242,18 +241,9 @@ function scatterplot() {
     chart.processDispatch = function (dispatchString) {
         if (dispatchString[0] === "filter") {
             lines = dispatchString[1]
-            d3.selectAll("line").each(function () {
-                if (lines[0] === 'All Lines') {
-                    d3.select(this).classed("unfiltered", false) //set to unfiltered if we want everything filteredgit
-                } else {
-                    let strokeColor = d3.rgb(d3.select(this).style("stroke"));
-                    let colorList = lines.map(line => color(line));
-                    d3.select(this).classed("unfiltered", !colorList.map(c => c.toString()).includes(strokeColor.toString()));
-                }
-            })
             selectableElements.each(function (d) {
                 if (lines[0] === 'All Lines') {
-                    d3.select(this).classed("unfiltered", false) //set to unfiltered if we want everything filteredgit
+                    d3.select(this).classed("unfiltered", false) //set to unfiltered if we want everything filtered
                 } else {
                     d3.select(this).classed("unfiltered", true)
                     for (i = 0; i < lines.length; i++) {
@@ -266,7 +256,6 @@ function scatterplot() {
         else if (dispatchString[0] === "calendarUpdated") {
             if (!arguments.length) return;
             message = dispatchString[1]
-            selected = d3.selectAll('circle').filter(function(){return d3.select(this).attr("type") === "scatterplot" && !this.classList.contains("unfiltered")})
             if (message === "|") {                               //if no selection (equivalent to all years / all months), don't select
                 selectableElements.classed("selected", false);
             } else {
@@ -281,28 +270,35 @@ function scatterplot() {
                     let m = d_y_m[1]                           //for each selectable element
                     d3.select(this).classed("selected", (years[0] === '' || years.includes(y)) && (months[0] === '' || months.includes(m)));                  //we want it toggled
                 })
-                selected = selected.filter(function () {return this.classList.contains("selected")  })
                 //groups data by line for linear regression of each group
 
             }
-            console.log(selected)
 
-            //groups data by line for linear regression of each group
-            const groupedData = d3.nest()
-            .key(d => d.route_or_line)
-            .entries(selected.data());
-            chart.drawTrendLine(linearRegression(selected.data()), "All Lines")
 
-            groupedData.forEach(group => {
-                const key = group.key;
-                const values = group.values;
 
-                chart.drawTrendLine(linearRegression(values), key);
-
-            });
 
         }
 
+        d3.selectAll("line").remove()
+        trend_points = d3.selectAll('circle').filter(function(){return d3.select(this).attr("type") === "scatterplot"})
+        
+        selected = trend_points.filter(function(){return this.classList.contains("selected")})
+        console.log(selected)
+        trend_points = selected.empty() ? trend_points.filter(function(){return !this.classList.contains("unfiltered")}) : selected.filter(function() {return !this.classList.contains("unfiltered")})
+        console.log(trend_points)
+        //groups data by line for linear regression of each group
+        const groupedData = d3.nest()
+        .key(d => d.route_or_line)
+        .entries(trend_points.data());
+
+        chart.drawTrendLine(linearRegression(trend_points.data()), "All Lines")
+        groupedData.forEach(group => {
+            const key = group.key;
+            const values = group.values;
+            console.log(values)
+            chart.drawTrendLine(linearRegression(values), key);
+
+        });
 
 
 
@@ -310,6 +306,8 @@ function scatterplot() {
 
 
     };
+
+    
     return chart;
 
 };
