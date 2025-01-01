@@ -276,7 +276,6 @@ function scatterplot() {
 
 
 
-
         }
 
         d3.selectAll("line").remove()
@@ -300,6 +299,7 @@ function scatterplot() {
 
         });
 
+        d3.selectAll("line").lower()
 
 
 
